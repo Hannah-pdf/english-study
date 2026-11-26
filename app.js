@@ -44,7 +44,7 @@ function home() {
     </div>
     <div class="tiles">
       <a class="tile h" href="#/h"><span class="badge">과외 노트</span><div><h3>H-class</h3><p>문법 ${total}챕터 · 영작 ${drills.length}문장</p></div><span class="big">H</span></a>
-      <a class="tile t" href="#/toeic"><span class="badge">준비 중</span><div><h3>TOEIC 850+</h3><p>LC · RC 전략</p></div><span class="big">850</span></a>
+      <a class="tile t" href="#/toeic"><span class="badge">학습 중</span><div><h3>TOEIC 850+</h3><p>강의노트 · 단어 · 패러프레이징 · 오답노트</p></div><span class="big">850</span></a>
       <a class="tile s" href="#/speaking"><span class="badge">준비 중</span><div><h3>Speaking IH</h3><p>토익스피킹 답변 템플릿</p></div><span class="big">IH</span></a>
     </div>
     <div class="sec-h">오늘의 영작</div>
@@ -171,6 +171,9 @@ function soon(name, sub) {
     <div class="empty"><div class="em">곧 추가돼요</div><p>H-class처럼 챕터별로 채워질 공간이에요.</p></div>`, 1);
 }
 
+/* ── shared helpers for other sections ── */
+window.UI = { setNav, render, esc, store, chev, check, $ };
+
 /* ── Router ── */
 function route() {
   const p = location.hash.replace(/^#\/?/, '').split('/');
@@ -180,14 +183,14 @@ function route() {
     if (p[1] === 'fix') return fixes();
     return chapter(p[1], p[2]);
   }
-  if (p[0] === 'toeic') return soon('TOEIC 850+', '목표 점수 850점 이상');
+  if (p[0] === 'toeic') return window.TOEIC ? window.TOEIC.route(p.slice(1)) : soon('TOEIC 850+', '목표 점수 850점 이상');
   if (p[0] === 'speaking') return soon('Speaking IH', '토익스피킹 Intermediate High');
   home();
 }
 function onScroll() { nav.classList.toggle('scrolled', window.scrollY > 30); }
 window.addEventListener('scroll', onScroll, { passive: true });
 window.addEventListener('hashchange', route);
-route();
+if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', route); else route();
 
 if ('serviceWorker' in navigator && location.protocol !== 'file:') navigator.serviceWorker.register('sw.js').catch(() => {});
 })();
