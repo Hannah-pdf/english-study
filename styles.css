@@ -423,3 +423,102 @@ a.block,button.block{display:block;width:100%;text-align:center;margin-top:8px}
 .cal-legend{font-size:12.5px;color:var(--text3);margin:12px 0 0!important;display:flex;align-items:center;gap:5px;flex-wrap:wrap}
 .lg{width:11px;height:11px;border-radius:50%;display:inline-block}
 .lg.ok{background:var(--green)} .lg.warn{box-shadow:inset 0 0 0 2px var(--orange)}
+
+/* ── 단어 테스트 v2 (Apple Fitness 스타일) ── */
+.eyebrow{font-size:13px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.02em;margin:6px 4px 0}
+.rings .rg{animation:ringIn 1s cubic-bezier(.2,.8,.2,1) both}
+@keyframes ringIn{from{stroke-dashoffset:var(--c)}}
+.weekstrip{display:grid;grid-template-columns:repeat(7,1fr);background:var(--card);border-radius:16px;padding:10px 6px 8px;margin:10px 0 12px}
+.wd{display:flex;flex-direction:column;align-items:center;gap:5px;position:relative}
+.wd span{font-size:11px;font-weight:600;color:var(--text3);height:17px;line-height:17px;padding:0 6px}
+.wd.now span{color:#fff;background:#fa114f;border-radius:99px}
+.wcheck{position:absolute;bottom:9px;width:12px;height:12px;background:center/10px no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fa114f' d='M9.5 16.2L5.3 12l-1.4 1.4 5.6 5.6L20.1 8.4 18.7 7z'/%3E%3C/svg%3E")}
+.act{background:var(--card);border-radius:20px;padding:18px;display:flex;align-items:center;gap:18px;margin-bottom:12px}
+.act-ring{flex:none;display:grid}
+.act-stats{display:flex;flex-direction:column;gap:10px;min-width:0}
+.act-stats small{display:block;font-size:13px;font-weight:600;color:var(--text)}
+.act-stats b{font-size:24px;font-weight:700;line-height:1.1;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.act-stats em{font-style:normal;font-size:15px;font-weight:600;opacity:.9}
+.glass{background:var(--card);border-radius:20px;padding:16px;margin-bottom:6px}
+.gl-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;gap:10px}
+.gl-row b{display:block;font-size:17px}
+.gl-row span{font-size:13.5px;color:var(--text3)}
+.badge2{font-size:12.5px;font-weight:600;padding:4px 10px;border-radius:99px;flex:none}
+.badge2.ok{background:color-mix(in srgb,#34c759 16%,transparent);color:#28a745}
+.badge2.warn{background:color-mix(in srgb,#fa114f 12%,transparent);color:#fa114f}
+.btn-primary{display:block;width:100%;text-align:center;background:var(--blue);color:#fff!important;font-weight:600;font-size:17px;border-radius:14px;padding:15px;margin-top:10px;transition:transform .1s,opacity .1s}
+.btn-primary:active{transform:scale(.98);opacity:.85}
+.btn-plain{display:block;width:100%;text-align:center;color:var(--blue);font-weight:500;font-size:17px;padding:13px;border-radius:14px}
+.btn-plain:active{background:var(--fill)}
+.ic.sf{display:grid;place-items:center}
+
+/* 문제 화면 */
+body.testing .nav{background:var(--bg)}
+.tprog{color:var(--text3);font-size:15px;font-variant-numeric:tabular-nums}
+.tline{height:4px;border-radius:9px;background:var(--fill);overflow:hidden;margin:2px 0 0}
+.tline i{display:block;height:100%;width:0;background:var(--blue);border-radius:9px;transition:width .35s cubic-bezier(.2,.8,.2,1)}
+.prompt{text-align:center;padding:42px 8px 34px}
+.prompt small{font-size:13px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.02em}
+.prompt .pword{font-size:34px;font-weight:700;letter-spacing:-.02em;margin:10px 0 0;line-height:1.2;word-break:break-word}
+.prompt .pmean{font-size:20px;font-weight:600;margin:12px 0 0;line-height:1.45}
+.choice{background:var(--card);border-radius:16px;overflow:hidden}
+.ch{display:flex;align-items:center;gap:12px;width:100%;text-align:left;padding:15px 16px;font-size:16px;line-height:1.4;position:relative;transition:background .15s,opacity .2s}
+.ch+.ch::before{content:"";position:absolute;top:0;left:16px;right:0;border-top:.5px solid var(--sep)}
+.ch:active{background:var(--fill)}
+.ch span{flex:1}
+.ch i{width:24px;height:24px;flex:none;border-radius:50%;background-position:center;background-repeat:no-repeat}
+#tq.done .ch:not(.right):not(.bad){opacity:.35}
+.ch.right i{background-color:#34c759;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M9.5 16.2L5.3 12l-1.4 1.4 5.6 5.6L20.1 8.4 18.7 7z'/%3E%3C/svg%3E");background-size:16px}
+.ch.bad i{background-color:#ff3b30;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M6.4 5L12 10.6 17.6 5 19 6.4 13.4 12 19 17.6 17.6 19 12 13.4 6.4 19 5 17.6 10.6 12 5 6.4z'/%3E%3C/svg%3E");background-size:14px}
+.ch.right span{font-weight:600}
+.sheet{position:fixed;left:0;right:0;bottom:0;z-index:30;transform:translateY(110%);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.sheet.up{transform:none}
+.sh-in{max-width:760px;margin:0 auto;background:color-mix(in srgb,var(--card) 82%,transparent);backdrop-filter:saturate(180%) blur(24px);-webkit-backdrop-filter:saturate(180%) blur(24px);border-radius:22px 22px 0 0;padding:18px 20px calc(18px + var(--safe-b));box-shadow:0 -8px 30px #00000014}
+.sh-t{margin:0;font-size:13px;font-weight:600;color:#ff3b30;text-transform:uppercase}
+.sh-w{margin:6px 0 2px;font-size:16px}
+.sh-w b{font-size:18px;margin-right:6px}
+.sh-s{margin:0;font-size:13px;color:var(--text3)}
+
+/* 결과 */
+.result2{text-align:center;padding:26px 0 18px}
+.r-ring{position:relative;display:inline-grid}
+.r-num{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:4px}
+.r-num b{font-size:46px;font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.r-num span{font-size:17px;color:var(--text3);margin-top:14px}
+.result2 h2{margin:14px 0 4px;font-size:26px;letter-spacing:-.01em}
+.result2 p{margin:0;color:var(--text3);font-size:15px}
+.summ{margin-bottom:6px}
+.srow{display:flex;justify-content:space-between;align-items:center;padding:13px 16px;position:relative;font-size:16px}
+.srow+.srow::before{content:"";position:absolute;top:0;left:16px;right:0;border-top:.5px solid var(--sep)}
+.srow b{font-variant-numeric:tabular-nums}
+.wrow{display:flex;flex-direction:column;padding:11px 16px;position:relative}
+.wrow+.wrow::before{content:"";position:absolute;top:0;left:16px;right:0;border-top:.5px solid var(--sep)}
+.wrow b{font-size:16px} .wrow span{font-size:14px;color:var(--text2)}
+
+/* 기록 캘린더 */
+.trend{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.trend>div{background:var(--card);border-radius:16px;padding:12px 14px}
+.trend small{display:block;font-size:12.5px;font-weight:600;color:var(--text3)}
+.trend b{font-size:26px;font-weight:700;color:#fa114f;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.trend em{font-style:normal;font-size:14px;margin-left:1px}
+.cal2-h{display:flex;align-items:baseline;gap:8px;margin-bottom:12px}
+.cal2-h b{font-size:24px;letter-spacing:-.01em}
+.cal2-h>span{color:var(--text3);font-size:15px}
+.cal2-nav{margin-left:auto;display:flex;gap:2px}
+.cal2-nav a{font-size:26px;line-height:1;width:34px;height:34px;display:grid;place-items:center;border-radius:50%;color:#fa114f}
+.cal2-nav a:active{background:var(--fill)}
+.cal2-w,.cal2-g{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px 2px;text-align:center}
+.cal2-w span{font-size:11px;font-weight:600;color:var(--text3);padding-bottom:2px}
+.cday{display:flex;flex-direction:column;align-items:center;gap:3px;padding:2px 0 8px;position:relative;border-radius:12px;min-width:0}
+.cday .cn{font-size:13px;font-weight:500;font-variant-numeric:tabular-nums;width:24px;height:24px;line-height:24px;border-radius:50%}
+.cday.now .cn{background:#fa114f;color:#fff;font-weight:700}
+.cday .cr{width:34px;height:34px}
+.cday.future .cn{color:var(--text3);opacity:.6}
+.cday.pass::after{content:"";position:absolute;bottom:1px;width:4px;height:4px;border-radius:50%;background:#fa114f}
+.cday.sel{background:var(--fill)}
+.cal2-note{font-size:12.5px;color:var(--text3);margin:12px 0 0!important}
+.dsum .ds-top{display:flex;align-items:center;gap:14px;margin-bottom:8px}
+.dsum .ds-top b{display:block;font-size:30px;color:#fa114f;letter-spacing:-.01em}
+.dsum .ds-top em{font-style:normal;font-size:16px}
+.dsum .ds-top span{font-size:14px;color:var(--text3)}
+.ds-w{background:var(--card2);border-radius:12px;margin-top:6px}

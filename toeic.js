@@ -377,31 +377,71 @@ function todaySet() {
   store.set('t.test.today', cur);
   return cur;
 }
+/* 활동 링 (Apple 피트니스 스타일) */
+const RC = { red: '#fa114f', green: '#34c759', blue: '#0a84ff' };
+function rings(size, stroke, list, gap = 2) {
+  let out = `<svg class="rings" width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">`;
+  list.forEach((r, k) => {
+    const rad = size / 2 - stroke / 2 - k * (stroke + gap);
+    if (rad <= 0) return;
+    const C = 2 * Math.PI * rad, p = Math.max(0, Math.min(r.pct, 1));
+    out += `<circle cx="${size / 2}" cy="${size / 2}" r="${rad}" fill="none" stroke="${r.color}" stroke-opacity=".18" stroke-width="${stroke}"/>`;
+    if (p > 0) out += `<circle class="rg" cx="${size / 2}" cy="${size / 2}" r="${rad}" fill="none" stroke="${r.color}" stroke-width="${stroke}" stroke-linecap="round" stroke-dasharray="${C}" stroke-dashoffset="${C * (1 - p)}" transform="rotate(-90 ${size / 2} ${size / 2})" style="--c:${C}"/>`;
+  });
+  return out + '</svg>';
+}
+function weekDays() {
+  const now = new Date(), mon = new Date(now); mon.setDate(now.getDate() - ((now.getDay() + 6) % 7));
+  return Array.from({ length: 7 }, (_, k) => { const d = new Date(mon); d.setDate(mon.getDate() + k); return d; });
+}
+const dayPct = r => r ? r.best / r.total : 0;
 function testHome() {
   const P = pool(), cur = todaySet(), log = tLog(), r = log[cur.date];
-  const pos = store.get('t.test.pos', 0), wrongN = Object.keys(store.get('t.wrong', {})).length;
-  const C = 2 * Math.PI * 29, pct = Math.min(pos / P.length, 1);
-  setNav({ back, title: '매일 단어 테스트' });
+  const pos = Math.min(store.get('t.test.pos', 0), P.length), wrongN = Object.keys(store.get('t.wrong', {})).length;
+  const wk = weekDays(), wkDone = wk.filter(d => log[dkey(d)] && log[dkey(d)].pass).length;
+  const n = cur.fresh.length + cur.rev.length;
+  const today = new Date();
+  setNav({ back, title: '단어 테스트' });
   render(`
-    <h1 class="large">매일 단어 테스트</h1>
-    <p class="lead">새 단어 ${T_NEW}개 + 틀렸던 단어 복습 · ${Math.round(PASS * 100)}점 이상이면 완료</p>
-    <div class="hero">
-      <svg class="ring" viewBox="0 0 66 66"><circle class="bg" cx="33" cy="33" r="29"/><circle class="fg t" cx="33" cy="33" r="29" stroke-dasharray="${C}" stroke-dashoffset="${C * (1 - pct)}" transform="rotate(-90 33 33)"/></svg>
-      <div><h2>🔥 ${streak()}일 연속</h2><p>전체 ${P.length}단어 중 ${Math.min(pos, P.length)}개 진행 · ${Math.ceil(P.length / T_NEW)}세트 중 ${cur.set}세트</p></div>
-    </div>
-    <section class="card tcard">
-      <div class="tc-top"><span class="tc-date">${new Date().toLocaleDateString('ko-KR', { month: 'long', day: 'numeric', weekday: 'short' })}</span>
-        ${r ? `<span class="pill2 ${r.pass ? 'ok' : 'warn'}">${r.pass ? '✓ 완료' : '재도전 필요'}</span>` : '<span class="pill2">아직 안 봄</span>'}</div>
-      <h3>오늘의 테스트 · ${cur.fresh.length + cur.rev.length}문제</h3>
-      <p class="mute">새 단어 ${cur.fresh.length}개${cur.rev.length ? ` · 복습 ${cur.rev.length}개` : ''} · 뜻 고르기 + 단어 고르기</p>
-      ${r ? `<p class="tc-score">최고 <b>${r.best}</b> / ${r.total} · ${r.tries}번 응시</p>` : ''}
-      <a class="lock-go block" href="#/toeic/test/run">${r ? '다시 보기' : '테스트 시작'}</a>
-      <a class="pbtn block" href="#/toeic/test/study">먼저 카드로 외우기</a>
+    <p class="eyebrow">${today.toLocaleDateString('ko-KR', { month: 'long', day: 'numeric', weekday: 'long' })}</p>
+    <h1 class="large" style="margin-top:0">단어 테스트</h1>
+
+    <div class="weekstrip">${wk.map(d => { const k = dkey(d), x = log[k]; return `
+      <div class="wd ${k === cur.date ? 'now' : ''}"><span>${'월화수목금토일'[(d.getDay() + 6) % 7]}</span>
+      ${rings(30, 4.5, [{ pct: dayPct(x), color: RC.red }])}${x && x.pass ? '<i class="wcheck"></i>' : ''}</div>`; }).join('')}</div>
+
+    <section class="act">
+      <div class="act-ring">${rings(150, 17, [
+        { pct: r ? r.best / r.total : 0, color: RC.red },
+        { pct: wkDone / 7, color: RC.green },
+        { pct: pos / P.length, color: RC.blue }])}</div>
+      <div class="act-stats">
+        <div><small>오늘</small><b style="color:${RC.red}">${r ? r.best : 0}<em>/${n}문제</em></b></div>
+        <div><small>이번 주</small><b style="color:${RC.green}">${wkDone}<em>/7일</em></b></div>
+        <div><small>전체 진도</small><b style="color:${RC.blue}">${pos}<em>/${P.length}</em></b></div>
+      </div>
     </section>
+
+    <section class="glass">
+      <div class="gl-row"><div><b>${cur.set}세트</b><span>새 단어 ${cur.fresh.length}${cur.rev.length ? ` · 복습 ${cur.rev.length}` : ''} · ${Math.round(PASS * 100)}점 이상 완료</span></div>
+        ${r ? `<span class="badge2 ${r.pass ? 'ok' : 'warn'}">${r.pass ? '완료' : `${Math.round(r.best / r.total * 100)}점`}</span>` : ''}</div>
+      <a class="btn-primary" href="#/toeic/test/run">${r ? (r.pass ? '다시 풀기' : '재도전') : '시작하기'}</a>
+      <a class="btn-plain" href="#/toeic/test/study">카드로 먼저 보기</a>
+    </section>
+
+    <div class="sec-h">기록</div>
     <div class="group-list">
-      ${row('#/toeic/cal', '📅', 'green', '학습 캘린더', `완료한 날 ${Object.values(log).filter(x => x.pass).length}일`)}
-      ${row('#/toeic/test/wrong', '✕', 'red', '틀린 단어 모음', `${wrongN}개 · 두 번 연속 맞히면 빠져요`)}
+      <a class="row" href="#/toeic/cal"><span class="ic sf" style="background:${RC.red}">${svgIcon('flame')}</span><span class="t"><b>연속 학습</b><small>${streak()}일째 · 캘린더 보기</small></span>${chev}</a>
+      <a class="row" href="#/toeic/test/wrong"><span class="ic sf" style="background:#ff9500">${svgIcon('x')}</span><span class="t"><b>틀린 단어</b><small>${wrongN}개 · 두 번 연속 맞히면 빠져요</small></span>${chev}</a>
     </div>`, 2);
+}
+function svgIcon(n) {
+  const p = {
+    flame: 'M12 2c1 3.5 5 5.5 5 10a5 5 0 0 1-10 0c0-2 1-3.5 2-4.5.3 1.6 1.2 2.6 2.2 3C10.5 7.5 11 4.5 12 2z',
+    x: 'M6.4 5L12 10.6 17.6 5 19 6.4 13.4 12 19 17.6 17.6 19 12 13.4 6.4 19 5 17.6 10.6 12 5 6.4z',
+    check: 'M9.5 16.2L5.3 12l-1.4 1.4 5.6 5.6L20.1 8.4 18.7 7z',
+  }[n];
+  return `<svg viewBox="0 0 24 24" width="18" height="18"><path fill="#fff" d="${p}"/></svg>`;
 }
 function testStudy() {
   const cur = todaySet(), P = pool();
@@ -427,33 +467,39 @@ function testRun(only) {
   const fs = only && only.length ? only : [...cur.fresh, ...cur.rev];
   const Q = makeQs(fs);
   let i = 0, score = 0; const wrong = [], right = [];
-  setNav({ back: { href: '#/toeic/test', label: '그만' }, title: only ? '틀린 것 다시' : '오늘의 테스트' });
-  render(`<div class="tbar"><span id="tprog"></span><div class="tline"><i id="tfill"></i></div></div><div id="tq"></div>`, 3);
+  setNav({ back: { href: '#/toeic/test', label: '닫기' }, title: only ? '다시 풀기' : '오늘의 테스트', act: '<span id="tprog" class="tprog"></span>' });
+  render(`<div class="tline"><i id="tfill"></i></div><div id="tq"></div>`, 3);
+  document.body.classList.add('testing');
   const draw = () => {
     if (i >= Q.length) return finish();
     const q = Q[i];
-    $('#tprog').textContent = `${i + 1} / ${Q.length}`;
+    $('#tprog').textContent = `${i + 1}/${Q.length}`;
     $('#tfill').style.width = `${(i / Q.length) * 100}%`;
     $('#tq').innerHTML = `
-      <section class="qcard"><small>${q.rev ? '알맞은 단어는?' : '뜻은?'}</small><p class="${q.rev ? 'qk' : 'qe'}">${esc(q.rev ? q.w.b : q.w.f)}</p></section>
-      <div class="opts">${q.opts.map((o, k) => `<button class="opt" data-k="${k}" type="button"><i>${'ABCD'[k]}</i><span>${esc(q.rev ? o.f : o.b)}</span></button>`).join('')}</div>
-      <div id="tnext"></div>`;
-    document.querySelectorAll('.opt').forEach(b => b.onclick = () => {
-      if ($('#tq').dataset.done === '1') return;
-      $('#tq').dataset.done = '1';
+      <div class="prompt"><small>${q.rev ? '이 뜻의 단어는?' : '이 단어의 뜻은?'}</small><p class="${q.rev ? 'pmean' : 'pword'}">${esc(q.rev ? q.w.b : q.w.f)}</p></div>
+      <div class="choice">${q.opts.map((o, k) => `<button class="ch" data-k="${k}" type="button"><span>${esc(q.rev ? o.f : o.b)}</span><i></i></button>`).join('')}</div>
+      <div class="sheet" id="sheet"></div>`;
+    $('#tq').classList.remove('done');
+    document.querySelectorAll('.ch').forEach(b => b.onclick = () => {
+      if ($('#tq').classList.contains('done')) return;
+      $('#tq').classList.add('done');
       const k = +b.dataset.k, ok = k === q.ans;
-      document.querySelectorAll('.opt')[q.ans].classList.add('right');
+      const all = document.querySelectorAll('.ch');
+      all[q.ans].classList.add('right');
       if (!ok) { b.classList.add('bad'); wrong.push(q.w.f); } else { score++; right.push(q.w.f); }
-      if (navigator.vibrate) navigator.vibrate(ok ? 10 : [30, 40, 30]);
-      if (ok) setTimeout(() => { i++; $('#tq').dataset.done = ''; draw(); }, 650);
+      if (navigator.vibrate) navigator.vibrate(ok ? 8 : [20, 40, 20]);
+      const next = () => { i++; draw(); };
+      if (ok) setTimeout(next, 600);
       else {
-        $('#tnext').innerHTML = `<p class="tsrc">${esc(q.w.f)} — ${esc(q.w.b)} <span class="mute">· ${esc(q.w.src)}</span></p><button class="lock-go block" id="nx" type="button">다음</button>`;
-        $('#nx').onclick = () => { i++; $('#tq').dataset.done = ''; draw(); };
+        const sh = $('#sheet');
+        sh.innerHTML = `<div class="sh-in"><p class="sh-t">정답</p><p class="sh-w"><b>${esc(q.w.f)}</b> ${esc(q.w.b)}</p><p class="sh-s">${esc(q.w.src)}</p><button class="btn-primary" id="nx" type="button">계속</button></div>`;
+        requestAnimationFrame(() => sh.classList.add('up'));
+        $('#nx').onclick = next;
       }
     });
   };
   const finish = () => {
-    // 틀린 단어장 갱신: 틀리면 추가, 복습 단어를 맞히면 +1, 두 번 연속 맞히면 제거
+    document.body.classList.remove('testing');
     const W = store.get('t.wrong', {}), P = pool();
     wrong.forEach(f => { const w = P.find(x => x.f === f); W[f] = { b: w ? w.b : '', n: 0, t: Date.now() }; });
     right.forEach(f => { if (W[f]) { W[f].n++; W[f].t = Date.now(); if (W[f].n >= 2) delete W[f]; } });
@@ -463,23 +509,26 @@ function testRun(only) {
       const log = tLog(), d = cur.date, prev = log[d];
       log[d] = { best: Math.max(score, prev ? prev.best : 0), total: Q.length, tries: (prev ? prev.tries : 0) + 1,
         pass: (prev && prev.pass) || pass, wrong: pass || !prev ? wrong : prev.wrong, set: cur.set };
-      if (pass) log[d].wrong = wrong;
       store.set('t.test.log', log);
       if (!cur.advanced) { store.set('t.test.pos', store.get('t.test.pos', 0) + cur.fresh.length); cur.advanced = true; store.set('t.test.today', cur); }
     }
-    const C = 2 * Math.PI * 52;
     $('#tfill').style.width = '100%';
+    $('#tprog').textContent = '';
     $('#tq').innerHTML = `
-      <div class="result">
-        <svg class="bigring" viewBox="0 0 120 120"><circle class="bg" cx="60" cy="60" r="52"/><circle class="fg ${pass ? 'ok' : 'warn'}" cx="60" cy="60" r="52" stroke-dasharray="${C}" stroke-dashoffset="${C * (1 - pct)}" transform="rotate(-90 60 60)"/></svg>
-        <div class="rnum"><b>${score}</b>/${Q.length}</div>
-        <h2>${pass ? (only ? '다 잡았어요!' : '오늘 완료! 🎉') : '조금만 더!'}</h2>
-        <p class="mute">${pass ? (only ? '' : '캘린더에 완료로 표시했어요') : `${Math.ceil(Q.length * PASS)}개 이상 맞히면 완료예요`}</p>
+      <div class="result2">
+        <div class="r-ring">${rings(180, 22, [{ pct, color: pass ? RC.green : RC.red }])}<div class="r-num"><b>${score}</b><span>/ ${Q.length}</span></div></div>
+        <h2>${pass ? (only ? '모두 맞혔어요' : '오늘 목표 달성') : '조금만 더'}</h2>
+        <p>${pass ? (only ? '틀린 단어를 다시 정복했어요.' : '캘린더에 완료로 기록했어요.') : `${Math.ceil(Q.length * PASS)}개 이상 맞히면 완료돼요.`}</p>
       </div>
-      ${wrong.length ? `<div class="sec-h">틀린 단어 ${wrong.length}</div><div class="group-list">${wrong.map(f => { const w = pool().find(x => x.f === f); return `<div class="prow"><span class="pa">${esc(f)}</span><span class="pb">${esc(w ? w.b : '')}</span></div>`; }).join('')}</div>
-        <button class="lock-go block" id="again" type="button" style="margin-top:12px">틀린 것만 다시</button>` : ''}
-      <a class="pbtn block" href="#/toeic/cal">캘린더 보기</a>
-      <a class="pbtn block" href="#/toeic/test">테스트 홈</a>`;
+      <div class="group-list summ">
+        <div class="srow"><span>정답</span><b style="color:${RC.green}">${score}</b></div>
+        <div class="srow"><span>오답</span><b style="color:${RC.red}">${wrong.length}</b></div>
+        <div class="srow"><span>연속 학습</span><b>${streak()}일</b></div>
+      </div>
+      ${wrong.length ? `<div class="sec-h">틀린 단어</div><div class="group-list">${wrong.map(f => { const w = pool().find(x => x.f === f); return `<div class="wrow"><b>${esc(f)}</b><span>${esc(w ? w.b : '')}</span></div>`; }).join('')}</div>
+        <button class="btn-primary" id="again" type="button">틀린 단어 다시 풀기</button>` : ''}
+      <a class="btn-plain" href="#/toeic/cal">캘린더 보기</a>
+      <a class="btn-plain" href="#/toeic/test">완료</a>`;
     const ag = $('#again'); if (ag) ag.onclick = () => testRun(wrong.slice());
   };
   draw();
@@ -497,46 +546,50 @@ function wrongList() {
 function calendar(ym) {
   const log = tLog(), now = new Date();
   let [y, m] = ym ? ym.split('-').map(Number) : [now.getFullYear(), now.getMonth() + 1];
-  const first = new Date(y, m - 1, 1), days = new Date(y, m, 0).getDate(), lead = first.getDay();
+  const days = new Date(y, m, 0).getDate(), lead = (new Date(y, m - 1, 1).getDay() + 6) % 7;
   const prev = m === 1 ? `${y - 1}-12` : `${y}-${m - 1}`, next = m === 12 ? `${y + 1}-1` : `${y}-${m + 1}`;
   const entries = Object.entries(log), passDays = entries.filter(([, v]) => v.pass);
-  const monthPass = passDays.filter(([d]) => d.startsWith(`${y}-${String(m).padStart(2, '0')}`)).length;
+  const mm = String(m).padStart(2, '0');
+  const monthPass = passDays.filter(([d]) => d.startsWith(`${y}-${mm}`)).length;
   const avg = entries.length ? Math.round(entries.reduce((a, [, v]) => a + v.best / v.total, 0) / entries.length * 100) : 0;
   let cells = '';
   for (let k = 0; k < lead; k++) cells += '<span></span>';
   for (let d = 1; d <= days; d++) {
-    const key = `${y}-${String(m).padStart(2, '0')}-${String(d).padStart(2, '0')}`, r = log[key];
-    const cls = [r ? (r.pass ? 'ok' : 'warn') : '', key === dkey() ? 'today' : '', new Date(y, m - 1, d) > now ? 'future' : ''].join(' ');
-    cells += `<button class="day ${cls}" data-d="${key}" type="button"><span>${d}</span>${r ? `<i>${r.pass ? '✓' : Math.round(r.best / r.total * 100)}</i>` : ''}</button>`;
+    const key = `${y}-${mm}-${String(d).padStart(2, '0')}`, r = log[key], fut = new Date(y, m - 1, d) > now;
+    cells += `<button class="cday ${key === dkey() ? 'now' : ''} ${fut ? 'future' : ''}" data-d="${key}" type="button">
+      <span class="cn">${d}</span>${fut ? '<span class="cr"></span>' : rings(34, 5, [{ pct: dayPct(r), color: RC.red }])}</button>`;
   }
-  setNav({ back: { href: '#/toeic/test', label: '테스트' }, title: '학습 캘린더' });
+  setNav({ back: { href: '#/toeic/test', label: '테스트' }, title: '기록' });
   render(`
-    <h1 class="large">학습 캘린더</h1>
-    <div class="stats">
-      <div><b>🔥 ${streak()}</b><span>연속</span></div>
-      <div><b>${passDays.length}</b><span>완료한 날</span></div>
-      <div><b>${avg}%</b><span>평균 점수</span></div>
+    <h1 class="large">기록</h1>
+    <div class="trend">
+      <div><small>연속</small><b>${streak()}<em>일</em></b></div>
+      <div><small>이번 달 완료</small><b>${monthPass}<em>일</em></b></div>
+      <div><small>평균 점수</small><b>${avg}<em>%</em></b></div>
     </div>
-    <section class="card cal">
-      <div class="cal-h"><a href="#/toeic/cal/${prev}" aria-label="이전 달">‹</a><b>${y}년 ${m}월</b><a href="#/toeic/cal/${next}" aria-label="다음 달">›</a></div>
-      <div class="cal-w">${'일월화수목금토'.split('').map(w => `<span>${w}</span>`).join('')}</div>
-      <div class="cal-g">${cells}</div>
-      <p class="cal-legend"><i class="lg ok"></i>완료 <i class="lg warn"></i>도전(80점 미만) · 이번 달 ${monthPass}일 완료</p>
+    <section class="card cal2">
+      <div class="cal2-h"><b>${m}월</b><span>${y}</span><div class="cal2-nav"><a href="#/toeic/cal/${prev}" aria-label="이전 달">‹</a><a href="#/toeic/cal/${next}" aria-label="다음 달">›</a></div></div>
+      <div class="cal2-w">${'월화수목금토일'.split('').map(w => `<span>${w}</span>`).join('')}</div>
+      <div class="cal2-g">${cells}</div>
+      <p class="cal2-note">링이 꽉 차면 만점, 링 아래 점은 80점 이상으로 완료한 날이에요.</p>
     </section>
-    <div id="dd"></div>
-    <a class="lock-go block" href="#/toeic/test">${log[dkey()] && log[dkey()].pass ? '오늘 테스트 다시 보기' : '오늘 테스트 보러 가기'}</a>`, 3);
-  document.querySelectorAll('.day').forEach(b => b.onclick = () => {
-    const r = log[b.dataset.d]; document.querySelectorAll('.day').forEach(x => x.classList.remove('sel')); b.classList.add('sel');
-    const P = pool();
-    $('#dd').innerHTML = r ? `<section class="card"><h3>${b.dataset.d.replace(/-/g, '.')} · ${r.set ? `${r.set}세트` : ''}</h3>
-      <p>최고 <b>${r.best}</b> / ${r.total} · ${r.tries}번 응시 · ${r.pass ? '✓ 완료' : '미완료'}</p>
-      ${r.wrong && r.wrong.length ? `<p class="mute">틀린 단어</p>${r.wrong.map(f => { const w = P.find(x => x.f === f); return `<div class="vx"><span>${esc(f)}</span><small>${esc(w ? w.b : '')}</small></div>`; }).join('')}` : '<p class="mute">틀린 단어 없음</p>'}</section>`
-      : `<section class="card"><p class="mute">${b.dataset.d.replace(/-/g, '.')} — 기록 없음</p></section>`;
+    <div id="dd"></div>`, 3);
+  document.querySelectorAll('.cday:not(.future)').forEach(b => {
+    const r = log[b.dataset.d]; if (r && r.pass) b.classList.add('pass');
+    b.onclick = () => {
+      document.querySelectorAll('.cday').forEach(x => x.classList.remove('sel')); b.classList.add('sel');
+      const P = pool(), dt = new Date(b.dataset.d + 'T00:00');
+      $('#dd').innerHTML = `<section class="card dsum"><p class="eyebrow" style="margin:0 0 6px">${dt.toLocaleDateString('ko-KR', { month: 'long', day: 'numeric', weekday: 'long' })}</p>
+        ${r ? `<div class="ds-top">${rings(64, 9, [{ pct: dayPct(r), color: RC.red }])}<div><b>${r.best}<em>/${r.total}</em></b><span>${r.pass ? '완료' : '미완료'} · ${r.tries}회 응시${r.set ? ` · ${r.set}세트` : ''}</span></div></div>
+          ${r.wrong && r.wrong.length ? `<div class="ds-w">${r.wrong.map(f => { const w = P.find(x => x.f === f); return `<div class="wrow"><b>${esc(f)}</b><span>${esc(w ? w.b : '')}</span></div>`; }).join('')}</div>` : '<p class="mute">틀린 단어 없음</p>'}`
+        : '<p class="mute">이날은 기록이 없어요.</p>'}</section>`;
+      $('#dd').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    };
   });
 }
-
 /* ── 라우터 ── */
 async function route(p) {
+  document.body.classList.remove('testing');
   if (!(await ensure())) return lockScreen(() => route(p));
   const [a, b, c, d] = p;
   if (!a) return home();
