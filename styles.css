@@ -556,3 +556,7 @@ a.wrow{color:var(--text)}
 .srsbar>div+div::before{content:"";position:absolute;left:0;top:12px;bottom:12px;border-left:.5px solid var(--sep)}
 .srsbar b{display:block;font-size:24px;font-variant-numeric:tabular-nums}
 .srsbar span{font-size:12px;color:var(--text3)}
+
+.today .dn{display:none;color:var(--text2)}
+.today.show .dn{display:block}
+.today .hint a{color:var(--blue);text-decoration:none}

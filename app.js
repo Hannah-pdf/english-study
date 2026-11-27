@@ -12,6 +12,19 @@ const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':
 const chev = '<svg class="chev" viewBox="0 0 8 13"><path d="M1 1l5.5 5.5L1 12"/></svg>';
 const check = '<span class="done"><svg viewBox="0 0 12 10"><path d="M4.2 9.4L.4 5.6l1.4-1.4 2.4 2.4L10.2.6l1.4 1.4z"/></svg></span>';
 const allDrills = () => CH.flatMap(c => (c.drills || []).map(d => ({ ko: d[0], en: d[1], note: d[2] || '', ch: c })));
+/* 오늘의 영작 기록: h.daily = { 'YYYY-MM-DD': { ko, en, note, cid, ct } } — 하루 한 번 고정 저장, 백업에 포함 */
+const dkey = (d = new Date()) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+function dailyDrill() {
+  const log = store.get('h.daily', {}), k = dkey();
+  if (log[k]) return log[k];
+  const all = allDrills(), used = new Set(Object.values(log).map(x => x.en));
+  const fresh = all.filter(d => !used.has(d.en)), list = fresh.length ? fresh : all;
+  const h = [...k].reduce((a, c) => (a * 31 + c.charCodeAt(0)) >>> 0, 7);
+  const t = list[h % list.length];
+  log[k] = { ko: t.ko, en: t.en, note: t.note, cid: t.ch.id, ct: t.ch.title };
+  store.set('h.daily', log);
+  return log[k];
+}
 
 let prevDepth = 0;
 function setNav({ back = null, title = '', act = '' }) {
@@ -32,8 +45,8 @@ function home() {
   const d = done().length, total = CH.length, pct = d / total;
   const C = 2 * Math.PI * 29;
   const drills = allDrills();
-  const day = Math.floor(Date.now() / 864e5);
-  const t = drills[day % drills.length];
+  const t = dailyDrill();
+  const past = Object.keys(store.get('h.daily', {})).length - 1;
   setNav({ title: '영어 공부', act: '<a href="#/settings" aria-label="설정" class="gear"><svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M19.4 13a7.5 7.5 0 0 0 0-2l2.1-1.6-2-3.5-2.5 1a7.6 7.6 0 0 0-1.7-1L15 3.3h-4l-.4 2.6a7.6 7.6 0 0 0-1.7 1l-2.5-1-2 3.5L6.6 11a7.5 7.5 0 0 0 0 2l-2.1 1.6 2 3.5 2.5-1c.5.4 1.1.7 1.7 1l.4 2.6h4l.4-2.6c.6-.3 1.2-.6 1.7-1l2.5 1 2-3.5L19.4 13zM13 15.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7z" transform="translate(-1 0)"/></svg></a>' });
   render(`
     <h1 class="large">영어 공부</h1>
@@ -50,8 +63,11 @@ function home() {
     <div class="sec-h">오늘의 영작</div>
     <button class="today" id="today" style="width:100%;text-align:left">
       <p class="ko">${esc(t.ko)}</p><p class="en">${esc(t.en)}</p>
-      <div class="hint">탭해서 정답 보기 · ${esc(t.ch.title)}</div>
+      <div class="hint">탭해서 정답 보기 · ${esc(t.ct)}</div>
     </button>
+    <div class="group-list" style="margin-top:10px">
+      <a class="row" href="#/h/daily"><span class="ic c-indigo">◷</span><span class="t"><b>지난 오늘의 영작</b><small>${past > 0 ? `${past}일치 기록 · 어제 문장 다시 보기` : '내일부터 날짜별로 쌓여요'}</small></span>${chev}</a>
+    </div>
   `, 0);
   $('#today').onclick = e => e.currentTarget.classList.toggle('show');
 }
@@ -229,6 +245,28 @@ function soon(name, sub) {
     <div class="empty"><div class="em">곧 추가돼요</div><p>H-class처럼 챕터별로 채워질 공간이에요.</p></div>`, 1);
 }
 
+/* ── 지난 오늘의 영작 ── */
+function dailyLog() {
+  const log = store.get('h.daily', {});
+  const keys = Object.keys(log).sort().reverse(), today = dkey();
+  const y = new Date(); y.setDate(y.getDate() - 1); const yest = dkey(y);
+  const label = k => { const [Y, M, D] = k.split('-').map(Number); const w = '일월화수목금토'[new Date(Y, M - 1, D).getDay()];
+    return `${M}월 ${D}일 (${w})${k === today ? ' · 오늘' : k === yest ? ' · 어제' : ''}`; };
+  setNav({ back: { href: '#/', label: '홈' }, title: '오늘의 영작 기록' });
+  render(`
+    <h1 class="large">오늘의 영작 기록</h1>
+    <p class="lead">홈에 나왔던 문장이 날짜별로 남아요. 먼저 말해 보고 탭하세요</p>
+    ${keys.map(k => { const t = log[k]; return `
+      <div class="sec-h">${label(k)}</div>
+      <button class="today dl" type="button" style="width:100%;text-align:left">
+        <p class="ko">${esc(t.ko)}</p><p class="en">${esc(t.en)}</p>
+        ${t.note ? `<div class="hint dn">${esc(t.note)}</div>` : ''}
+        <div class="hint">탭해서 정답 보기 · <a href="#/h/${t.cid}">${esc(t.ct)}</a></div>
+      </button>`; }).join('')}
+  `, 1);
+  document.querySelectorAll('.dl').forEach(b => b.onclick = e => { if (e.target.closest('a')) return; b.classList.toggle('show'); });
+}
+
 /* ── shared helpers for other sections ── */
 window.UI = { setNav, render, esc, store, chev, check, $ };
 
@@ -239,6 +277,7 @@ function route() {
     if (!p[1]) return hlist();
     if (p[1] === 'drill') return drills(p[2]);
     if (p[1] === 'fix') return fixes();
+    if (p[1] === 'daily') return dailyLog();
     return chapter(p[1], p[2]);
   }
   if (p[0] === 'toeic') return window.TOEIC ? window.TOEIC.route(p.slice(1)) : soon('TOEIC 850+', '목표 점수 850점 이상');

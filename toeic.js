@@ -8,7 +8,7 @@ const PW_KEY = 'toeic.pw';
 /* ── 암호 해제 ── */
 const b64 = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
 async function decrypt(pw) {
-  const enc = await fetch('toeic.enc?v=4').then(r => r.json());
+  const enc = await fetch('toeic.enc?v=5').then(r => r.json());
   const base = await crypto.subtle.importKey('raw', new TextEncoder().encode(pw), 'PBKDF2', false, ['deriveKey']);
   const key = await crypto.subtle.deriveKey({ name: 'PBKDF2', salt: b64(enc.salt), iterations: enc.iter, hash: 'SHA-256' },
     base, { name: 'AES-GCM', length: 256 }, false, ['decrypt']);
@@ -516,6 +516,14 @@ function testStudy() {
   view.mount();
 }
 function shuffle(a) { for (let k = a.length - 1; k > 0; k--) { const j = Math.floor(Math.random() * (k + 1)); [a[k], a[j]] = [a[j], a[k]]; } return a; }
+/* 시험용 뜻: 영어 힌트(괄호 속 동의어, '/ 다른 표현', '= ...', '명사 :' 같은 접두)를 지워 정답이 새지 않게 */
+function qm(b) {
+  let t = String(b).replace(/\s*[\(（][^)）]*[A-Za-z][^)）]*[\)）]/g, '').replace(/\s*\*.*$/, '');
+  const segs = t.split(/\s+\/\s+/).map(x => x.replace(/\s*=\s*[A-Za-z(].*$/, '').replace(/\s*\(?\s*(반의어|동의어)[^)]*\)?$/, '')
+    .replace(/^[^:)]{1,14}:\s*/, '').trim());
+  const ok = segs.filter(x => x && !/[A-Za-z]{2,}/.test(x) && /[가-힣~]/.test(x));
+  return (ok.length ? ok.join(' / ') : segs[0].replace(/[A-Za-z][A-Za-z\s'-]*/g, '…')).replace(/\s{2,}/g, ' ').trim();
+}
 function makeQs(fs) {
   const P = pool();
   return shuffle(fs.map(f => P.find(w => w.f === f)).filter(Boolean)).map((w, k) => {
@@ -553,8 +561,8 @@ function testRun(only) {
     $('#tprog').textContent = `${i + 1}/${Q.length}`;
     $('#tfill').style.width = `${(i / Q.length) * 100}%`;
     $('#tq').innerHTML = `
-      <div class="prompt"><small>${q.rev ? '이 뜻의 단어는?' : '이 단어의 뜻은?'}</small><p class="${q.rev ? 'pmean' : 'pword'}">${esc(q.rev ? q.w.b : q.w.f)}</p>${q.rev ? '' : spk(q.w.f)}</div>
-      <div class="choice">${q.opts.map((o, k) => `<button class="ch" data-k="${k}" type="button"><span>${esc(q.rev ? o.f : o.b)}</span><i></i></button>`).join('')}</div>
+      <div class="prompt"><small>${q.rev ? '이 뜻의 단어는?' : '이 단어의 뜻은?'}</small><p class="${q.rev ? 'pmean' : 'pword'}">${esc(q.rev ? qm(q.w.b) : q.w.f)}</p>${q.rev ? '' : spk(q.w.f)}</div>
+      <div class="choice">${q.opts.map((o, k) => `<button class="ch" data-k="${k}" type="button"><span>${esc(q.rev ? o.f : qm(o.b))}</span><i></i></button>`).join('')}</div>
       <div class="sheet" id="sheet"></div>`;
     $('#tq').classList.remove('done');
     bindSpk($('#tq'));
