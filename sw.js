@@ -1,6 +1,6 @@
 // 오프라인에서도 열리도록 캐시. 내용을 고치면 VERSION 숫자를 올리세요.
-const VERSION = 'v10';
-const FILES = ['./', 'index.html', 'styles.css?v=9', 'data.js?v=4', 'app.js?v=6', 'manifest.webmanifest',
+const VERSION = 'v11';
+const FILES = ['./', 'index.html', 'styles.css?v=9', 'data.js?v=5', 'app.js?v=7', 'manifest.webmanifest',
   'apple-touch-icon.png', 'icon-192.png', 'icon-512.png', 'toeic.js?v=7'];
 
 self.addEventListener('install', e => {

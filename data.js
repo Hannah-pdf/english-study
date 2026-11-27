@@ -40,6 +40,21 @@ window.HCLASS = [
     <p class="ex">I went <u>to the office</u>.</p>
     <p class="ex">I will go <u>to Paris</u> <u>next month</u>.</p>
     <p class="tip">${SUP} 두 문장 모두 밑줄 친 부분은 동사를 꾸미는 <b>부사 역할</b>. 전치사구는 빼도 문장이 성립해요.</p>
+  </section>
+  <section class="card">
+    <h3>전치사구가 형용사일 때 (노트)</h3>
+    <p class="ex">My phone <u>on the table</u> is not <b>mine</b>.</p>
+    <p class="mute">on the table → 명사(phone) 수식 = 형용사 / mine = 소유대명사</p>
+  </section>
+  <section class="card">
+    <h3>부사의 자리 (노트 10/12)</h3>
+    <div class="rows">
+      <div><b>문장 전체 수식</b><span>문장 제일 앞 — Therefore, ~</span></div>
+      <div><b>동사 수식</b><span>문장 제일 끝 — I can run <u>fast</u>.</span></div>
+      <div><b>형용사 수식</b><span>정도를 나타내기 위해 부사 출동 — very beautiful</span></div>
+      <div><b>부사 수식</b><span>so fast, too much</span></div>
+    </div>
+    <p class="note">1형식: S + V + (부사 or 전치사구) — 동사 수식으로</p>
   </section>`
 },
 
@@ -64,6 +79,348 @@ window.HCLASS = [
     <p class="ex">She prepared <u>some food</u> <span class="mute">for my birthday</span>.</p>
     <div class="formula"><b class="c s">S</b><b class="c v">V</b><b class="c o">O</b><i>전치사구</i></div>
     <p class="note">prepare <b>O</b> for ~ → 3형식. "for my birthday"는 꾸미는 말.</p>
+  </section>`
+},
+
+/* ───────────── (노트) 1형식 동사 ───────────── */
+{
+  id: 'v1', no: 0, color: 'indigo', glyph: '1V',
+  title: '1형식 동사', sub: 'S + V + 전치사구/부사 · 장소 → 시간 순서', pages: '노트 9/26·10/12·10/18',
+  html: `
+  <section class="card">
+    <h3>1형식 = S + V</h3>
+    <div class="formula"><b class="c s">S</b><b class="c v">V</b><i>+ 전치사구 / 부사</i></div>
+    <p class="note">1형식 동사에는 뒤에 전치사구 또는 부사가 따라와야 한다. (형식상 동사로 알려주는 것)</p>
+    <p class="ex">I sleep. → I slept <u>in my friend's house</u>.</p>
+    <p class="note">sleep은 1형식이기 때문에 뒤에 명사가 오면 안 됨 → 전치사가 와야 함!</p>
+    <p class="mute">부사는 동사와 떨어져도 OK</p>
+  </section>
+  <section class="card">
+    <h3>1형식 동사 목록</h3>
+    <p class="words">go · come · return · sleep · wake up · get up · look · move · talk · speak · study · walk · run · exercise · sit · stand · fall · fly · grow · work · dance · sing · play · travel · drive · arrive · depart · drink · swim · cry · scream · fight · smile · laugh · sneeze(재채기) · cough(기침) · begin · start · last · lie · appear · disappear · reply · live · die · happen</p>
+    <p class="tip">${SUP} study, drink, play, work 등은 3형식(목적어 있음)으로도 써요. 여기서는 목적어 없이 쓰는 경우.</p>
+  </section>
+  <section class="card">
+    <h3>순서: 장소 → 시간</h3>
+    <p class="ex">I will work <u>in the office</u> <u>today</u>. <span class="mute">전치사구(장) · 부사(시)</span></p>
+    <p class="ex">I walked <u>around the house</u> <u>at night</u>. <span class="mute">장 · 시</span></p>
+    <p class="ex">I went to supermarket <u>at 8:00pm</u> <u>last night</u> with my mom. <span class="mute">구체적 시간 → 더 넓은 시간대</span></p>
+    <p class="note">장소와 시간 사이에 다른 걸 넣지 X → 앞으로 빼거나 맨 뒤로 가기</p>
+    <p class="ex">I will stay in France for a while next year <b>with my son</b>.</p>
+    <p class="note">시간·장소를 나타내는 전치사구 or 부사는 앞으로 오기도 한다! 문장 전체 수식 부사는 문장 앞에.</p>
+    <p class="ex"><b>Last week</b>, I met my friends.</p>
+  </section>
+  <section class="card">
+    <h3>1형식 vs 3형식 (짝으로 외우기)</h3>
+    <div class="rows">
+      <div><b>go (1)</b><span>go <b>to</b> + 장소</span></div>
+      <div><b>visit (3)</b><span>visit + 장소 바로 — My coworker will visit my home today.</span></div>
+      <div><b>reply · respond (1)</b><span>I will reply <b>to</b> you / to your message soon.</span></div>
+      <div><b>answer (3)</b><span>I will answer you / your message / your email soon.</span></div>
+      <div><b>depart (1)</b><span>I departed <b>from</b> Korea.</span></div>
+      <div><b>leave (3)</b><span>I left Korea.</span></div>
+      <div><b>talk (1)</b><span>I will talk <b>to</b> you <b>about</b> the news tomorrow. (사람과 이슈)</span></div>
+      <div><b>lie (1)</b><span>lie는 1형식으로만 쓴다 — He lied <b>to</b> me.</span></div>
+    </div>
+    <p class="ex">He lied to me, but I understood his situation. <span class="mute">understand → 3형식</span></p>
+    <div class="fixes"><div><s>I understanded</s><b>I understood</b></div></div>
+  </section>
+  <section class="card">
+    <h3>1형식 동사가 좋아하는 전치사 (look)</h3>
+    <div class="tree">
+      <div class="node">look +<small>전치사 + 명사</small></div>
+      <ul>
+        <li><b>for</b> + n : ~을 찾다</li>
+        <li><b>after</b> + n : ~을 돌보다 <span class="mute">= take care of + n</span></li>
+        <li><b>into</b> + n : ~을 조사하다 <span class="mute">(들어가서 더 찾아봄)</span></li>
+      </ul>
+    </div>
+    <p class="ex">I am looking <b>for</b> a document now.</p>
+    <p class="ex">I am looking <b>after</b> two dogs at home.</p>
+    <p class="mute">look은 1형식·2형식 둘 다 (2형식: ~처럼 보인다)</p>
+  </section>
+  <section class="card">
+    <h3>헷갈렸던 1형식 표현</h3>
+    <div class="rows">
+      <div><b>wake up → woke up</b><span>의식을 (잠에서 깨다). up은 부사</span></div>
+      <div><b>get up → got up</b><span>몸을 (일어나다)</span></div>
+      <div><b>last (1V)</b><span>지속되다 — When does it last until? 언제까지 해요?</span></div>
+      <div><b>travel to</b><span>~로 여행을 가다 — I will travel to the mountain in summer.</span></div>
+      <div><b>move to / into</b><span>~로 이사를 가다 — I moved to Seoul / to a new house.</span></div>
+    </div>
+    <div class="fixes">
+      <div><s>I will go to travel at the mountain</s><b>I will travel to the mountain in summer. (계절엔 in)</b></div>
+      <div><s>My friend lives in overseas</s><b>My friend lives overseas. (overseas는 부사)</b></div>
+      <div><s>Your message will reply tomorrow</s><b>I will reply to your message tomorrow.</b></div>
+    </div>
+  </section>
+  <section class="card">
+    <h3>in / at 느낌 (노트)</h3>
+    <div class="rows">
+      <div><b>in</b><span>안에서 — in my room / the kitchen / the living room / the toilet, 행정구역 in 안양 · in 호계동 · in 동안구</span></div>
+      <div><b>at</b><span>도착해서, 목적성이 강한 느낌 — arrive at the airport / 시간도 at 특정 시간 (at 9:00 am)</span></div>
+    </div>
+    <p class="mute">hair salon · cafe · market 처럼 건물 안 가게는 in, 목적성이 강한 곳(bus stop, station, airport, pharmacy)은 at</p>
+  </section>`,
+  drills: [
+    ['저는 친구의 집에서 잤습니다.', "I slept in my friend's house.", 'sleeped (X) → slept / 소유격(my friend’s)'],
+    ['나는 오늘 사무실에서 일할 것입니다.', 'I will work in the office today.', 'will 뒤엔 동사원형 (will working X)'],
+    ['나는 집에서 운동했습니다.', 'I exercised in the house.'],
+    ['나는 서울에서 삽니다.', 'I live in Seoul.'],
+    ['당신은 내일 이 방에서 잘 것입니다.', 'You will sleep in this room tomorrow.', '장소 → 시간'],
+    ['우리팀은 이 호텔에서 머물 것입니다.', 'Our team will stay in this hotel.'],
+    ['서울에 계신 나의 부모님은 다음주에 제주도로 여행을 갈 것입니다.', 'My parents in Seoul will travel to Jeju Island next week.', '전치사구(in Seoul)가 명사를 꾸미면 형용사 역할'],
+    ['우리는 방금 공항에 도착했습니다.', 'We arrived at the airport just now.'],
+    ['저는 집에서 출발했습니다.', 'I departed from the house.', '출발점은 from'],
+    ['저는 집 주위를 밤에 걸었습니다.', 'I walked around the house at night.'],
+    ['저는 어제 밤 슈퍼에 갔어요.', 'I went to the supermarket last night.', 'go (X) → went (과거)'],
+    ['작년에 우리가족은 미국으로 여행을 갔어요.', 'Last year, my family traveled to America.'],
+    ['어제밤 저의 남편은 거실에서 잤어요.', 'Last night, my husband slept in the living room.', 'sleeps (X) → slept'],
+    ['지난주에 친구의 결혼식에 갔었죠.', "Last week, I went to my friend's wedding."],
+    ['저는 내년에 아들과 함께 프랑스에 잠깐 머물 거예요.', 'I will stay in France for a while next year with my son.', 'at France (X) → in France / 장소·시간 사이에 넣지 말고 맨 뒤로'],
+    ['제 친구는 해외에 살고 있어요.', 'My friend lives overseas.', 'overseas는 부사 → in 불필요'],
+    ['당신의 문자에 내일 답을 할게요.', 'I will reply to your message tomorrow.', 'reply는 1형식 → reply to'],
+    ['영업부의 제 동료가 오늘 안으로 당신의 질문에 답할 거예요.', 'My coworker in the sales department will reply to your question within today.'],
+    ['어제 학교에서 너 너무 피곤해 보였어.', 'You looked so tired at school yesterday.'],
+    ['그저께 저는 한국에 도착해서 친구 집에 머물렀어요.', "The day before yesterday, I arrived in Korea and I stayed in my friend's house.", 'departed from (X) — 거기에서 출발한!'],
+    ['지난주에 엄마가 미국에서 출발했어요.', 'Last week, my mom departed from America.'],
+    ['저는 오후에 헬스장에 갈 것입니다.', 'I will go to the gym in the afternoon.', 'gym = fitness club = fitness center'],
+    ['저는 여름에 산으로 여행을 갈 것입니다.', 'I will travel to the mountain in summer.', '계절엔 in'],
+    ['저는 친구와 함께 공항에 9시에 도착했습니다.', 'I arrived at the airport at 9:00 am with my friends.', 'departed (X) → arrived / 특정 시간은 at'],
+    ['저는 지금 어떤 서류를 찾고 있습니다.', 'I am looking for a document now.', '현재진행은 now와 잘 나옴'],
+    ['저는 강아지 두 마리를 집에서 돌보고 있습니다.', 'I am looking after two dogs at home.'],
+    ['저는 오늘 아침 5시에 일어났습니다.', 'I woke up at 5:00 am today.', 'wake up (X) → woke up (과거)'],
+    ['저는 내일 아침 5시에 일어나야만 합니다.', 'I have to get up at 5:00 am tomorrow.'],
+  ]
+},
+
+/* ───────────── (노트) 2·3·4형식 ───────────── */
+{
+  id: 'v234', no: 0, color: 'purple', glyph: '2·3·4',
+  title: '2·3·4형식 동사', sub: 'be·look / 목적어 / 사람목적어 + 사물목적어', pages: '노트 10/12~11월',
+  html: `
+  <section class="card">
+    <h3>2형식 = S + V + 주격보어</h3>
+    <div class="formula"><b class="c s">S</b><b class="c v">V</b><b class="c c2">주격보어</b><i>명사 · 형용사 / 전치사구</i></div>
+    <p class="note">주격보어 = 주어와 같다(=). 보충하는 / 설명하는 말</p>
+    <div class="two">
+      <div><h4>2형식</h4><p class="ex">I am a teacher. <span class="mute">I = teacher</span></p></div>
+      <div><h4>3형식</h4><p class="ex">I love you. <span class="mute">I ≠ you</span></p></div>
+    </div>
+    <div class="tree">
+      <div class="node">주격보어</div>
+      <ul><li>상태 형용사 — dirty, tired, worried, sad</li><li>명사 — 주어의 정보 (I am Haneul. I am a teacher.)</li></ul>
+    </div>
+  </section>
+  <section class="card">
+    <h3>대표적인 2형식 동사 ① be</h3>
+    <p class="ex">I am <u>a student</u>. <span class="mute">명사</span></p>
+    <p class="ex">I am <u>smart</u>. <span class="mute">형용사</span></p>
+    <p class="ex">I am <u>in the class</u>. <span class="mute">전치사구 — 수업 중에 있다</span></p>
+    <p class="mute">반 안에 있다 → (in the) classroom</p>
+    <p class="ex">I am in the cafe <u>near the house</u>. <span class="mute">near the house = 형용사(카페 수식)</span></p>
+  </section>
+  <section class="card">
+    <h3>대표적인 2형식 동사 ② look</h3>
+    <p class="note">look : ~처럼 보인다 / ~하게 보이다 → 상태를 표현할 수 있다</p>
+    <p class="ex">You look <u>tired / smart / beautiful</u>. <span class="mute">형용사</span></p>
+    <div class="fixes"><div><s>You look beautifully.</s><b>You look beautiful. (보여지는 '상태'라 형용사)</b></div></div>
+    <p class="ex">You look <b>like</b> your mom / a professor. <span class="mute">like = 전치사 + 명사</span></p>
+    <p class="ex">You look <u>in trouble</u>. <span class="mute">전치사구 — 문제에 빠진 / 걱정 있어 보인다 (상태, 형용사 느낌)</span></p>
+    <p class="ex">This building looks too old. / These clothes look very dirty.</p>
+    <p class="mute">2형식 동사: am · look · feel</p>
+  </section>
+  <section class="card">
+    <h3>new로 보는 2형식</h3>
+    <div class="rows">
+      <div><b>I am new.</b><span>내가 새로워 (신입)</span></div>
+      <div><b>I am new here.</b><span>여기가 처음이에요</span></div>
+      <div><b>This company is new to me.</b><span>(feel) 이 회사가 나에게 새롭다</span></div>
+      <div><b>I am new in this region.</b><span>이 지역이 처음이에요</span></div>
+    </div>
+  </section>
+  <section class="card">
+    <h3>3형식 = S + V + O (~을/를)</h3>
+    <div class="formula"><b class="c s">S</b><b class="c v">V</b><b class="c o">O</b><i>명사</i></div>
+    <p class="words">visit · provide · marry · answer · eat · leave · use · drink · buy · wear · meet · clean</p>
+    <p class="ex">I drink <u>this coffee</u> every day.</p>
+    <p class="ex">Nowadays, the living room looked so dirty, so I cleaned <u>the living room</u>.</p>
+    <p class="ex">I will take <u>a flight</u> / for Sydney. <span class="mute">for Sydney = 시드니로 향하는</span></p>
+  </section>
+  <section class="card">
+    <h3>4형식 = S + V + 사람목적어 + 사물목적어</h3>
+    <div class="formula"><b class="c s">S</b><b class="c v">V</b><b class="c o">사람·목</b><b class="c o">사물·목</b></div>
+    <p class="note">사람이 꼭 언급되어야 나온다</p>
+    <p class="words">give · send · tell · show · teach · buy · make · bring · offer</p>
+    <p class="ex">I will give <u>her</u> <u>this present</u> / on her birthday.</p>
+    <p class="ex">I will show you the brochure / my room.</p>
+    <p class="ex">I will tell you the story / my secret / the news.</p>
+    <p class="ex">My parents gave me some cash on my birthday.</p>
+    <div class="rows"><div><b>send vs give</b><span>보내는 느낌 / 주는 느낌</span></div></div>
+  </section>
+  <section class="card">
+    <h3>4형식 → 3형식 바꾸기</h3>
+    <p class="ex">I will give her this present. (4) <span class="mute">외국인들은 보통 4형식으로 함</span></p>
+    <p class="ex">I will give <u>this present</u> <b>to</b> her. (3)</p>
+    <p class="note">사물 목적어가 먼저 오면 뒤에 전치사!</p>
+  </section>
+  <section class="card">
+    <h3>say / talk · speak / tell (노트)</h3>
+    <div class="rows">
+      <div><b>say (3V)</b><span>사물을 목적어로, 사람은 전치사로</span></div>
+      <div><b>talk / speak (1V)</b><span>talk = 이야기 개념 / speak = 발성, 발음, 영어를 말하다</span></div>
+      <div><b>tell (4V)</b><span>tell 사람 + 내용</span></div>
+    </div>
+    <p class="ex">I will talk to you about the news.</p>
+    <p class="ex">I didn't say <u>to you</u> <b>that</b> I didn't like coffee.</p>
+    <p class="mute">to you = 전치사구 / that = 긴 목적어(목적어절) 만들 때 나옴</p>
+    <div class="fixes"><div><s>My son tell me the new friends last night</s><b>My son talked to me about new friends last night.</b></div></div>
+  </section>
+  <section class="card">
+    <h3>until vs by (노트)</h3>
+    <div class="rows">
+      <div><b>until</b><span>계속 진행되는 느낌 — You can use this free coupon until next Thursday.</span></div>
+      <div><b>by</b><span>완료 — I will send you the money by this week.</span></div>
+    </div>
+  </section>`,
+  drills: [
+    ['테이블 위에 있는 저 핸드폰은 저의 것이 아니에요.', 'The phone on the table is not mine.', '2형식 · mine = 소유대명사'],
+    ['이 옷은 너무 더러워 보이는데요.', 'These clothes look very dirty.', 'clothes는 복수 → These / look'],
+    ['나는 매일 이 커피를 마신다.', 'I drink this coffee every day.'],
+    ['나는 친구들과 함께 어제 병원에 갔다.', 'I went to the hospital with my friends yesterday.', '관련 있는 사람은 소유격(my) / 장소·시간 뒤에 붙이기'],
+    ['엄마는 어제 마트에서 수박을 샀다.', 'My mom bought a watermelon at the market yesterday.'],
+    ['나는 이 셔츠를 3일 동안 입었다.', 'I wore this shirt for 3 days.'],
+    ['우리는 이 호텔에 이틀 동안 머물 것이다.', 'We will stay in this hotel for 2 days.', 'stay는 1형식 → in/at 필요'],
+    ['다음주에 우리는 동물원에 갈 것이다.', 'Next week, we will go to the zoo.'],
+    ['지난주에 나는 친구를 만났다.', 'Last week, I met my friend.'],
+    ['저는 지금 집 근처에 있는 카페에 있습니다.', 'I am in the cafe near the house.', '2형식 · near the house가 카페 수식'],
+    ['저는 아침 10시에 엄마와 함께 카페에서 아침을 먹을 것입니다.', 'I will have breakfast at the cafe with my mom at 10:00 am.', '삼시세끼는 have (eat도 가능)'],
+    ['나의 회사 동료가 저희 집을 오늘 방문할 것입니다.', 'My coworker will visit my home today.', 'visit은 3형식 → 전치사 X'],
+    ['당신은 이 무료 쿠폰을 다음주 목요일까지 사용할 수 있습니다.', 'You can use this free coupon until next Thursday.'],
+    ['저는 병원을 나와서 약국으로 갔습니다.', 'I left the hospital and I went to a pharmacy.'],
+    ['나의 부모님은 생일에 나에게 돈을 주셨다.', 'My parents gave me some cash on my birthday.'],
+    ['제가 지금 바빠서 좀 이따 답장할게요.', "I'm busy now. I will reply to you soon."],
+    ['이 건물은 너무 오래되어 보여요.', 'This building looks too old.'],
+    ['우리 아들은 어제 저녁에 새로운 친구들에 대해서 나에게 말했다.', 'My son talked to me about new friends last night.'],
+    ['이번 주까지 당신에게 돈을 보낼게요.', 'I will send you the money by this week.', 'until (X) → by (완료)'],
+    ['저는 테이블 위에 있는 저 케이크를 먹을게요.', 'I will eat the cake on the table.'],
+    ['오늘 우리는 호텔 옆에 있는 박물관에 갈 거예요.', 'Today we will go to the museum next to the hotel.'],
+    ['그는 나에게 거짓말을 했지만, 나는 그의 상황을 이해했다.', 'He lied to me, but I understood his situation.'],
+  ]
+},
+
+/* ───────────── (노트) 동사 기초: 인칭·변화·진행 ───────────── */
+{
+  id: 'vbasic', no: 0, color: 'orange', glyph: '-s/-ed',
+  title: '동사 기초', sub: '3인칭 단수 · 규칙/불규칙 · 현재진행', pages: '노트 10/12~',
+  html: `
+  <section class="card">
+    <h3>현재시제 인칭에 따른 단수 / 복수</h3>
+    <div class="rows">
+      <div><b>I sleep</b><span></span></div>
+      <div><b>You sleep</b><span></span></div>
+      <div><b>He / She sleep<b style="color:var(--red)">s</b></b><span>3인칭 단수 → 동사에 s</span></div>
+      <div><b>We sleep</b><span></span></div>
+      <div><b>They sleep</b><span>여러 명 → s 없음</span></div>
+      <div><b>It sleep<b style="color:var(--red)">s</b></b><span>(곰) — 3인칭 단수</span></div>
+    </div>
+    <p class="note">명사를 복수로 만들 때 s 붙음 (students) ↔ He/She는 동사에 s 붙음</p>
+  </section>
+  <section class="card">
+    <h3>동사 변화: 원형 – 과거 – 과거분사</h3>
+    <div class="tbl-wrap"><table class="tbl">
+      <thead><tr><th></th><th>동사원형</th><th>과거</th><th>과거분사</th></tr></thead>
+      <tbody>
+        <tr><th>불규칙</th><td>sleep</td><td>slept</td><td>slept</td></tr>
+        <tr><th>규칙</th><td>walk</td><td>walked</td><td>walked</td></tr>
+        <tr><th>${SUP}</th><td>wake / get / wear / understand</td><td>woke / got / wore / understood</td><td>woken / got(ten) / worn / understood</td></tr>
+      </tbody></table></div>
+    <p class="mute">과거분사는 be + p.p (수동태) / have + p.p (완료)에 쓰임</p>
+    <div class="fixes"><div><s>sleeped</s><b>slept</b></div><div><s>understanded</s><b>understood</b></div></div>
+  </section>
+  <section class="card">
+    <h3>현재진행 = be + ~ing</h3>
+    <p class="ex">It <b>is raining</b>. <span class="mute">비가 오는 중이에요 (지금)</span></p>
+    <p class="ex">It rains. <span class="mute">비가 오네요</span></p>
+    <p class="ex">It rained yesterday.</p>
+    <p class="note">쓰고 싶은 동사를 원형으로 해서 ing 붙임 / 현재진행 시제는 now랑 잘 나옴</p>
+    <p class="note">ing만 붙으면 be동사 없다 → 현재분사 / 동명사 (동사 아님!)</p>
+  </section>
+  <section class="card">
+    <h3>조동사 + 동사원형</h3>
+    <p class="ex">I <b>have to</b> get up at 5:00 am tomorrow. <span class="mute">have to = 조동사 역할</span></p>
+    <div class="fixes"><div><s>I will working in the office</s><b>I will work in the office</b></div></div>
+  </section>
+  <section class="card">
+    <h3>먹다: have vs eat</h3>
+    <div class="rows">
+      <div><b>have</b><span>삼시세끼 (have breakfast / lunch / dinner)</span></div>
+      <div><b>eat</b><span>간식거리 — 식사도 have 대신 써도 됨 (단순 섭취의 경우)</span></div>
+    </div>
+  </section>
+  <section class="card">
+    <h3>a lot vs a lot of</h3>
+    <div class="rows">
+      <div><b>a lot</b><span>부사 → 많이 (It rained a lot yesterday.)</span></div>
+      <div><b>a lot of + n</b><span>수량형용사 → 많은</span></div>
+    </div>
+  </section>
+  <section class="card">
+    <h3>대명사는 수식을 받을 수 없다</h3>
+    <p class="note">I, she 등 대명사는 형용사로 수식할 수 없다</p>
+    <div class="fixes"><div><s>beautiful she</s><b>She is beautiful.</b></div></div>
+  </section>
+  <section class="card">
+    <h3>소유격 붙이기</h3>
+    <p class="ex">I slept at <u>my parents'</u> house. / <u>my boss's</u> chair</p>
+    <p class="note">관련 있는 사람은 소유격을 붙이는 게 좋다 (with <b>my</b> friends, with <b>my</b> son)</p>
+    <p class="mute">a hospital — 병원을 잘 모르니까 a / 아는(그) 병원이면 the</p>
+  </section>`
+},
+
+/* ───────────── (노트) 문장 구조와 직독직해 ───────────── */
+{
+  id: 'reading1', no: 0, color: 'teal', glyph: '/',
+  title: '문장 구조 · 직독직해', sub: '주절 + 부사절 · 끊어 읽기 (시드니 일기)', pages: '노트',
+  html: `
+  <section class="card">
+    <h3>문장 만드는 순서</h3>
+    <ol class="num">
+      <li><b>문장 (주절)</b> — S + V부터: I went to supermarket at 8:00pm last night with my mom.</li>
+      <li><b>문장 (부사절) = 추가절</b> — When it rained a lot <span class="mute">(부사절 · 1형식 동사)</span></li>
+      <li>주어를 추측해서 적합한 걸로 주어 놓기 → 한국식 → 영어식으로 가지기</li>
+      <li>끊어서 구조 보기: You can put your phone / on the table. <span class="mute">S · V(~을 놓다) · O(~을) · 부사</span></li>
+    </ol>
+  </section>
+  <section class="card">
+    <h3>절의 3종류</h3>
+    <div class="tree">
+      <div class="node">절</div>
+      <ul><li>① 명사절</li><li>② 형용사절</li><li>③ 부사절 → 부사 역할을 하는 (주절의 입장에서!!)</li></ul>
+    </div>
+    <p class="note">추가절을 주절에 붙이기 위해 접속사 필요. 부사절은 앞에 접속사를 붙여야 한다. 뜻이 있습니다 → 해석을 해줘야 함.</p>
+  </section>
+  <section class="card">
+    <h3>직독직해: 시드니로 떠나기 전날 밤</h3>
+    <p class="hintbar">영어 순서대로 끊어서 해석하는 연습. 탭하면 해석이 보여요.</p>
+    ${[
+      ['I will go to the airport early tomorrow / and I will take a flight for Sydney,', '나는 갈 것입니다 공항에 일찍 내일 / 그리고 나는 탈 겁니다 비행기를 시드니로 향하는'],
+      ['so I have to sleep now / and it is 12:30 am', '그래서 나는 잠을 자야만 한다 지금 / 그리고 새벽 12:30분이다'],
+      ['but I cannot sleep right away now.', '그러나 나는 잠을 잘 수 없다 당장 지금'],
+      ['Actually, I am worried and nervous.', '사실, 나는 걱정되고 긴장된다'],
+      ['I will stay there for a year.', '나는 머물 것입니다 거기에 1년 동안'],
+      ['At first, I will study English for 6 months at school,', '먼저 난 공부할 것이다 영어를 6달 동안 학교에서'],
+      ['and then I will work in a food court with my friend.', '그리고 나서 나는 일할 것입니다 푸드코트에서 내 친구랑 함께'],
+      ['He introduced the job to me.', '그는 소개시켜 줬습니다 직업을 나에게'],
+      ['He is so nice to me all the time.', '그는 정말 친절합니다 나에게 항상'],
+    ].map(([e, k]) => `<button class="pic" type="button"><span class="pe">${e}</span><span class="pk">${k}</span></button>`).join('')}
+    <p class="tip">${FIX} 노트의 "food cart"는 해석(푸드코트)에 맞춰 food court로, "introduced the job for me"는 introduced the job <b>to</b> me로 고쳤어요.</p>
+  </section>
+  <section class="card">
+    <h3>구조 분석 (노트)</h3>
+    <p class="ex">I will go / to the airport / early tomorrow <span class="mute">S V · 전치사구(1형식) · 구체적 시간</span></p>
+    <p class="ex">and I will take / a flight / for Sydney. <span class="mute">S V O(~을, 3형식) · 시드니로 향하는</span></p>
+    <p class="ex">So I have to sleep / now <span class="mute">1형식 · 부사</span></p>
   </section>`
 },
 
@@ -1108,6 +1465,8 @@ window.HCLASS = [
 },
 ];
 
+window.HCLASS.forEach((c, i) => { c.no = i + 1; });
+
 /* 오답노트: 내가 자주 틀린 표현 (필기 첨삭 기반) */
 window.FIXES = [
   ['Thank you to your email', 'Thank you for your email', 'thank you for'],
@@ -1134,4 +1493,13 @@ window.FIXES = [
   ['during working', 'while working', 'during + 명사'],
   ['It is pleased to see you', 'It is my pleasure to see you', 'pleased는 사람'],
   ['This clothes is', 'These clothes are', ''],
+  ['sleeped', 'slept', '불규칙 동사'],
+  ['I will working', 'I will work', 'will + 동사원형'],
+  ['You look beautifully', 'You look beautiful', '2형식 보어는 형용사'],
+  ['reply your message', 'reply to your message', 'reply는 1형식'],
+  ['visit to my home', 'visit my home', 'visit은 3형식'],
+  ['depart Korea', 'depart from Korea / leave Korea', ''],
+  ['live in overseas', 'live overseas', 'overseas는 부사'],
+  ['beautiful she', 'She is beautiful', '대명사는 수식 X'],
+  ['until this week (완료)', 'by this week', 'until 계속 / by 완료'],
 ];

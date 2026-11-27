@@ -106,6 +106,7 @@ function chapter(id, tab) {
     const on = d.includes(c.id); const b = $('#done'); b.classList.toggle('on', on); b.textContent = on ? '✓ 학습 완료' : '학습 완료로 표시';
   };
   bindDrills();
+  document.querySelectorAll('.pic').forEach(p => p.onclick = () => p.classList.toggle('open'));
 }
 
 function drillList(list) {
