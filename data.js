@@ -771,6 +771,108 @@ window.HCLASS = [
   ]
 },
 
+/* ───────────── (노트) 분사: 명사 수식 ───────────── */
+{
+  id: 'participle', no: 0, color: 'green', glyph: '-ing/-ed',
+  title: '분사로 명사 꾸미기', sub: '현재분사(능동·진행) vs 과거분사(수동·완료)', pages: '노트 (스프링노트)',
+  html: `
+  <section class="card">
+    <h3>준동사 = 동사를 사용하면서 만드는 아이</h3>
+    <div class="tree">
+      <div class="node">준동사</div>
+      <ul>
+        <li>to부정사 — 명사(주·목·보) / 형용사(명사수식, 보어) / 부사(문장 전체)</li>
+        <li>동명사</li>
+        <li>분사 — 형용사 역할: ① 명사 수식 ② 보어</li>
+      </ul>
+    </div>
+    <div class="rows">
+      <div><b>현재분사 (-ing)</b><span>진행 · 능동 — 사람 O, 사물 O가 식구로 옴</span></div>
+      <div><b>과거분사 (p.p)</b><span>완료 · 수동 — 전치사구, 부사가 식구로 옴</span></div>
+    </div>
+    <p class="note">명사와의 관계를 보고 현재분사 / 과거분사를 고른다. 동사의 형식을 따져야 함 — 식구 챙기기!</p>
+  </section>
+  <section class="card">
+    <h3>현재분사: 식구(목적어·전치사구)를 데리고 뒤에서 꾸밈</h3>
+    <p class="ex">There is a bus <u>going to the beach</u> directly. <span class="mute">go는 1V라서 to the beach 전치사구가 따라옴</span></p>
+    <p class="ex">There are many people <u>waiting for the bus</u> right now. <span class="mute">waited (X) — 단순하게 생각하라!</span></p>
+    <p class="ex">A kid <u>riding a swing</u> is our kid. <span class="mute">ride a swing (3V) — 사물 O가 식구</span></p>
+    <p class="ex">Children <u>singing in the performance</u> looked very happy. <span class="mute">singing children도 가능</span></p>
+  </section>
+  <section class="card">
+    <h3>★ 과거분사는 수동태 구문이 가능한 동사에만!</h3>
+    <p class="note">과거분사는 거의 3V로 만든다. 1V · 2V는 목적어가 없어서 → 안 됨!</p>
+    <p class="ex">I made coffee. → Coffee was made by me. → There is a cup of coffee <u>made by your mom</u> on the table. <span class="mute">3V라 가능!</span></p>
+    <div class="fixes"><div><s>The bus arrived in the bus stop is ~</s><b>arrive는 1V라 과거분사로 꾸밀 수 없음</b></div></div>
+    <p class="ex">I prepared the food on the table. (능동) → The food was prepared on the table (by me). (수동)</p>
+    <p class="note">과거분사를 사용할 때는 수동문장을 떠올려야 한다! 전치사구·by me·부사는 p.p의 식구 — 와도 안 와도 됨</p>
+    <p class="ex">You will see a lot of food <u>prepared on the table</u>. <span class="mute">식구가 없으면 단독으로 food 앞으로 올 수 있어 (prepared food)</span></p>
+    <p class="ex">Put the torn clothes here. <span class="mute">here는 torn이 아니라 put을 꾸미는 것</span></p>
+  </section>
+  <section class="card">
+    <h3>lie / lay / put / place</h3>
+    <div class="rows">
+      <div><b>lie (1V)</b><span>놓여있다 → lying — clothes lying outside</span></div>
+      <div><b>put · place (3V)</b><span>놓다 → 수동이면 p.p — clothes put / placed outside</span></div>
+    </div>
+    <div class="rows">
+      <div><b>will</b><span>의지를 물어볼 때 — Will you throw them away?</span></div>
+      <div><b>be going to</b><span>진짜 확실한지 물어볼 때</span></div>
+    </div>
+  </section>
+  <section class="card">
+    <h3>문장 형식 + 전치사구/부사</h3>
+    <ol class="num">
+      <li>S + V + 전치사구/부사</li>
+      <li>S + V + 주격보어 + 전·구/부사</li>
+      <li>S + V + O + 전·구/부사</li>
+      <li>S + V + O1 + O2 + 전·구/부사</li>
+      <li>S + V + O + 목적격보어 + 전·구/부사</li>
+    </ol>
+    <p class="note">There is/are + 주어: there는 비인칭주어(뜻 X, 주어 취급 X). 주어(명사) ← 형용사 / 전치사구 / 부사가 꾸밈</p>
+  </section>
+  <section class="card">
+    <h3>that이 이끄는 절 (맛보기)</h3>
+    <p class="ex">There is no data <b>that</b> we will upload this week or next week. <span class="mute">형용사절 접속사 that — 사물 목적어를 가져감 (upload 3V)</span></p>
+    <p class="ex">This is <b>that</b> S + V. <span class="mute">보어 자리 → 명사절</span></p>
+    <p class="ex">There is nothing special about our part.</p>
+  </section>
+  <section class="card">
+    <h3>사역 · 지각 · stop (노트)</h3>
+    <p class="ex">I make him study. / I made the computer turned on. <span class="mute">O가 O.C 행위를 하는지 안 하는지만 보라~!</span></p>
+    <p class="ex">I saw him watch(ing) TV. <span class="mute">ing → 진행의 의미가 강조됨</span> / I saw the cup broken.</p>
+    <p class="note">stop은 동작을 멈추기 때문에 → ing를 사용 (O.C 자리에 to+V / 동명사 중)</p>
+    <p class="ex">Can I ask you to keep the door closed? <span class="mute">make · keep · find · consider (KFC) → O.C에 형용사</span></p>
+  </section>`,
+  drills: [
+    ['이미 당신에게 부과된 요금이에요.', 'It was a fee imposed on you.', 'money·cash를 제외한 돈이 언급된 명사는 셀 수 O'],
+    ['이 책에서 아이들에 의해 찢겨진 부분이 좀 있어요.', 'There is a part torn by children in this book.'],
+    ['아침마다 인스턴트 라면을 먹는 사람들은 많이 없을 걸요.', 'There are not many people having instant noodles every morning.'],
+    ['놀이터에서 그네를 타고 있는 애가 우리 아이예요.', 'The kid riding a swing in the playground is our kid.'],
+    ['이 사진에서 빨간 모자를 쓰고 있는 아이가 제 동생이에요.', 'The kid wearing the red hat in this picture is my younger sister.', 'worn (X) → wearing'],
+    ['제가 본다이 비치로 가는 버스를 여기서 탈 수 있나요?', 'Can I take a bus going to Bondi Beach here?', 'to Bondi Beach만 써도 OK (전치사구 형용사)'],
+    ['저희 가게에서 손님들의 관심을 끄는 다양한 이벤트를 준비하려고 합니다.', "We will make various events attracting customers' attention in our restaurant."],
+    ['부서진 유리조각을 당장 치워야 해요.', 'You have to clean the broken pieces of glass right now.'],
+    ['요즘은 잘못된 주소로 배달된 편지가 많아요.', 'There are many letters delivered to wrong addresses nowadays.'],
+    ['밖에 놓여져 있는 옷들이 많네요. 저 옷들을 버릴 건가요?', 'There are many clothes lying outside. Will you throw them away?', 'lie 1V → lying / throw away them (X)'],
+    ['제 집 주변에 요즘 새로 지어진 건물들이 많아요.', 'There are many buildings newly built around my house.'],
+    ['제 생일파티를 위해 준비된 음식이 많은 것 같아서 친구 몇 명을 추가로 초대하려고요.', 'There is a lot of food prepared for my birthday party, so I will invite some friends additionally.'],
+    ['찢어진 옷들은 여기에 넣으세요.', 'Put the torn clothes here.'],
+    ['그 레스토랑에 기다리고 있는 사람이 많습니까?', 'Are there many people waiting in the restaurant?'],
+    ['업로드된 데이터가 있나요?', 'Is there any data uploaded?'],
+    ['지금 버스를 기다리는 사람이 많아요.', 'There are many people waiting for the bus right now.'],
+    ['테이블 위에 준비된 많은 음식을 보게 될 거예요.', 'You will see a lot of food prepared on the table.'],
+    ['테이블 위에 엄마가 만든 커피 한 잔이 있어.', 'There is a cup of coffee made by your mom on the table.'],
+    ['문을 닫아 두라고 부탁해도 될까요? 모기가 방에 들어오는 걸 원치 않아요.', "Can I ask you to keep the door closed? I don't want a mosquito to come into the room.", 'close (X) → closed / want O to V'],
+    ['저는 직원에게 3시까지 방을 청소해달라고 요청했어요.', 'I asked a staff to clean the room by 3 p.m.', 'asked to a staff (X) / 완료는 by (노트엔 until)'],
+    ['우리 아들은 음식을 충분히 먹었을 때 완전히 만족했어요.', 'My son felt fully satisfied when he had enough food.'],
+    ['시설과 서비스가 아주 좋아서 이 호텔에 머무는 걸 추천해요.', 'I recommend you to stay in this hotel because the facilities and service are very good.', 'stay 1V → in'],
+    ['공연에서 노래하는 아이들은 아주 행복하고 신나 보였어요.', 'Children singing in the performance looked very happy and excited.'],
+    ['특히 아프리카에서는 꽤 위험하기 때문에 그는 내가 밤에 나가는 걸 허락하지 않았어요.', "He didn't allow me to go out at night because it is quite dangerous especially in Africa.", 'allow O to V (going X)'],
+    ['저한테 너무 어두워 보여서 다른 모델을 보여주셨으면 해요.', 'I would like you to show me another model as it looks too dark for me.', 'would like = want (예의 바른 표현) / another + 단수'],
+  ]
+},
+
 /* ───────────── (노트) 수동태 ───────────── */
 {
   id: 'passive', no: 0, color: 'teal', glyph: 'be p.p',
@@ -1494,6 +1596,30 @@ window.HCLASS = [
     </div>
   </section>
   <section class="card">
+    <h3>직독직해: 시드니 도착</h3>
+    <button class="pic" type="button"><span class="pe">When I arrived in Sydney, it was very late at night.</span><span class="pk">내가 시드니에 도착했을 때, 매우 늦은 저녁이었다</span></button>
+    <button class="pic" type="button"><span class="pe">Actually it was 3:45 a.m.</span><span class="pk">사실 오전 3시 45분이었다</span></button>
+    <button class="pic" type="button"><span class="pe">It was raining and windy, but it made me very refreshed.</span><span class="pk">비가 내렸고 바람이 불었다. 그러나 그것은 날 매우 개운하게 만들었다 (노트: refused → refreshed)</span></button>
+    <button class="pic" type="button"><span class="pe">Also, the air was very clean, so my headache went away.</span><span class="pk">또한 공기는 매우 깨끗했다. 그래서 내 두통이 사라졌다</span></button>
+    <button class="pic" type="button"><span class="pe">Before I came to Sydney, I asked my friend to come to the airport for me,</span><span class="pk">시드니에 오기 전에, 친구에게 나를 위해 공항으로 와달라고 요청했다 (ask 5V)</span></button>
+    <button class="pic" type="button"><span class="pe">but he refused it. It made me a bit disappointed,</span><span class="pk">그러나 그는 거절했다. 그것은 나를 조금 실망시켰다</span></button>
+    <button class="pic" type="button"><span class="pe">but I totally understood him as he is living far away from the airport.</span><span class="pk">그러나 그가 공항에서 멀리 살고 있어서 나는 그를 전적으로 이해했다</span></button>
+  </section>
+  <section class="card">
+    <h3>직독직해: 회의 영어 (업무)</h3>
+    <button class="pic" type="button"><span class="pe">At first, we have uploaded the CityGML to the OGC portal with the building errors and GML IDs fixed that WiTech mentioned last week.</span><span class="pk">먼저, WiTech이 지난주 언급한 건물 오류와 GML ID를 수정해서 CityGML을 OGC 포털에 업로드했습니다</span></button>
+    <button class="pic" type="button"><span class="pe">If you have feedback, we&#x27;re continuing to update.</span><span class="pk">피드백이 있으시면 계속 업데이트하고 있습니다</span></button>
+    <button class="pic" type="button"><span class="pe">And we&#x27;re also working on the design of the CityGML importer and will start development in the next week or two.</span><span class="pk">그리고 CityGML 임포터 설계도 진행 중이며 1~2주 내에 개발을 시작합니다</span></button>
+    <button class="pic" type="button"><span class="pe">You don&#x27;t need to make me the presenter. I&#x27;ll just do the talking about our part.</span><span class="pk">저를 발표자로 지정 안 하셔도 돼요. 저희 파트만 말로 설명할게요</span></button>
+    <button class="pic" type="button"><span class="pe">I&#x27;m sure he knows the exact date, but according to the milestones, we&#x27;re still working on it until early February.</span><span class="pk">그가 정확한 날짜를 알 거라 확신하지만, 마일스톤에 따르면 2월 초까지 계속 작업합니다</span></button>
+    <button class="pic" type="button"><span class="pe">He is not here today, so I&#x27;ll share our part.</span><span class="pk">그가 오늘 없어서 제가 저희 파트를 공유할게요</span></button>
+    <button class="pic" type="button"><span class="pe">Sina, can you make me a presenter? Okay, thank you.</span><span class="pk">시나, 저를 발표자로 해줄 수 있나요? 네, 감사합니다</span></button>
+    <button class="pic" type="button"><span class="pe">This is our milestone that I talked about.</span><span class="pk">이게 제가 말씀드린 마일스톤입니다</span></button>
+    <button class="pic" type="button"><span class="pe">The CityGML importer is still in design and we will start development soon.</span><span class="pk">CityGML 임포터는 아직 설계 중이고 곧 개발을 시작합니다</span></button>
+    <button class="pic" type="button"><span class="pe">We are continuing to update CityGML. That is all.</span><span class="pk">CityGML은 계속 업데이트 중입니다. 이게 다예요</span></button>
+    <p class="mute">verbally 구두로 · There is nothing special about our part. 저희 파트는 특별한 게 없어요</p>
+  </section>
+  <section class="card">
     <h3>노트 단어장</h3>
     <div class="rows">
       <div><b>rinse</b><span>헹구다</span></div>
@@ -1609,6 +1735,18 @@ window.HCLASS = [
       <div><b>distilled · vine</b><span>증류된 · 포도나무 (cabernet sauvignon, merlot)</span></div>
       <div><b>ruin</b><span>망치다</span></div>
       <div><b>high level of curiosity · self-directed</b><span>호기심이 많은 · 자기주도적인</span></div>
+      <div><b>crowded · arrange</b><span>붐비는 · 정리하다</span></div>
+      <div><b>lots of = a lot of</b><span>많은</span></div>
+      <div><b>do housework / homework / shopping / the laundry / the dishes</b><span>집안일 / 숙제 / 쇼핑 / 빨래 / 설거지</span></div>
+      <div><b>annual leave</b><span>연차</span></div>
+      <div><b>chili pepper · bell pepper</b><span>고추 · 피망, 파프리카</span></div>
+      <div><b>location · operation</b><span>위치 (to the new location) · 운영</span></div>
+      <div><b>thoughtful</b><span>생각하게 만드는 (or relaxed)</span></div>
+      <div><b>I was quite OK.</b><span>quite 부사 + OK 형용사 — 양호한 상태였다</span></div>
+      <div><b>long time of studying / working</b><span>오랜 공부 / 근무 (전치사 뒤 동명사)</span></div>
+      <div><b>verbally</b><span>구두로</span></div>
+      <div><b>until vs by</b><span>3시까지 TV 볼 수 있어, 세일이 수요일까지래 (계속) / 3시까지 완료해야 해, 월요일까지 데이터 제출할게요 (완료)</span></div>
+      <div><b>another</b><span>떡이 아닌 사과, 재고가 있는 사과 (같은 종류의 다른 하나)</span></div>
       <div><b>celebrate</b><span>기념하다, 축하하다 (3V) — I want to celebrate our graduation.</span></div>
     </div>
   </section>
@@ -2721,4 +2859,9 @@ window.FIXES = [
   ['Whose shoes is yellow?', 'Whose shoes are yellow?', '복수 주어'],
   ['living fee', 'living cost', '물가'],
   ['flee market', 'flea market', '벼룩시장'],
+  ['people waited for the bus', 'people waiting for the bus', '능동·진행 → -ing'],
+  ['keep the door close', 'keep the door closed', '문이 닫힌 상태'],
+  ['allow me going out', 'allow me to go out', 'allow O to V'],
+  ['I would like to you show me', 'I would like you to show me', 'would like O to V'],
+  ['The bus arrived in the bus stop is ~', 'The bus that arrived at the bus stop is ~', 'arrive 1V는 p.p 수식 X'],
 ];
