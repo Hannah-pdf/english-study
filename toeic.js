@@ -8,7 +8,7 @@ const PW_KEY = 'toeic.pw';
 /* ── 암호 해제 ── */
 const b64 = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
 async function decrypt(pw) {
-  const enc = await fetch('toeic.enc?v=1').then(r => r.json());
+  const enc = await fetch('toeic.enc?v=2').then(r => r.json());
   const base = await crypto.subtle.importKey('raw', new TextEncoder().encode(pw), 'PBKDF2', false, ['deriveKey']);
   const key = await crypto.subtle.deriveKey({ name: 'PBKDF2', salt: b64(enc.salt), iterations: enc.iter, hash: 'SHA-256' },
     base, { name: 'AES-GCM', length: 256 }, false, ['decrypt']);
