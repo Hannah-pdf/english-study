@@ -309,6 +309,396 @@ window.HCLASS = [
   ]
 },
 
+/* ───────────── (노트) 4형식 ↔ 3형식 ───────────── */
+{
+  id: 'v43', no: 0, color: 'pink', glyph: '4↔3',
+  title: '4형식 ↔ 3형식 바꾸기', sub: 'give · make · buy · offer · provide · pay · charge · ask', pages: '노트 12/15·12/28',
+  html: `
+  <section class="card">
+    <h3>기본 공식</h3>
+    <div class="rows">
+      <div><b>(4) V + 사람 + 사물</b><span>I will give her this present.</span></div>
+      <div><b>(3) V + 사물 + 전치사 + 사람</b><span>I will give this present to her.</span></div>
+    </div>
+    <p class="note">전치사구는 문장의 중요한 구성요소 X → 생략 가능</p>
+    <p class="ex">I teach English (to students). <span class="mute">to students 없어도 문장이 됨</span></p>
+  </section>
+  <section class="card">
+    <h3>to를 쓰는 동사 vs for를 쓰는 동사</h3>
+    <div class="two">
+      <div><h4>to (주는 느낌)</h4>
+        <p class="ex">give · send · teach · show · offer · tell</p>
+        <p class="ex">I will offer free drinks <b>to</b> you.</p>
+        <p class="ex">I teach English <b>to</b> students.</p>
+        <p class="ex">Send the document <b>to</b> me.</p></div>
+      <div><h4>for (해 주는 느낌)</h4>
+        <p class="ex">make · buy · cook</p>
+        <p class="ex">I will make coffee <b>for</b> you.</p>
+        <p class="ex">I will buy a cup <b>for</b> you.</p>
+        <p class="ex">I made a tomato pasta <b>for</b> my friend.</p></div>
+    </div>
+    <p class="ex">Can you bring me the book? <span class="mute">bring (4) 가지고 오다</span></p>
+  </section>
+  <section class="card">
+    <h3>목적어가 대명사면 3형식!</h3>
+    <p class="ex">give 사람 사물 (4) / give 사물 to 사람 (3)</p>
+    <p class="ex">..., but I heard that she gave <b>it</b> to another friend.</p>
+    <p class="note">목적어를 대명사(it, them)로 받아야 할 때는 3형식으로 씀!</p>
+    <div class="fixes"><div><s>she gave another friend it</s><b>she gave it to another friend</b></div></div>
+  </section>
+  <section class="card">
+    <h3>offer (4) vs provide (3)</h3>
+    <p class="ex">I will offer you free drinks today. (4) <span class="mute">offer ≈ give</span></p>
+    <p class="ex">I will offer free drinks to you. (3)</p>
+    <p class="note">provide는 3형식 — 목적어 1개, 나머지는 전치사구로 받기</p>
+    <div class="rows">
+      <div><b>provide A with B</b><span>A(사람)에게 B(사물)를 — 선호!! I will provide you with free drinks.</span></div>
+      <div><b>provide B to A</b><span>I will provide free drinks to you.</span></div>
+    </div>
+    <p class="ex">A staff of the restaurant provided me <b>with</b> some side dishes and water, and she <b>served</b> me the main dish. <span class="mute">serve (4)</span></p>
+  </section>
+  <section class="card">
+    <h3>pay (지불하다) · charge (부과하다)</h3>
+    <div class="rows">
+      <div><b>(4)</b><span>You have to pay me $30.</span></div>
+      <div><b>(3)</b><span>You have to pay $30 to me.</span></div>
+      <div><b>(1)</b><span>You have to pay for the entrance fee. — 사람·사물 목적어가 다 빠지면 1V</span></div>
+    </div>
+    <p class="note">for: 어떤 것에 대해 지불해야 되는지 알려주기 위해 붙임</p>
+    <p class="ex">You have to pay me $30 <b>for</b> the ticket.</p>
+    <p class="ex">I think that you didn't pay <b>for</b> this product. <span class="mute">(1V) 아직 계산 안 하신 것 같아요</span></p>
+    <p class="mute">Do I have to pay? / I have to pay. → 손님 입장에서 pay</p>
+    <p class="ex">He charged me $30 for the entrance fee. (4) <span class="mute">~에게 ~금액을 부과시키다 (가게 입장)</span></p>
+  </section>
+  <section class="card">
+    <h3>ask 사람 + 사물</h3>
+    <p class="ex">Can I ask <u>you</u> <u>some questions</u>? <span class="mute">사람 · 질문(사물목적어)</span></p>
+    <p class="mute">ask는 1·3·4·5형식 다 가능</p>
+  </section>
+  <section class="card">
+    <h3>say (3) · tell (4→3) · talk (1) · speak (1, 3)</h3>
+    <p class="ex">I said <u>to you</u> <u>that S + V</u>. <span class="mute">to you = 전치사구(없어도 됨) / that절 = 목적어절</span></p>
+    <p class="ex">I talked to him about promotion. <span class="mute">promotion = 승진 (홍보라는 뜻도)</span></p>
+    <p class="mute">speak (3) → 외국어를 말할 때 (speak English)</p>
+    <p class="ex">My mom told me that I don't have to go there. <span class="mute">tell (4) · 갈 필요가 없다</span></p>
+  </section>
+  <section class="card">
+    <h3>셀 수 있는 / 없는 (노트)</h3>
+    <div class="rows">
+      <div><b>음식</b><span>원칙적으로 셀 수 없다 → a 빼기 (my friend made me delicious spaghetti)</span></div>
+      <div><b>돈</b><span>money, cash는 셀 수 없고, 그 외 화폐(dollar, coin)는 셀 수 있다</span></div>
+      <div><b>a → the</b><span>서로 존재를 아는 것(그 서류)은 the — 내가 인지하는 걸 우선해서 the라고 하자</span></div>
+    </div>
+  </section>`,
+  drills: [
+    ['나는 그 당시에 남편을 아주 사랑했기 때문에, 그와 작년에 결혼했다.', 'Because I loved my husband at that time, I married him last year.', 'love · marry 3V (marry with X)'],
+    ['친구는 나에게 이번달에 보너스를 받을 것이라고 이야기했다.', 'My friend told me that I have a bonus this month.', 'tell 4V · the bonus (X) → a bonus'],
+    ['남편은 갑자기 나에게 하나의 검은 상자를 가져왔다.', 'Suddenly my husband brought me a black box.', 'bring 4V'],
+    ['내가 친구의 집을 방문했을 때 친구는 나에게 맛있는 스파게티를 만들어주었다.', "When I visited my friend's house, my friend made me delicious spaghetti.", 'make 4V · visit 3V · 음식은 a 빼기'],
+    ['친구는 아침 일찍 내 집을 떠나서 공항에 도착했다.', 'My friend left my house early in the morning and she arrived at the airport.', 'early(구체) → in the morning(넓은 시간) 순서'],
+    ['제 시간에 카페에 도착했고, 친구들을 거기에서 만났다.', 'I arrived at the cafe on time and I met my friends there.', 'on time = 관용 전치사구 / in there (X) → there는 부사'],
+    ['저는 당신께 방금 이메일을 보냈습니다. 확인하신 이후에 답해주세요.', 'I sent you an email just now. After you check it, please reply to it.', 'send 4V · reply 1V → reply to / check it out (대명사는 가운데)'],
+    ['나는 남편에게 다음주에 시부모님댁에 방문해야 한다고 말했다.', "I told my husband that we have to visit my parents-in-law's house next week."],
+    ['이 카페에서는 오늘만 손님들에게 무료 음료를 제공한대요.', 'This cafe offers customers a free drink only today.', '카페는 단수 → offers / by today (X) → only today'],
+    ['30분 안에 이메일로 이 서류를 저에게 보내주셔야 합니다.', 'You have to send me the document by email in 30 minutes.', 'in = 30분쯤(약간 넘어도) / within = 확실히 30분 이내 · by, through 둘 다 OK'],
+    ['지난번에 나는 친구에게 토마토 파스타를 만들어 주었다.', 'Last time I made my friend a tomato pasta.', '3형식: made a tomato pasta for my friend'],
+    ['작년 조카에게 생일에 핑크색 드레스를 사줬지만 나중에 다른 친구에게 주었다고 들었다.', 'Last year I bought my niece a pink dress on her birthday, but I heard that she gave it to another friend later.', 'nephew(남) / niece(여) / cousin(사촌) · 대명사 it → 3형식'],
+    ['늦은 저녁 공원에 도착해서 혼자 거의 두 시간 동안 운동을 했다.', 'I arrived at the park late at night and I exercised alone for almost 2 hours.', 'alone · almost 부사 / for 2 hours 전치사구'],
+    ['아침에 아빠는 너무 피곤하고 졸려 보였다.', 'My father looked so tired and sleepy in the morning.', '2형식 look + 형용사'],
+    ['그 손님이 갑자기 직원에게 많은 질문을 해서 직원은 당황한 것처럼 보였다.', 'Suddenly the customer asked the employee many questions and he looked embarrassed.', 'too much (X) → many questions'],
+    ['나는 너의 생일에 너무 많은 장난감을 사줄 수 없어.', "I can't buy you a lot of toys on your birthday."],
+    ['당신은 아직 이 물건을 계산을 안 하신 것 같아요.', "I think that you didn't pay for this product.", 'pay 사람(me) + 돈 + for 사물'],
+    ['5세 이하에 대해서는 돈을 안 내셔도 되세요.', "You don't have to pay for a five-year-old child.", "don't have to = ~하지 않아도 된다 / five-year-old (나이가 명사 앞에선 단수+하이픈)"],
+    ['저 직원이 당신에게 그 방법을 가르쳐줄 거예요.', 'The staff will teach you the way.'],
+    ['당신은 호텔 프런트 직원에게 여권을 보여주셔야 합니다.', 'You have to show the hotel front desk employee your passport.', 'front desk / your passport'],
+    ['저 직원이 추가 포크를 저에게 가져다 주셨어요.', 'The staff brought me an additional fork.', 'the (X) → an'],
+    ['당신이 50불 이상 시키시면 무료음료를 제공합니다.', 'If you order something more than $50, we offer you a free drink.'],
+    ['집들이로 저는 손님들에게 여러가지 한국음식을 만들어 주었어요.', 'I made my guests various Korean food for housewarming.'],
+    ['만약 당신이 질문이 있다면 저에게 물어볼 수 있어요.', 'If you have a question, you can ask me the question.'],
+  ]
+},
+
+/* ───────────── (노트) 부사절 접속사 ───────────── */
+{
+  id: 'advcl', no: 0, color: 'blue', glyph: 'if',
+  title: '부사절 접속사', sub: '주절 + 종속절 · 접속사 ↔ 전치사 · 시제', pages: '노트 12월~',
+  html: `
+  <section class="card">
+    <h3>주절과 종속절</h3>
+    <div class="formula"><b class="c s">S + V</b><i>+</i><b class="c o">접속사 S + V</b></div>
+    <div class="rows">
+      <div><b>주절</b><span>결과 · 메인 문장</span></div>
+      <div><b>종속절</b><span>배경 — 주절에 대한 배경 (부사절 = 보장)</span></div>
+    </div>
+    <p class="ex">I went to the hospital <u>because I was sick</u>. <span class="mute">주절 1형식 + 부사절 2형식</span></p>
+    <p class="ex"><u>Because I was sick</u><b>,</b> I went to the hospital.</p>
+    <p class="note">종속절이 앞에 오면 콤마를 붙인다</p>
+  </section>
+  <section class="card">
+    <h3>종속절 3종류</h3>
+    <div class="tree">
+      <div class="node">종속절</div>
+      <ul>
+        <li><b>부사절</b> — 주절의 앞뒤에. 접속사 뜻 O (생략 X)</li>
+        <li><b>형용사절</b> — 명사를 수식. 접속사 뜻 X (생략 가능)<br><span class="mute">The coffee (that) I like is latte.</span></li>
+        <li><b>명사절</b> — 주어 · 목적어 · 보어 역할. 접속사 뜻 O<br><span class="mute">What I like is ham. → 명사절이 주어 자리에</span></li>
+      </ul>
+    </div>
+  </section>
+  <section class="card">
+    <h3>부사절 접속사 ↔ 전치사</h3>
+    <div class="tbl-wrap"><table class="tbl">
+      <thead><tr><th></th><th>부사절 접속사 (+ S V)</th><th>전치사 (+ 명사)</th></tr></thead>
+      <tbody>
+        <tr><th>시간</th><td>when = as, <b>before</b>, <b>after</b>, while, <b>since</b>, <b>until</b>, as soon as(~하자마자)</td><td>before · after · since · until · by</td></tr>
+        <tr><th>조건</th><td>if, unless(= if not), in case (that), as long as(~하는 한), once(일단 ~하면)</td><td></td></tr>
+        <tr><th>이유</th><td>because, as, since</td><td>because of</td></tr>
+        <tr><th>양보</th><td>even though, although (~임에도 불구하고) · even if (~할지라도, 혹시 미래적)</td><td>despite, in spite of</td></tr>
+        <tr><th>대조</th><td>while (~인 반면에)</td><td></td></tr>
+      </tbody></table></div>
+    <p class="mute">굵은 글씨 = 접속사이면서 전치사</p>
+    <p class="note">before: 뒤에 명사가 나오면 전치사, 주어 + 동사가 나오면 부사절 접속사</p>
+    <p class="ex">before boarding (전치사) / before I left my house (접속사)</p>
+    <div class="fixes"><div><s>Despite I have to concentrate</s><b>Even though I have to concentrate (despite는 전치사)</b></div></div>
+  </section>
+  <section class="card">
+    <h3>until vs by (전치사일 때)</h3>
+    <div class="rows">
+      <div><b>until</b><span>~계속해서 그때까지 — I did housework until late at night.</span></div>
+      <div><b>by</b><span>~까지 완료하는 느낌을 강조</span></div>
+    </div>
+  </section>
+  <section class="card">
+    <h3>시제: 부사절은 현재로!</h3>
+    <p class="note">부사절 & 주절이 미래인 경우 → 미래시제는 주절에만 표시한다 (will, can, may, 명령문 please 등). 부사절은 현재시제로 표시한다.</p>
+    <p class="ex">If you <b>arrive</b> at home late, <b>please</b> call me.</p>
+    <p class="ex">Once you <b>apply</b> for this activity, we <b>will</b> send you the message within today.</p>
+    <p class="note">규칙사항 → 현재시제 (어제도 오늘도 내일도 사실이니까)</p>
+    <p class="ex">As long as you use the coupon, additional discount is impossible.</p>
+    <p class="note">과거진행: ~하는 동안 → 과거 진행형으로</p>
+    <p class="ex">While I <b>was washing</b> the dishes, my husband wiped the window.</p>
+  </section>
+  <section class="card">
+    <h3>타다: take vs get on vs get in</h3>
+    <div class="rows">
+      <div><b>take</b><span>타고 갈래 (택시 타야겠다) — 이동 수단 선택</span></div>
+      <div><b>get in / get out</b><span>소형차 — 구멍으로 들어가는 느낌</span></div>
+      <div><b>get on / get off</b><span>버스 · 지하철 · 비행기 · 배 — 올라 탄 느낌 (육체적인 움직임)</span></div>
+    </div>
+    <p class="ex">After we had lunch, we got on the bus.</p>
+  </section>
+  <section class="card">
+    <h3>부사절 시제 정리 (2/8)</h3>
+    <div class="rows">
+      <div><b>주절 미래</b><span>부사절은 현재시제</span></div>
+      <div><b>과거</b><span>과거는 과거로 그대로 쓰기</span></div>
+    </div>
+    <p class="ex">I will finish this homework in the coffee shop before I <b>go</b> home.</p>
+    <p class="ex">He was cleaning the toilet when I arrived at home.</p>
+  </section>
+  <section class="card">
+    <h3>시제 표 (과거진행 ~ing)</h3>
+    <div class="tbl-wrap"><table class="tbl">
+      <thead><tr><th></th><th>단순시제</th><th>진행시제 (be + ing)</th></tr></thead>
+      <tbody>
+        <tr><th>현재</th><td>wash / washes</td><td>am · are · is washing</td></tr>
+        <tr><th>과거</th><td>washed</td><td>was · were washing</td></tr>
+        <tr><th>미래</th><td>will wash</td><td>will be washing</td></tr>
+      </tbody></table></div>
+  </section>`,
+  drills: [
+    ['오늘 특히 카페에 사람이 많네요.', 'Especially today, there are so many people in the cafe.', 'especially 특히·유난히 / specially 특별히'],
+    ['그 식당에 사람들이 너무 많았기 때문에 우리는 다른 식당으로 이동했습니다.', 'Because there were so many people in the restaurant, we went to another restaurant.', '과거 → there were'],
+    ['우리는 고속도로 한 중간에 있었기 때문에 화장실을 발견할 수 없었다.', "Because we were in the middle of the expressway, we couldn't find the toilet.", 'in the middle of: 공간·시간 다 가능'],
+    ['아침에 일찍 집에서 출발해서 저녁 늦게 시댁에 도착했다.', "We departed from the house early in the morning and we arrived at my parents-in-law's house late at night.", 'and로 연결'],
+    ['어제 커피를 너무 많이 마셔서 지난밤에 잠을 잘 못 잤어요.', "Yesterday I drank a lot of coffee, so I couldn't sleep well last night.", 'Last day (X) / drunk (X) → drank / can\'t → couldn\'t'],
+    ['내가 집에 도착했을 때 엄마는 설거지를 하고 있었다.', 'When I arrived home, my mom was washing the dishes.', 'when 부사절 접속사 → and 빼기 / 과거진행 / at home (O)'],
+    ['카페의 2층에 몇몇의 사람들만 있었다.', 'There were some people on the 2nd floor of the cafe.', 'of = 속하는 개념'],
+    ['5월 초에 우리는 제주도로 여행을 갈 거야.', 'We will travel to Jeju Island at the beginning of May.', 'go to travel (X) / at the beginning of ~ (초에)'],
+    ['내가 한국으로 떠나기 전에 면세점에서 가족들 선물을 샀다.', 'Before I departed for Korea, I bought my family presents in the duty free shop.', 'depart for + 목적지 (노트: to Korea)'],
+    ['발권이 시작되었지만 아직 3명이 도착하지 않았다.', "Ticketing started, but three people haven't arrived yet.", 'person → people / yet 부사'],
+    ['우리는 그 공연장소를 30분동안 찾았지만 결국 공연에 참석하지 못했다.', "We looked for the performance venue for 30 minutes, but finally we couldn't attend the show.", 'found (X) → looked for / attend 3V (attend to X)'],
+    ['제가 이 시간에 일을 해야하기 때문에 지금 나대신 남편이 아기를 돌보고 있어요.', 'Because I have to work at this time, my husband is looking after the baby instead of me now.'],
+    ['수업에 집중해야함에도 불구하고 오늘은 너무 피곤하네요.', 'Even though I have to concentrate on the class, I am so tired today.', 'Despite (X) — 뒤에 S+V면 even though'],
+    ['이 식당은 일본 라면을 전문으로 하기 때문에 제 생각에 다른 음식들은 맛이 없을 것 같아요.', 'Because this restaurant specializes in Japanese noodles, I think that other food is not tasty.', 'have no taste (X) → is not tasty'],
+    ['일단 이 활동을 신청하시면 오늘 안으로 저희가 당신에게 문자를 보내드릴 것입니다.', 'Once you apply for this activity, we will send you the message within today.', 'once = 일단 ~하면 · 부사절은 현재'],
+    ['비행기를 기다리는 동안 그는 회사일을 처리했다.', 'While he was waiting for the airplane, he dealt with his work.', 'office business (X) → his work'],
+    ['나는 아주 피곤했음에도 불구하고 집안일을 밤 늦게까지 했다.', 'Even though I was so tired, I did housework until late at night.', "I'm (X) → I was (시제 확인)"],
+    ['만약 당신이 집에 늦게 도착하게 되면 나에게 전화를 주세요.', 'If you arrive at home late, please call me.', '미래지만 부사절은 현재 / 명령문은 주절'],
+    ['점심을 다 먹자마자 우리는 버스를 탔다.', 'After we had lunch, we got on the bus.', 'have → had / 버스는 get on (as soon as도 가능)'],
+    ['당신이 쿠폰을 사용하는 한 추가적인 할인은 불가능합니다.', 'As long as you use the coupon, additional discount is impossible.', 'is not impossible (X) / 규칙 → 현재시제'],
+    ['내가 설거지를 하는 동안 남편은 창문을 닦았다.', 'While I was washing the dishes, my husband wiped the window.', 'I washing (X) → I was washing'],
+    ['일단 당신이 다이어트 중이라면, 당신은 야채를 많이 먹어야 합니다.', 'Once you are on a diet, you have to eat vegetables a lot.'],
+    ['한국 사람들이 매운 음식을 좋아하는 반면, 일본인들은 매운 음식을 좋아하지 않습니다.', "While Korean people like spicy food, Japanese people don't like spicy food.", 'while = ~인 반면에 (대조)'],
+    ['만약 당신이 영수증을 가져오지 않아도, 당신의 구매내역을 저희 쇼핑몰 홈페이지에서 확인할 수 있어요.', "If you don't bring me the receipt, I can check your purchase history on the website.", 'bring 4형식 · purchase history = 목적어'],
+    ['내가 집에 도착했을 때 그는 화장실을 청소하고 있었다.', 'He was cleaning the toilet when I arrived at home.'],
+    ['그가 TV를 보는 동안 나는 숙제를 할 것이다.', 'I will do homework while he watches TV.', '주절 미래 → 부사절 현재'],
+    ['내가 집에 가기 전에 커피숍에서 이 숙제를 끝낼 것이다.', 'I will finish this homework in the coffee shop before I go home.'],
+    ['내가 집에 도착한 후에 저녁을 위해 요리를 해야한다.', 'I have to cook for dinner after I arrive at home.'],
+    ['그가 나아질 때까지 나는 아들과 함께 집에 머물 것이다.', 'I will stay at home with my son until he gets better.', '3인칭 단수 → gets'],
+    ['만약 질문이 있다면 언제든지 나에게 물어볼 수 있다.', 'If you have a question, you can ask me any time.'],
+    ['어떤 질문도 없다면 다음 단계로 넘어가겠다.', 'Unless you have any question, I will move to the next step.', 'unless = if not'],
+    ['어떤 공부를 하던 간에, 너는 약간의 스트레스를 가질 것이다.', 'As long as you study something, you will have some stress.'],
+    ['일단 숙제를 끝내면 그것을 나에게 보내야 한다.', 'Once you finish your homework, you have to send it to me.', '대명사 it → 3형식'],
+    ['혹시 네가 시험에서 좋은 성적을 못 받더라도 나는 너한테 화내지 않을 거야.', "Even if you can't have a good score in the test, I won't feel angry at you.", 'feel 2V + 형용사 · angry at'],
+    ['비행기에서 머리가 아플 경우를 대비해서 이 알약을 챙겨라.', 'In case that you have a headache in the airplane, please take this tablet.'],
+    ['지난 밤 늦게 자서 일찍 일어날 수 없었다.', "I couldn't wake up early because I slept late last night.", 'because / since / as'],
+    ['고속도로에 교통체증이 있었음에도 불구하고, 우리는 거기에 제시간에 도착했다.', 'Even though there was a traffic jam on the highway, we arrived there on time.', 'traffic jam은 하나로 외워!'],
+    ['그가 한국음식을 좋아하는 반면에, 나는 이탈리아 음식을 좋아한다.', 'While he likes Korean food, I like Italian food.'],
+  ]
+},
+
+/* ───────────── (노트) 5형식 심화 · 감정분사 ───────────── */
+{
+  id: 'oc2', no: 0, color: 'red', glyph: '-ed/-ing',
+  title: '5형식 노트 · 감정분사', sub: '다단계 동사 · 사역/지각 · confusing vs confused', pages: '노트 1~2월',
+  html: `
+  <section class="card">
+    <h3>S + V + O + O.C (목적격보어)</h3>
+    <div class="tree">
+      <div class="node">목적격보어</div>
+      <ul>
+        <li>① 형용사 / 전치사구</li>
+        <li>② 명사</li>
+        <li>③ to부정사 (다단계 동사)</li>
+        <li>④ 동사원형 (사역동사)</li>
+        <li>⑤ 분사 — 현재분사 / 과거분사</li>
+      </ul>
+    </div>
+    <p class="note">동사에 따라 받는 품사가 다르다 → 5형식은 자연스럽게 동사가 나와야 함</p>
+  </section>
+  <section class="card">
+    <h3>① 형용사: make · keep · find · consider</h3>
+    <p class="mute">외우기: "make KFC"</p>
+    <p class="ex">I will make this room <u>clean</u>. <span class="mute">이 방을 깨끗한 상태로 (목보)</span></p>
+    <p class="ex">I will make a clean room. <span class="mute">clean = 명사 수식하는 형용사 (3형식)</span></p>
+    <div class="rows">
+      <div><b>keep (2·3·5)</b><span>You should keep your room clean. (5) 유지하다<br>It keeps clean. (2) 유지되다 — 주어의 상태<br>I will keep studying. (3) 계속 ~하다</span></div>
+      <div><b>find</b><span>발견하다 / 알게되다 — I found my mom so old.</span></div>
+      <div><b>consider (3·5)</b><span>고려하다, 깊게 생각하다(3) / 여기다(5) — I consider the friend very kind.</span></div>
+    </div>
+  </section>
+  <section class="card">
+    <h3>② 명사: make · consider · call · appoint(임명하다)</h3>
+    <p class="ex">I will make him a doctor.</p>
+    <p class="ex">I consider this doll my friend.</p>
+    <p class="ex">You can call me Helen.</p>
+    <p class="ex">People appointed him the president of the country.</p>
+    <p class="note">We appointed him our/the president — 4형식이 아니고 5형식! 헷갈리지 말자</p>
+  </section>
+  <section class="card">
+    <h3>③ to부정사: 다단계 동사</h3>
+    <div class="rows">
+      <div><b>① 바라다</b><span>want(= would like, 격식) · hope · expect(기대하다) · need · wish</span></div>
+      <div><b>② 요청하다</b><span>ask(일상, 두 상황 모두 가능) · require · request(격식체: 이메일, 공지사항, 발표 / 일반대화·실생활 X)</span></div>
+      <div><b>③ 명령하다</b><span>order · push (3·5) — order 주문(3)/명령(5), push 밀다(3)/강요하다·시키다(5)</span></div>
+      <div><b>④ 말하다·권하다</b><span>recommend(자세하게 추천) · suggest(제안) · tell(상대방이 하라고 말하다, 3·4·5) · encourage(격려하다) · persuade(설득하다)</span></div>
+      <div><b>⑤ 허락하다</b><span>allow · permit(격식체)</span></div>
+    </div>
+    <p class="ex">I want you to send <b>me</b> the email soon. = I want you to send the email (to me) soon. <span class="mute">전치사구는 중요하지 않아서 생략 가능</span></p>
+    <p class="ex">I asked you to bring me some towels in the morning. <span class="mute">asked [애스트] — k 발음 묵음처럼</span></p>
+    <p class="ex">My boss told me to send her the plan by email. <span class="mute">수단을 나타낼 땐 by (a/the 없이)</span></p>
+    <p class="ex">I recommended her to visit the cafe.</p>
+    <p class="ex">I encourage my students to do homework hard.</p>
+    <p class="ex">I persuaded my mom to go to the hospital.</p>
+    <p class="ex">I didn't allow her to work out hard. <span class="mute">work out = do exercise = exercise(1V)</span></p>
+    <p class="ex">I asked her <b>not</b> to go to the hospital. <span class="mute">to부정사 부정 = not to</span></p>
+    <div class="rows"><div><b>강약 차이</b><span>I hope · wish &lt; I want · need — 비즈니스에서 want/need는 무례한 느낌 → would like</span></div></div>
+    <p class="ex">I want to drink coffee. <span class="mute">to부정사가 바로 목적어가 될 수 있다 (3형식)</span></p>
+  </section>
+  <section class="card">
+    <h3>help + O + (to) 동사원형</h3>
+    <p class="ex">I helped her send the email. <span class="mute">to 생략 (to 써도 OK)</span></p>
+  </section>
+  <section class="card">
+    <h3>④ 사역동사: make · let · have</h3>
+    <p class="note">사역동사(목적어를 시키는 동사)는 목적격보어에 동사원형과 과거분사 中 1을 받는다</p>
+    <div class="rows">
+      <div><b>능동 관계 → 동사원형</b><span>I made my husband look after the children. (= take care of)<br>My boss made me look into the information in detail. (자세히, 부사)</span></div>
+      <div><b>수동 관계 → 과거분사</b><span>I made my car repaired. (차가 고쳐지는)</span></div>
+    </div>
+    <p class="mute">let - let - let (과거 · 현재 · 미래 형태 같음) / have p.p는 비즈니스에서 자주 (시제와는 다른 의미)</p>
+  </section>
+  <section class="card">
+    <h3>지각동사: hear · listen to · see · watch · feel</h3>
+    <p class="mute">see = 눈이 있어서 보는 것 / watch = 의도를 가지고 봄 / listen to = 의도를 가지고 들음</p>
+    <div class="rows">
+      <div><b>능동 → 동사원형 / 현재분사</b><span>I heard the baby cry. → crying (생생함을 나타냄)<br>I saw my friend enter the cafe. → entering</span></div>
+      <div><b>수동 → 과거분사</b><span>I heard / saw the cup broken.</span></div>
+    </div>
+  </section>
+  <section class="card">
+    <h3>재귀대명사</h3>
+    <p class="ex">I love myself. (O) / I love me. (X)</p>
+    <p class="note">주어가 반복되는 자리(목적어)에만 들어갑니다!! 주어엔 거의 X</p>
+    <p class="ex">alone = by himself = by herself <span class="mute">혼자서</span></p>
+  </section>
+  <section class="card">
+    <h3>준동사 = 동사 → to부정사 · 동명사 · 분사</h3>
+    <div class="tree">
+      <div class="node">준동사</div>
+      <ul>
+        <li>① to부정사 — 명사(주어·목적어·보어) / 형용사(명사수식 ~할, 보어) / 부사(목적·결과·감정원인)</li>
+        <li>② 동명사 — 명사 자리에 있다</li>
+        <li>③ 분사 — 형용사: 현재분사(~ing, 하고 있는 · 능동·진행) / 과거분사(p.p, ~된 · 수동·완료)</li>
+      </ul>
+    </div>
+    <p class="note">동사 + ing → 명사 자리면 동명사 / 문장이 끝나고 뒤에 붙으면 현재분사. be동사와 결합 X → 분사</p>
+    <p class="ex">I have no money <u>to spend</u>. <span class="mute">형용사 역할 to부정사</span></p>
+  </section>
+  <section class="card">
+    <h3>감정분사 → 형용사</h3>
+    <div class="rows">
+      <div><b>현재분사 (-ing)</b><span>감정의 원인 — This movie is interesting. (2형식, 현재진행 아님!)</span></div>
+      <div><b>과거분사 (-ed)</b><span>감정을 직접적으로 느끼는 — I am interested in the movie.</span></div>
+    </div>
+    <p class="ex">This movie is interesting <b>to me</b>. <span class="mute">비교대상이 있을 때: 나한텐 재밌는데</span></p>
+    <p class="ex">This movie is interesting <b>for me</b>. <span class="mute">나에게 있어</span></p>
+    <div class="fixes"><div><s>confused manual</s><b>confusing manual (매뉴얼이 원인)</b></div><div><s>confusing people</s><b>confused people (사람이 느낌)</b></div></div>
+    <p class="ex">This manual is confusing. (2V) / The people are confused. (2V)</p>
+    <p class="ex">This manual makes the people confused. (5V — 목적격보어 형용사)</p>
+    <p class="note">분사(형용사) 역할: 명사수식 / 보어 — 주격보어(2, 주어를 서술) · 목적격보어(5, 목적어를 서술)</p>
+    <p class="note">감정형용사 → 전치사 + 대명사: angry <b>at</b> / happy <b>with</b> — I'm so happy with this present. / I won't feel angry at you.</p>
+  </section>
+  <section class="card">
+    <h3>감정동사 표 (3V)</h3>
+    <div class="tbl-wrap"><table class="tbl">
+      <thead><tr><th>단어</th><th>현재분사 (~하게 하는)</th><th>과거분사 (~한)</th><th>전치사</th></tr></thead>
+      <tbody>
+        <tr><th>confuse 혼란시키다</th><td>confusing 혼란스러운</td><td>confused 혼란스러워하는</td><td>at / about</td></tr>
+        <tr><th>embarrass 당황하게 하다</th><td>embarrassing 당황스러운</td><td>embarrassed 당황한</td><td>at / about</td></tr>
+        <tr><th>satisfy 만족시키다</th><td>satisfying 만족스러운</td><td>satisfied 만족하는</td><td>with</td></tr>
+        <tr><th>frustrate 좌절시키다</th><td>frustrating 좌절감을 주는</td><td>frustrated 좌절한</td><td>by</td></tr>
+        <tr><th>bore 지루하게 하다</th><td>boring 지루한</td><td>bored 지루해하는</td><td>with</td></tr>
+        <tr><th>disappoint 실망시키다</th><td>disappointing 실망스러운</td><td>disappointed 실망한</td><td>at / by</td></tr>
+        <tr><th>excite 흥분시키다</th><td>exciting 흥분시키는</td><td>excited 흥분한</td><td>at / by / about</td></tr>
+        <tr><th>interest 관심을 끌다</th><td>interesting 흥미로운</td><td>interested 관심있어하는</td><td>in</td></tr>
+        <tr><th>surprise 놀라게 하다</th><td>surprising 놀라운</td><td>surprised 놀란</td><td>at / by</td></tr>
+        <tr><th>shock 충격을 주다</th><td>shocking 충격적인</td><td>shocked 충격을 받은</td><td>at / by</td></tr>
+        <tr><th>impress 감명을 주다</th><td>impressive* 인상적인</td><td>impressed 감명받은</td><td>by / with</td></tr>
+        <tr><th>annoy 짜증나게 하다</th><td>annoying 짜증나게 하는</td><td>annoyed 짜증난</td><td>at / with / about</td></tr>
+        <tr><th>tire 피곤하게 하다</th><td>tiring 피곤하게 하는</td><td>tired 피곤한</td><td>with / of</td></tr>
+        <tr><th>exhaust 지치게 하다</th><td>exhausting 진을 빼는</td><td>exhausted 기진맥진한</td><td>from</td></tr>
+        <tr><th>depress 우울하게 하다</th><td>depressing 우울하게 만드는</td><td>depressed 우울한</td><td>about / with</td></tr>
+        <tr><th>discourage 의욕을 꺾다</th><td>discouraging 의욕을 꺾는</td><td>discouraged 낙담한</td><td>by</td></tr>
+        <tr><th>stress</th><td>stressful 스트레스를 주는</td><td>stressed 스트레스를 받는</td><td>by</td></tr>
+        <tr><th>scare / scary</th><td>scary 무서운</td><td>scared 무서워하는</td><td>of</td></tr>
+        <tr><th>encourage 격려하다</th><td>encouraging 격려하는</td><td>encouraged 격려받은</td><td>by</td></tr>
+      </tbody></table></div>
+    <p class="tip">${FIX} 노트엔 impressing으로 적혀 있지만 실제로는 형용사 <b>impressive</b>를 주로 써요.</p>
+  </section>`,
+  drills: [
+    ['당신은 아이가 스스로 밥을 먹을 수 있도록 시켜야 합니다.', 'You have to make the baby eat by himself.', 'eating (X) → eat (사역동사 + 동사원형)'],
+    ['그 직원은 우리가 그 제품의 사용법을 잘 이해하게 했다.', "The staff made us understand the product's usage.", 'our (X) → us / the usage of the product'],
+    ['당신은 제 폰이 충전이 되게 할 수 있나요?', 'Can you make my phone charged?', '폰이 충전되는 → 수동 → 과거분사'],
+    ['그 음식이 타게끔 만들지 마세요.', "Don't make the food burnt.", 'burned도 가능'],
+    ['그 아이가 스스로 자신의 감정을 말하게끔 해주세요.', 'Please make the baby speak about her emotion by herself.', 'speak는 1형식 → about'],
+    ['이 표지판은 사람들이 주차장을 쉽게 찾도록 만들어 줄 것입니다.', 'The sign will make the people find the parking lot easily.', 'easily = 동사 수식 부사 / parking space < parking lot'],
+    ['아이가 이 곤충을 잘 관찰하게 해주세요.', 'Let the child observe this insect well.', 'have (X) → let or make'],
+    ['아이가 혼자 밖에 나가지 않도록 해주세요.', "Don't make the child go out alone.", 'alone = by himself / by herself'],
+  ]
+},
+
 /* ───────────── (노트) 동사 기초: 인칭·변화·진행 ───────────── */
 {
   id: 'vbasic', no: 0, color: 'orange', glyph: '-s/-ed',
@@ -375,13 +765,99 @@ window.HCLASS = [
     <p class="ex">I slept at <u>my parents'</u> house. / <u>my boss's</u> chair</p>
     <p class="note">관련 있는 사람은 소유격을 붙이는 게 좋다 (with <b>my</b> friends, with <b>my</b> son)</p>
     <p class="mute">a hospital — 병원을 잘 모르니까 a / 아는(그) 병원이면 the</p>
+  </section>
+  <section class="card">
+    <h3>동사의 3종류 (노트)</h3>
+    <div class="tree">
+      <div class="node">동사</div>
+      <ul>
+        <li>① 일반동사 (1V ~ 5V)</li>
+        <li>② be동사 — be, (look, smell 같은 2V) / be + ing, be + p.p</li>
+        <li>③ 조동사 — 동사 앞에 있어</li>
+      </ul>
+    </div>
+    <div class="rows">
+      <div><b>부정문 만들 때</b><span>① 일반동사 → do를 사용해서 (don't / doesn't / didn't)</span></div>
+      <div><b></b><span>② be동사 · ③ 조동사 → not을 붙인다 (isn't, can't)</span></div>
+    </div>
+  </section>
+  <section class="card">
+    <h3>There is / are · 비인칭주어 It</h3>
+    <p class="note">be동사 → 보통 2형식 / There is · are + 주어 → 1형식 (있다)</p>
+    <p class="ex">There are so many people at the airport now. <span class="mute">주어 = so many people → are</span></p>
+    <p class="ex">There isn't / aren't → 없다</p>
+    <p class="note">비인칭주어 It — 주어는 맞으나 해석을 하지 않는다</p>
+    <p class="ex">It is sunny. / It takes 3 hours. / It is 3 o'clock.</p>
+  </section>
+  <section class="card">
+    <h3>부사의 위치 (노트)</h3>
+    <p class="note">동사 수식하는 부사는 끝에도 앞에도 온다</p>
+    <p class="ex">I <b>totally</b> agree with all opinions. <span class="mute">totally agree / totally understand — 어울리는 짝꿍</span></p>
+    <p class="note">빈도부사(sometimes, always, usually 등): 일반동사 앞 / be동사 · 조동사 뒤</p>
+    <p class="ex">I <b>sometimes</b> go there. / I should <b>sometimes</b> go there.</p>
+    <p class="mute">Sometimes는 말할 때 문장 앞이나 뒤에 넣어도 OK</p>
+  </section>
+  <section class="card">
+    <h3>a lot of coffee vs coffee a lot</h3>
+    <div class="rows">
+      <div><b>I drank a lot of coffee.</b><span>a lot of = 형용사 → 커피 양이 많다</span></div>
+      <div><b>I drank coffee a lot.</b><span>a lot = 부사 → 커피를 자주·많이 마셨다</span></div>
+    </div>
+  </section>
+  <section class="card">
+    <h3>헷갈리는 짝 (노트)</h3>
+    <div class="rows">
+      <div><b>especially</b><span>특히, 유난히</span></div>
+      <div><b>specially</b><span>특별히</span></div>
+      <div><b>at the beginning of / at the end of</b><span>~의 초에 / 말에 (시간 · 공간 둘 다)</span></div>
+      <div><b>in 30 minutes</b><span>30분쯤 (약간 넘어도 OK)</span></div>
+      <div><b>within 30 minutes</b><span>확실하게 30분 이내</span></div>
+      <div><b>exercise (1V)</b><span>= do exercise (3V) = work out 운동하다</span></div>
+      <div><b>do homework / do housework</b><span>숙제 / 집안일</span></div>
+      <div><b>make up</b><span>보충하다 (보강)</span></div>
+      <div><b>charge (3V)</b><span>충전시키다 — I will charge my phone.</span></div>
+      <div><b>as well</b><span>나도~ I want to go there as well. = Me too.</span></div>
+      <div><b>gonna</b><span>= going to</span></div>
+      <div><b>You would be tired.</b><span>너는 피곤할 것 같아 (추측)</span></div>
+    </div>
+  </section>
+  <section class="card">
+    <h3>another · other · the other</h3>
+    <div class="rows">
+      <div><b>an apple + the other apple</b><span>2개 중 하나 / 마지막 남은 것 → the other</span></div>
+      <div><b>an apple, another apple, the other apple</b><span>3개: 여러 개 가운데 또 하나 → another</span></div>
+      <div><b>some apples + the other apples</b><span>단수·복수 상관없이 마지막 남은 것엔 the other</span></div>
+      <div><b>some, other apples, the other apples</b><span>다른 복수 여럿 → other (복수 개념으로 씀)</span></div>
+    </div>
+    <p class="mute">30개 중 3개는 뭘까? 그 나머지 전부 → the others</p>
+  </section>
+  <section class="card">
+    <h3>전치사 노트 (2/8)</h3>
+    <div class="rows">
+      <div><b>of</b><span>① ~의 ② ~중에서, ~중의 (one of the restaurants — 뒤에 복수) ③ ~으로 만든 (It is made of cheese, 수동태) ④ ~으로부터 (= from)</span></div>
+      <div><b>find vs look for</b><span>찾았다(결과) / 찾는 중(과정)</span></div>
+      <div><b>next to vs next</b><span>공간적인 경우 / 시간적인 경우 (next week)</span></div>
+      <div><b>at a certain point</b><span>특정 포인트로 · stuck 갇혀있는</span></div>
+      <div><b>such as</b><span>예를 들어 (전치사 느낌)</span></div>
+      <div><b>suit (3)</b><span>~에 어울리다 — It suits you. (suit 뒤에 바로 목적어)</span></div>
+      <div><b>make an effort to</b><span>노력하다 (3V + 목적어)</span></div>
+      <div><b>previous</b><span>그전의 (형용사) · ex- 전 ~ (ex-boyfriend, ex-coworker, ex-house)</span></div>
+      <div><b>Can you pass me water?</b><span>pass 4V</span></div>
+    </div>
+  </section>
+  <section class="card">
+    <h3>How have you been? vs How are you?</h3>
+    <div class="rows">
+      <div><b>How have you been?</b><span>그동안 어떻게 지냈어? — have p.p (have는 뜻 X 조동사 → 의문문에서 주어와 도치)</span></div>
+      <div><b>How are you?</b><span>지금 어때? — you are → are you 도치</span></div>
+    </div>
   </section>`
 },
 
 /* ───────────── (노트) 문장 구조와 직독직해 ───────────── */
 {
   id: 'reading1', no: 0, color: 'teal', glyph: '/',
-  title: '문장 구조 · 직독직해', sub: '주절 + 부사절 · 끊어 읽기 (시드니 일기)', pages: '노트',
+  title: '문장 구조 · 직독직해', sub: '끊어 읽기 지문 7개 · 노트 단어장', pages: '노트',
   html: `
   <section class="card">
     <h3>문장 만드는 순서</h3>
@@ -415,6 +891,95 @@ window.HCLASS = [
       ['He is so nice to me all the time.', '그는 정말 친절합니다 나에게 항상'],
     ].map(([e, k]) => `<button class="pic" type="button"><span class="pe">${e}</span><span class="pk">${k}</span></button>`).join('')}
     <p class="tip">${FIX} 노트의 "food cart"는 해석(푸드코트)에 맞춰 food court로, "introduced the job for me"는 introduced the job <b>to</b> me로 고쳤어요.</p>
+  </section>
+  <section class="card">
+    <h3>직독직해: 공항 가는 버스</h3>
+    <button class="pic" type="button"><span class="pe">I left my house at 6 a.m. and I will take a bus for the airport at 6:30.</span><span class="pk">나는 떠났다 우리집을 새벽 6시에 그리고 나는 버스를 타고 갈 겁니다 공항으로 향하는 6시 30분에</span></button>
+    <button class="pic" type="button"><span class="pe">Because the bus stop is near my house, I can reach there soon.</span><span class="pk">왜냐하면 그 버스정류장은 우리집 근처에 있다, 나는 도달할 수 있다 거기에 곧</span></button>
+    <button class="pic" type="button"><span class="pe">It was still dark and windy, so I was a bit cold.</span><span class="pk">여전히 어둡고 바람이 불고 있었다. 그래서 나는 조금 추웠다 (a bit = 부사)</span></button>
+    <button class="pic" type="button"><span class="pe">I walked for 10 minutes and I arrived at the bus stop.</span><span class="pk">나는 걸었다 10분 동안 그리고 나는 버스정류장에 도착했다</span></button>
+    <button class="pic" type="button"><span class="pe">I found some people with their luggage there.</span><span class="pk">나는 발견했다 몇 사람들을 그들의 짐과 함께 거기에서</span></button>
+    <button class="pic" type="button"><span class="pe">We waited for a bus for 10 minutes and the bus arrived a bit early.</span><span class="pk">우리는 기다렸다 버스를 10분 동안 그리고 버스는 도착했다 조금 일찍 (wait for = 좋아하는 전치사)</span></button>
+    <button class="pic" type="button"><span class="pe">I put my luggage into the baggage compartment.</span><span class="pk">나는 두었다 내 짐을 수하물 칸 쪽으로</span></button>
+    <p class="mute">비행기 위칸 = overhead compartment · 짐 찾는 곳 = baggage claim · produce = 농작물</p>
+  </section>
+  <section class="card">
+    <h3>직독직해: 호주로 떠나는 이유</h3>
+    <button class="pic" type="button"><span class="pe">My mom told me that I don&#x27;t have to go there.</span><span class="pk">우리 엄마는 말했다 나에게 나는 거기에 갈 필요가 없다고</span></button>
+    <button class="pic" type="button"><span class="pe">She told me that Australia is very far from Korea</span><span class="pk">그녀는 말했다 나에게 호주는 매우 멀다 한국으로부터</span></button>
+    <button class="pic" type="button"><span class="pe">and it has very different culture and different environment.</span><span class="pk">그리고 매우 다른 문화와 다른 환경을 가졌다고</span></button>
+    <button class="pic" type="button"><span class="pe">Also, my friend told me that my English is not perfect,</span><span class="pk">또한 내 친구는 말했다 나에게 나의 영어가 완벽하지 않다고</span></button>
+    <button class="pic" type="button"><span class="pe">so I can have many difficult situations there.</span><span class="pk">그래서 나는 많은 어려운 상황들이 있을 수 있다 거기서</span></button>
+    <button class="pic" type="button"><span class="pe">I totally agree with all opinions, but I need some challenges and experiences.</span><span class="pk">나는 전적으로 동의한다 모든 의견들에, 그러나 나는 필요하다 약간의 도전들과 경험들이</span></button>
+    <button class="pic" type="button"><span class="pe">They will give me a lot of improvement for myself.</span><span class="pk">그들은 줄 것이다 나에게 많은 향상을 나 자신을 위한</span></button>
+    <p class="mute">totally agree / totally understand — 어울리는 짝꿍 · all opinions (= you, them)</p>
+  </section>
+  <section class="card">
+    <h3>직독직해: 8월의 공항</h3>
+    <button class="pic" type="button"><span class="pe">There are so many people at the airport now</span><span class="pk">있다 매우 많은 사람들이 공항에 지금 (There are → 1형식)</span></button>
+    <button class="pic" type="button"><span class="pe">because it is in the middle of August.</span><span class="pk">때문에 지금은 8월 중순이기 (it = 비인칭주어)</span></button>
+    <button class="pic" type="button"><span class="pe">Students are in the summer vacation and adults are in the summer holidays in their companies.</span><span class="pk">학생들은 여름방학이다 그리고 성인들은 여름휴가이다 그들의 회사에서</span></button>
+    <button class="pic" type="button"><span class="pe">A lot of families are carrying their luggage and they look happy.</span><span class="pk">많은 가족들이 옮기고 있다 그들의 짐을 그리고 그들은 행복해 보인다 (look = 2V)</span></button>
+    <button class="pic" type="button"><span class="pe">Now I am waiting for my flight and it will depart from gate 34 at 11 a.m.</span><span class="pk">지금 나는 기다리고 있다 나의 항공편을 그리고 그것은 출발할 것이다 게이트 34에서 11시에</span></button>
+  </section>
+  <section class="card">
+    <h3>직독직해: 공항 식당에서</h3>
+    <button class="pic" type="button"><span class="pe">I visited one of the restaurants at the airport because I was quite hungry.</span><span class="pk">난 방문했다 식당들 중 하나를 공항에 있는 때문이다 나는 꽤 배고팠기 (one of the + 복수 / quite = 부사)</span></button>
+    <button class="pic" type="button"><span class="pe">I just had a small sandwich with a cup of water early in the morning before I left my house.</span><span class="pk">나는 단지 작은 샌드위치를 먹었다 물 한 잔과 함께 아침 일찍 내가 집을 떠나기 전에 (before + S V = 부사절)</span></button>
+    <button class="pic" type="button"><span class="pe">I looked around and I found a Japanese noodle restaurant near my check-in counter.</span><span class="pk">나는 둘러봤다 그리고 찾았다 일본라면 음식점을 내 체크인 카운터 근처에 있는</span></button>
+    <button class="pic" type="button"><span class="pe">Because I had enough time before boarding, I decided to eat something at first.</span><span class="pk">나는 충분한 시간을 가지고 있었기 때문에 탑승하기 전에, 나는 결정했다 먹는 것을 어떤 것 먼저 (before + 명사 = 전치사)</span></button>
+    <button class="pic" type="button"><span class="pe">I ordered a pork noodle and a staff of the restaurant provided me with some side dishes and water,</span><span class="pk">난 주문했다 돼지고기 라면을 그리고 음식점의 스태프가 제공했다 나에게 몇 반찬들과 물을</span></button>
+    <button class="pic" type="button"><span class="pe">and she served me the main dish 15 minutes later.</span><span class="pk">그리고 그녀는 제공했다 나에게 메인 음식을 15분 뒤에 (serve 4V)</span></button>
+    <button class="pic" type="button"><span class="pe">It was tasty, but a bit spicy and oily.</span><span class="pk">음식은 맛있었다 그러나 조금 맵고 느끼했다</span></button>
+    <p class="mute">look around = 둘러보다 / 두리번거리며 · decide는 to부정사 짝꿍!</p>
+  </section>
+  <section class="card">
+    <h3>직독직해: 면세점 선물</h3>
+    <button class="pic" type="button"><span class="pe">Before I arrived at the gate, I bought some presents for my friend.</span><span class="pk">내가 게이트에 도착하기 전에, 나는 샀다 몇 가지 선물들을 내 친구를 위해 (4→3V)</span></button>
+    <button class="pic" type="button"><span class="pe">He is living and working in Sydney now.</span><span class="pk">그는 살고 있고 일하고 있다 시드니에서 지금</span></button>
+    <button class="pic" type="button"><span class="pe">Actually he loves Korean male cosmetics such as moisturiser or toner from ABC company.</span><span class="pk">사실 그는 사랑한다 한국 남성 화장품들을 예를 들어 로션 또는 스킨을 ABC 회사에서 나오는</span></button>
+    <button class="pic" type="button"><span class="pe">I paid 67,000 won for the male moisturiser.</span><span class="pk">나는 지불했다 67,000원을 남성 로션을 위해 (pay 3V + for)</span></button>
+    <button class="pic" type="button"><span class="pe">Even though it is a bit expensive, I heard that it is very famous and popular for young people especially in Australia.</span><span class="pk">이것이 조금 비쌈에도 불구하고, 나는 들었다 이것이 매우 유명하고 인기 있다고 젊은 사람들에게 특히 호주에서 (that = 목적어절)</span></button>
+  </section>
+  <section class="card">
+    <h3>직독직해: 탑승</h3>
+    <button class="pic" type="button"><span class="pe">Finally the boarding started.</span><span class="pk">마침내 탑승이 시작됐다 (start 1V)</span></button>
+    <button class="pic" type="button"><span class="pe">3 flight attendants checked the passengers&#x27; passports and tickets one by one.</span><span class="pk">3명의 승무원들은 확인했다 승객들의 여권과 티켓을 하나씩</span></button>
+    <button class="pic" type="button"><span class="pe">I showed mine to one of them.</span><span class="pk">나는 보여줬다 내 것을 그들 중 한 명에게 (대명사 → 3형식)</span></button>
+    <button class="pic" type="button"><span class="pe">Then I got on the flight and I looked for my seat.</span><span class="pk">그리고 나서 나는 비행기에 올라탔다 그리고 나는 찾았다 내 좌석을</span></button>
+    <button class="pic" type="button"><span class="pe">I hoped that my seat was next to a window,</span><span class="pk">나는 희망했다 나의 좌석이 창문 옆이길</span></button>
+    <button class="pic" type="button"><span class="pe">but unfortunately my seat was in the middle of the aisle.</span><span class="pk">그러나 불행하게도(안타깝게도) 나의 좌석은 통로 중앙이었다</span></button>
+  </section>
+  <section class="card">
+    <h3>노트 단어장</h3>
+    <div class="rows">
+      <div><b>rinse</b><span>헹구다</span></div>
+      <div><b>Chinese cabbage</b><span>배추</span></div>
+      <div><b>relatives</b><span>친척</span></div>
+      <div><b>full time / part time / casual</b><span>하루 8시간 이상 / 하루 3시간 이상 / 한 주에 2~3시간</span></div>
+      <div><b>ambitious</b><span>열정적인, 야망 있는</span></div>
+      <div><b>master's degree</b><span>석사(대학원)</span></div>
+      <div><b>promotion</b><span>승진 (홍보)</span></div>
+      <div><b>nephew / niece / cousin</b><span>남자 조카 / 여자 조카 / 사촌</span></div>
+      <div><b>sulfur hot spring</b><span>유황 온천 · public bath 대중목욕탕</span></div>
+      <div><b>attractive</b><span>매력적인</span></div>
+      <div><b>earth / dig</b><span>흙, 땅 / 파다</span></div>
+      <div><b>prevent us from ~ing</b><span>우리가 ~하는 걸 막다</span></div>
+      <div><b>helpful</b><span>도움이 되는</span></div>
+      <div><b>bland · flat · neat</b><span>아무 맛 안 날 때 · 싱겁다 · 담백하다(노트)</span></div>
+      <div><b>Great Barrier Reef</b><span>대보초 산호초 (Cairns) · Bondi Beach (시드니)</span></div>
+      <div><b>underground market</b><span>지하상가</span></div>
+      <div><b>pork / fork</b><span>돼지고기 / 포크 — 발음 구분!</span></div>
+      <div><b>public restroom</b><span>공중화장실</span></div>
+      <div><b>quality time</b><span>재밌는(의미 있는) 시간</span></div>
+      <div><b>treadmill</b><span>러닝머신</span></div>
+      <div><b>sushi train</b><span>회전초밥</span></div>
+      <div><b>lunar new year's day</b><span>음력 설날</span></div>
+      <div><b>naughty</b><span>장난꾸러기</span></div>
+      <div><b>introvert / extrovert</b><span>내성적인 / 외향적인</span></div>
+      <div><b>pick</b><span>고르다</span></div>
+      <div><b>look into</b><span>조사하다</span></div>
+    </div>
   </section>
   <section class="card">
     <h3>구조 분석 (노트)</h3>
@@ -1502,4 +2067,10 @@ window.FIXES = [
   ['live in overseas', 'live overseas', 'overseas는 부사'],
   ['beautiful she', 'She is beautiful', '대명사는 수식 X'],
   ['until this week (완료)', 'by this week', 'until 계속 / by 완료'],
+  ['Despite I have to ~', 'Even though I have to ~', 'despite는 전치사 → 뒤에 명사'],
+  ['marry with him', 'married him', 'marry는 3형식'],
+  ['she gave another friend it', 'she gave it to another friend', '대명사 목적어 → 3형식'],
+  ['make the baby eating', 'make the baby eat', '사역동사 + 동사원형'],
+  ['a confused manual', 'a confusing manual', '원인은 -ing / 느끼는 사람은 -ed'],
+  ['If you will arrive', 'If you arrive', '부사절은 현재시제'],
 ];
