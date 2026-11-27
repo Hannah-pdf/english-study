@@ -941,6 +941,66 @@ window.HCLASS = [
     </div>
   </section>
   <section class="card">
+    <h3>의문사 정리 (노트)</h3>
+    <div class="rows">
+      <div><b>① 의문대명사 who · what</b><span>주어 → Who/What + V (도치 X) / 목적어·보어 → Who/What + 도치(S+V)</span></div>
+      <div><b>② 의문부사 when · where · how · why</b><span>주어가 아니니 항상 도치를 해야 함</span></div>
+      <div><b>③ 의문형용사 which · whose</b><span>which 어떤 / 어떤 것 · whose 누구의 / 누구의 것 (의문대명사로도 씀)</span></div>
+    </div>
+    <p class="ex">Who are you? <span class="mute">주격보어 V S — You are who? → I am Helen.</span></p>
+    <p class="ex">Who is the man / the lady / the staff here?</p>
+    <p class="ex">Where did you go? <span class="mute">where = 부사이면서 전치사구 역할이라 to를 따로 안 붙임</span></p>
+  </section>
+  <section class="card">
+    <h3>의문부사 예문</h3>
+    <p class="ex">Where did you go yesterday?</p>
+    <p class="ex">When did you go to the restaurant?</p>
+    <p class="ex">Why did you go there? / Why didn't you answer my phone call?</p>
+    <p class="ex">① How can I go there? <span class="mute">how = 어떻게</span></p>
+    <p class="ex">② How long will you stay in this hotel? <span class="mute">how = 얼마나 + 형/부 → 형용사·부사를 뒤에 챙김</span></p>
+    <p class="ex">Where are you? → I am at work. <span class="mute">전치사구 — 형용사로도 보고 부사로도 본다</span></p>
+    <p class="ex">Where can I buy it? / Where am I? / Where is here?</p>
+    <h4>how much</h4>
+    <div class="rows">
+      <div><b>much (형용사, 많은)</b><span>부정문·의문문에서만!! 평서문에서는 a lot of로 쓴다 — How much food will you eat?</span></div>
+      <div><b>much (부사, 많이)</b><span>= a lot — How much will you eat?</span></div>
+      <div><b>how many + 복수명사</b><span>How many people gathered in the meeting room?</span></div>
+    </div>
+  </section>
+  <section class="card">
+    <h3>ask 총정리</h3>
+    <div class="rows">
+      <div><b>① ask for + n</b><span>요청하다 — 물건을 요청 (n 달라고)</span></div>
+      <div><b>① ask about + n</b><span>물어보다 — n에 대한 정보 (궁금한 게 있을 때)</span></div>
+      <div><b>③ ask 사람 for + n</b><span>누구한테 n 달라고 요청했는지</span></div>
+      <div><b>③ ask 사람 about + n</b><span>누구한테 n에 대한 정보를 물어봄</span></div>
+      <div><b>④ ask 사람 + 사물(질문)</b><span>질문하다</span></div>
+      <div><b>⑤ ask 사람 to V</b><span>다단계 동사 — 의무적인 느낌, 사람이 하는 행위</span></div>
+      <div><b>기타 ask that S + V</b><span>I asked that she has to give me the present. (목적어절)</span></div>
+    </div>
+    <p class="ex">You asked for what? → What did you ask for? <span class="mute">전치사 빼먹으면 큰일 나요!!!!</span></p>
+    <p class="ex">You asked the staff about what? → What did you ask the staff about?</p>
+    <p class="ex">Who did you ask about the coupon? / Who did you ask for a towel?</p>
+  </section>
+  <section class="card">
+    <h3>talk · tell · say (노트)</h3>
+    <div class="rows">
+      <div><b>talk (1)</b><span>talk to 사람 about the 주제/이슈 (with = ~와 함께)</span></div>
+      <div><b>tell (4)</b><span>tell 사람 이슈/주제 · tell me that S+V — 사람 반드시 넣기!</span></div>
+      <div><b>say (3)</b><span>say 이슈/주제 · that절(S+V)을 목적어로 바로 받는다 + (to 사람)</span></div>
+    </div>
+    <p class="ex">You didn't say it to me. / You didn't say (to me) that S + V.</p>
+    <p class="ex">What are you talking about now?</p>
+    <p class="ex">What are you looking after? / Who is looking after this project? <span class="mute">look after = 담당하다, 돌보다</span></p>
+  </section>
+  <section class="card">
+    <h3>It takes + 시간</h3>
+    <p class="ex">It takes 20 minutes by walk. <span class="mute">걸어서 20분 걸려요 · 비인칭주어 (거리·시간·날씨)</span></p>
+    <p class="note">by + 교통수단 → 교통수단에는 a / the 안 씀 (by bus, by car)</p>
+    <p class="ex">It takes 20 minutes (in) going to the office. <span class="mute">만약 어떤 동작을 말할 때 — 전치사 생략됨 → ing</span></p>
+    <p class="ex">It will take one month to finish this project. <span class="mute">will 뒤엔 take (takes X)</span></p>
+  </section>
+  <section class="card">
     <h3>pay + 사는 물건 (노트)</h3>
     <div class="rows">
       <div><b>① pay for + n</b><span>사는 물건</span></div>
@@ -976,6 +1036,33 @@ window.HCLASS = [
     ['당신은 누구와 같이 저녁을 먹었어요?', 'Who did you have dinner with?'],
     ['당신은 누구를 위해서 이 커피를 만들었나요?', 'Who did you make this coffee for?'],
     ['당신은 지금 무엇에 집중하고 있나요?', 'What are you concentrating on now?', 'did (X) → 현재진행으로'],
+    ['제가 왜 20달러를 더 내야 하나요?', 'Why do I have to pay $20 more?'],
+    ['제가 어떻게 이 서비스를 신청해야 하나요?', 'How should I apply for this service?', 'apply for = 신청하다'],
+    ['이 식당에서 유명한 요리는 무엇인가요?', 'What is a famous dish in this restaurant?', 'food 셀 수 X 모든 음식 / dish 셀 수 O 접시에 담긴 요리'],
+    ['당신은 호텔 프런트 데스크에서 무엇을 요청했나요?', 'What did you ask for at the hotel front desk?', 'request도 가능'],
+    ['당신은 그에게 그의 생일 선물로 무엇을 줄 예정인가요?', 'What will you give him for his birthday present?', 'to (X) → for'],
+    ['누가 너에게 이 돈을 줬니?', 'Who gave you this money?'],
+    ['당신의 비행기는 언제 공항에서 출발하나요?', 'When does your airplane depart from the airport?'],
+    ['어떻게 이 문제를 해결할 수 있을까요?', 'How can I solve this problem?', 'How can this problem solve (X) · solve 3V'],
+    ['얼마나 많은 사람들이 회의실에 모였나요?', 'How many people gathered in the meeting room?'],
+    ['커피를 하루에 얼마나 많이 마시나요?', 'How much coffee do you drink in a day?', 'How many drink a coffee (X)'],
+    ['저는 당신에게 3일 전에 첫 번째 프로젝트에 대한 서류를 요청했는데 아직 받지 못했습니다.', "I asked you for the document about the first project 3 days ago, but I didn't receive it yet."],
+    ['그는 저에게 그 서류를 오늘까지 준비하라고 요청했어요.', 'He asked me to prepare the document by today.'],
+    ['첫 번째 프로젝트에 대해 아직 물어보지 못했어요.', "I didn't ask the customer about the first project yet."],
+    ['호텔에서 무료 조식 쿠폰을 받으셨나요? 3일 이상 머물면 이틀치 무료 쿠폰을 받을 수 있다고 들었어요.', 'Did you receive a free breakfast coupon? I heard that if I stay at this hotel over 3 days, I can receive free coupons for 2 days.'],
+    ['그 무료쿠폰에 대해 프런트 직원에게 물어보세요.', 'You can ask a front desk staff about the free coupon.'],
+    ['누구에게 물어보셨나요?', 'Who did you ask?', 'Who do you ask (X) → 과거'],
+    ['직원 중 한 명에게 물어봤는데 쿠폰에 대해 모르더라고요. 매니저에게 직접 물어봐야겠어요.', "I asked one of the staff, but he didn't know about the coupon. I think that I have to ask the manager about it directly.", '~할 것 같다 느낌으로 I think that'],
+    ['당신은 그 쿠폰에 대해서 누구에게 물어봤나요?', 'Who did you ask about the coupon?'],
+    ['제가 누구에게 그 정보를 요청해야 하나요?', 'Who do I have to ask for the information?', '물어봐야 하냐면 about'],
+    ['지난주에 저에게 무엇을 요청하셨죠?', 'What did you ask me for last week?'],
+    ['저녁으로 무엇을 드실 거예요?', 'What will you have for dinner?'],
+    ['당신은 방금 무엇에 대해 돈을 지불했나요?', 'What did you pay for just now?'],
+    ['당신은 그 이슈에 대해 누구와 이야기를 했나요?', 'Who did you talk to about the issue?', 'with = ~와 / to = ~에게'],
+    ['당신은 오늘 무엇을 해야 하나요?', 'What do you have to do today?', '본동사 do 빼먹지 말기!'],
+    ['누가 당신에게 그 프로젝트에 대해서 이야기 했나요?', 'Who talked to you about the project?', '누가 = 주어 → 도치 X'],
+    ['그 문제에 대해 당신은 누구에게 이메일을 보냈나요?', 'Who did you send this email to about the problem?'],
+    ['누가 이 프로젝트를 담당하고 있나요?', 'Who is looking after this project?'],
   ]
 },
 
@@ -1413,6 +1500,27 @@ window.HCLASS = [
       <div><b>touching</b><span>감동적인 (= impressive)</span></div>
       <div><b>material</b><span>재료, 자료</span></div>
       <div><b>at the beginning / in the middle / at the end of</b><span>초반에 / 한가운데에 / 끝에</span></div>
+      <div><b>on a business trip</b><span>출장 중인 — He is on a business trip. (2V, 전치사구가 주격보어) / go on a business trip (1V, 가다)</span></div>
+      <div><b>affect</b><span>영향을 주다</span></div>
+      <div><b>bully / be bullied</b><span>괴롭히다 / 왕따 당하다</span></div>
+      <div><b>also · too · as well</b><span>Also, S+V (문장 앞) / S+V too · as well (문장 뒤)</span></div>
+      <div><b>fluctuate</b><span>출렁거리다, 일정하지 않다, 변동이 심하다</span></div>
+      <div><b>changeable</b><span>변하기 쉬운, 가변적인</span></div>
+      <div><b>adjust the schedule</b><span>일정을 조정하다</span></div>
+      <div><b>apply for</b><span>신청하다</span></div>
+      <div><b>flock</b><span>모이다 (떼 지어)</span></div>
+      <div><b>food vs dish</b><span>셀 수 X 모든 음식 / 셀 수 O 접시에 담긴 요리 · cook 3V 요리하다, n 요리사</span></div>
+      <div><b>ward · injury · tough</b><span>병동 · 상처 · 거친</span></div>
+      <div><b>rely on · burden</b><span>의존하다 · 짐</span></div>
+      <div><b>show off</b><span>자랑하다 (3V)</span></div>
+      <div><b>pack</b><span>싸다</span></div>
+      <div><b>weekdays</b><span>평일</span></div>
+      <div><b>for vs during</b><span>~동안에: for + 숫자 (for 2 days) / during + 숫자 없는 기간 (during weekdays)</span></div>
+      <div><b>once</b><span>한 번 (부사) — I do pilates once during weekdays and once during the weekend.</span></div>
+      <div><b>pass away</b><span>떠나다, 돌아가시다</span></div>
+      <div><b>awkward</b><span>어색하다</span></div>
+      <div><b>touching = impressive / touched = impressed</b><span>I'm touched. That is touching.</span></div>
+      <div><b>be jealous of</b><span>~에 질투를 느끼다</span></div>
       <div><b>celebrate</b><span>기념하다, 축하하다 (3V) — I want to celebrate our graduation.</span></div>
     </div>
   </section>
@@ -2517,4 +2625,8 @@ window.FIXES = [
   ['Did you waited?', 'Did you wait?', 'did 뒤엔 동사원형'],
   ['It may rains', 'It may rain', '조동사 뒤엔 동사원형'],
   ['Who broken this toy?', 'Who broke this toy?', 'break-broke-broken'],
+  ['How can this problem solve?', 'How can I solve this problem?', 'solve는 3V'],
+  ['What did you ask?', 'What did you ask for?', '전치사 빼먹지 말기'],
+  ['It will takes', 'It will take', '조동사 뒤 원형'],
+  ['by the bus', 'by bus', '교통수단엔 관사 X'],
 ];
