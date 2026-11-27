@@ -488,6 +488,16 @@ window.HCLASS = [
     <p class="ex">After we had lunch, we got on the bus.</p>
   </section>
   <section class="card">
+    <h3>부사절 축약 (생략) 조건 (노트)</h3>
+    <p class="ex">S + V (before S + V) <span class="mute">주절 + 부사절(생략 가능)</span></p>
+    <ol class="num">
+      <li>주절 주어와 부사절 주어가 같을 때</li>
+      <li>주절 동사와 부사절 동사(시제)가 같을 때</li>
+    </ol>
+    <p class="note">두 가지 한번에 충족할 때 → 부사절의 주어 생략 → 부사절의 동사에 ing</p>
+    <p class="ex">Do I have to show you this coupon before having breakfast? <span class="mute">= before I have breakfast</span></p>
+  </section>
+  <section class="card">
     <h3>부사절 시제 정리 (2/8)</h3>
     <div class="rows">
       <div><b>주절 미래</b><span>부사절은 현재시제</span></div>
@@ -816,6 +826,24 @@ window.HCLASS = [
     <p class="mute">You are wanted to be healthy — want는 수동태로 잘 안 씀 (바라지는…)</p>
   </section>
   <section class="card">
+    <h3>수동태 복습 노트</h3>
+    <p class="ex">People consider her smart. (5V) → She is considered smart (by people). <span class="mute">her = 목적격, smart = O.C(형용사) · by people 생략 가능</span></p>
+    <p class="note">1V는 수동태를 구성할 수 X — 주요 구성성분인 목적어가 없어서. 2V도 마찬가지</p>
+    <p class="ex">S told me to V <span class="mute">~해야 한다고 / ~하라고 → to부정사가 have to 느낌이 든다</span></p>
+    <p class="ex">S told me that I have to tell it to the front desk. <span class="mute">tell 4V: 사람 O + that절</span></p>
+    <p class="ex">I was told (that) if I want to have breakfast, I have to tell the front desk.</p>
+    <p class="mute">speak(발성·외국어) / talk / say(내용을 말하는, 3V) + that / tell은 to부정사 자리에 X</p>
+    <div class="rows">
+      <div><b>from A to B</b><span>여기서부터 저기까지 (공간·시간) — from June to September</span></div>
+      <div><b>It will rain today.</b><span>날씨 얘기할 때 주어 써야 함 → 비인칭주어 (날씨·시간·거리)</span></div>
+      <div><b>Everyone was / All people were</b><span>everyone은 단수, all people은 복수</span></div>
+      <div><b>during vs while</b><span>전치사 + 명사 / 접속사 + S V — 전치사 뒤에는 동명사로!! (during travelling)</span></div>
+      <div><b>belong</b><span>~에 속하다 — I don't belong here. · personal belongings 개인 짐(소지품)</span></div>
+      <div><b>public transportation</b><span>모든 대중교통수단</span></div>
+    </div>
+    <div class="fixes"><div><s>today will rains a lot</s><b>it will rain a lot today</b></div></div>
+  </section>
+  <section class="card">
     <h3>leave: 형식마다 뜻이 다르다</h3>
     <div class="rows">
       <div><b>1V</b><span>떠나다</span></div>
@@ -851,6 +879,103 @@ window.HCLASS = [
     ['만약 당신이 수업에 빠지지 않는다면 선생님은 당신을 성실한 학생으로 여길 거예요.', "If you don't miss the class, you will be considered a diligent student by the teacher.", 'consider 5V → be considered + 명사 / are not miss (X)'],
     ['모든 사람들이 이 규칙을 지키도록 요청되어집니다.', 'Everyone is asked to follow this rule.', 'everyone은 단수 → is / were (X)'],
     ['어린이들은 이 음료를 마시도록 허락되지 않습니다.', 'Children are not allowed to drink this drink.', 'to have로도 가능'],
+  ]
+},
+
+/* ───────────── (노트) 의문문 · 부정문 ───────────── */
+{
+  id: 'question', no: 0, color: 'blue', glyph: '?',
+  title: '의문문 · 부정문', sub: 'Do를 꺼내냐 마냐 · 의문사가 주어일 때', pages: '노트 (스프링노트)',
+  html: `
+  <section class="card">
+    <h3>동사의 분류 → 부정문·의문문 만드는 법</h3>
+    <div class="tbl-wrap"><table class="tbl">
+      <thead><tr><th>동사</th><th>예</th><th>부정문</th><th>의문문</th></tr></thead>
+      <tbody>
+        <tr><th>① 일반동사</th><td>1~5형식 동사 (2형식 be·look·remain 포함)</td><td>do / does / did + not</td><td>Do를 꺼내!</td></tr>
+        <tr><th>② be동사</th><td>be (2형식) · be ~ing (진행) · be p.p (수동) · there is/are</td><td>not</td><td>be동사를 앞으로 (도치)</td></tr>
+        <tr><th>③ 조동사</th><td>will·would / can·could / may·might / must &gt; have to &gt; should</td><td>not</td><td>조동사를 앞으로 (도치)</td></tr>
+      </tbody></table></div>
+    <p class="note">have to는 예외 → do를 사용: don't / doesn't have to = ~안 해도 된다, ~할 필요가 없다</p>
+    <p class="ex">You don't have to drink all. / Do I have to pay?</p>
+    <p class="ex">I didn't have breakfast. / I don't meet my friend.</p>
+    <p class="mute">may = 확률 50:50 (It may rain.) · 과거형 would / could / might → 예의 바른 느낌 전달</p>
+  </section>
+  <section class="card">
+    <h3>의문사가 없는 의문문 → Yes / No</h3>
+    <p class="ex">Are you staff here? <span class="mute">be동사 도치</span></p>
+    <p class="ex">Did they arrive at the airport on time? <span class="mute">일반동사 → Did + 동사원형</span></p>
+    <p class="ex">There is my coffee. → Is there my coffee? <span class="mute">there is도 도치</span></p>
+    <p class="ex">Do we have a meeting in the morning today?</p>
+    <div class="fixes"><div><s>Are they arrived at the airport?</s><b>Did they arrive at the airport?</b></div><div><s>Did you waited</s><b>Did you wait (did 뒤엔 원형)</b></div></div>
+  </section>
+  <section class="card">
+    <h3>의문사가 있는 의문문 → 정보로 대답</h3>
+    <div class="rows">
+      <div><b>① 의문대명사</b><span>who · what — 주어 / 목적어 / 보어 역할</span></div>
+      <div><b>② 의문부사</b><span>when · where · how · why</span></div>
+      <div><b>③ 의문형용사</b><span>which · whose</span></div>
+    </div>
+    <p class="ex">You like what. → <b>What do you like?</b> <span class="mute">O · do · S · V</span></p>
+    <p class="ex">You are who. → <b>Who are you?</b> <span class="mute">보어 · V · S</span></p>
+    <p class="ex">What should I do next? <span class="mute">조동사가 나왔으니 일단 바로 도치</span></p>
+    <p class="ex">What do I have to do? <span class="mute">앞 do = 도치용 / 뒤 do = 본동사(하다)</span></p>
+  </section>
+  <section class="card">
+    <h3>★ 의문사가 주어일 때는 도치하지 않는다</h3>
+    <div class="two">
+      <div><h4>주어 (누가)</h4><p class="ex"><b>Who</b> hit you? <span class="mute">S V O</span></p><p class="ex">Who gave you this present?</p><p class="ex">Who sent you this email?</p></div>
+      <div><h4>목적어 (누구를)</h4><p class="ex"><b>Who did you hit?</b> <span class="mute">O · did · S · V</span></p><p class="ex">Who did you send this email to?</p></div>
+    </div>
+    <p class="mute">hit - hit - hit 때리다 / break - broke - broken</p>
+  </section>
+  <section class="card">
+    <h3>전치사는 뒤에 남는다</h3>
+    <p class="ex">You are looking for what. → <b>What are you looking for?</b> <span class="mute">for 뒤 = 전치사의 목적어 자리</span></p>
+    <p class="ex">You had dinner with who. → Who did you have dinner with?</p>
+    <p class="ex">Who are you having dinner with?</p>
+    <div class="rows">
+      <div><b>look for</b><span>1V + 전치사 + 명사 — 찾다</span></div>
+      <div><b>look (2V)</b><span>~처럼 보이다</span></div>
+      <div><b>watching vs looking at</b><span>쳐다보는 느낌 / 꽂혀서 보는 느낌, 긴 시간이 아닌 잠깐 보는</span></div>
+    </div>
+  </section>
+  <section class="card">
+    <h3>pay + 사는 물건 (노트)</h3>
+    <div class="rows">
+      <div><b>① pay for + n</b><span>사는 물건</span></div>
+      <div><b>② pay 사람 + 사물 (for + n)</b><span>4형식 → to 안 씀</span></div>
+      <div><b>③ pay 사물 + to 사람 (for + n)</b><span>3형식이면 to</span></div>
+    </div>
+    <p class="mute">for + n(사는 물건)은 전치사구라 안 나와도 됨</p>
+  </section>`,
+  drills: [
+    ['당신은 여기 직원입니까?', 'Are you staff here?'],
+    ['어제 그들은 제시간에 공항에 도착했습니까?', 'Did they arrive at the airport on time yesterday?', 'Are they arrived (X) → 일반동사는 Did + 원형'],
+    ['당신은 여분의 수건을 바로 지금 나에게 가져다 줄 수 있습니까?', 'Can you bring me extra towels right now?', 'an extra towels (X) · bring 4V'],
+    ['당신은 여기에서 30분 넘게 기다렸나요?', 'Did you wait here for more than 30 minutes?', 'waited (X) · wait 1V'],
+    ['당신은 그 영화를 좋아하나요?', 'Do you like the movie?'],
+    ['식당에서 조식을 먹기 전에 이 쿠폰을 보여줘야 하나요?', 'Do I have to show you this coupon before having breakfast in the restaurant?', 'have to → Do / should는 강제성 부여'],
+    ['당신이 다음 주 수요일에 시간이 있으시면 저랑 점심을 드실 수 있을까요?', 'If you have time next Wednesday, could you have lunch with me?', 'could = 예의 바른 느낌'],
+    ['그 영화는 감동적이었나요?', 'Was the movie impressive?'],
+    ['당신은 그 영화에 감동받았나요?', 'Were you impressed by the movie?'],
+    ['당신은 저녁으로 무엇을 먹었습니까?', 'What did you eat for dinner?'],
+    ['제가 다음에 무엇을 해야 하나요?', 'What should I do next?', '조동사 → 바로 도치'],
+    ['다음에 뭘 할 겁니까?', 'What will you do next?'],
+    ['당신은 오늘 누구를 만날 것입니까?', 'Who will you meet today?'],
+    ['당신은 무엇을 찾고 있습니까?', 'What are you looking for?', 'for는 뒤에 남김'],
+    ['넌 뭘 먹고 있니?', 'What are you eating now?'],
+    ['누가 너에게 이 이메일을 보냈니?', 'Who sent you this email?', '의문사가 주어 → 도치 X'],
+    ['당신은 누구에게 이 이메일을 보냈습니까?', 'Who did you send this email to?', '의문사가 목적어 → did 도치'],
+    ['이 택배를 누가 보냈나요?', 'Who sent this package?'],
+    ['누가 이 장난감을 부쉈지요?', 'Who broke this toy?', 'broken (X) → broke'],
+    ['당신은 누구에게 이 책을 줄 겁니까?', 'Who will you give this book to?', '노트: Who will you give this book? (4형식)'],
+    ['제가 누구에게 이 돈을 지불해야 하나요?', 'Who do I have to pay the money to?'],
+    ['당신은 지금 무엇이 필요합니까?', 'What do you need now?'],
+    ['누가 이 선물을 너에게 주었니?', 'Who gave you this present?'],
+    ['당신은 누구와 같이 저녁을 먹었어요?', 'Who did you have dinner with?'],
+    ['당신은 누구를 위해서 이 커피를 만들었나요?', 'Who did you make this coffee for?'],
+    ['당신은 지금 무엇에 집중하고 있나요?', 'What are you concentrating on now?', 'did (X) → 현재진행으로'],
   ]
 },
 
@@ -1182,6 +1307,47 @@ window.HCLASS = [
     <p class="mute">You can transfer to line number 2. (환승하다) · exit number 1 (1번 출구)</p>
   </section>
   <section class="card">
+    <h3>직독직해: 자기소개 (첫 수업)</h3>
+    <button class="pic" type="button"><span class="pe">Hi, my name is Haneul. I&#x27;m 25 years old.</span><span class="pk">안녕하세요, 제 이름은 하늘이에요. 25살이에요.</span></button>
+    <button class="pic" type="button"><span class="pe">I am living and working in 가산 now.</span><span class="pk">지금 가산에서 살고 일하고 있어요 (live in Seoul → 현재진행으로)</span></button>
+    <button class="pic" type="button"><span class="pe">I like drawing with acrylic on canvas</span><span class="pk">캔버스에 아크릴로 그리는 걸 좋아해요 (painting → drawing)</span></button>
+    <button class="pic" type="button"><span class="pe">and I started studying English in October last year.</span><span class="pk">그리고 작년 10월에 영어 공부를 시작했어요 (to study in English X)</span></button>
+    <button class="pic" type="button"><span class="pe">I hope that my English skill is improved.</span><span class="pk">제 영어 실력이 향상되길 바라요 (= I want my English skill to be improved)</span></button>
+    <button class="pic" type="button"><span class="pe">So I am interested in this class.</span><span class="pk">그래서 이 수업에 관심이 있어요</span></button>
+    <p class="mute">artwork 그림 작품</p>
+  </section>
+  <section class="card">
+    <h3>직독직해: 우리 집 소개 (There is / are)</h3>
+    <button class="pic" type="button"><span class="pe">There are two bathrooms in this house.</span><span class="pk">이 집엔 화장실이 2개 있어요</span></button>
+    <button class="pic" type="button"><span class="pe">There are 3 rooms and all rooms have windows.</span><span class="pk">방이 3개 있고 모든 방에 창문이 있어요</span></button>
+    <button class="pic" type="button"><span class="pe">There is a living room. There is a terrace next to the living room.</span><span class="pk">거실이 있어요. 거실 옆에 테라스가 있어요</span></button>
+    <button class="pic" type="button"><span class="pe">There is a sofa in the living room.</span><span class="pk">거실에 소파가 있어요</span></button>
+    <button class="pic" type="button"><span class="pe">The kitchen has a refrigerator.</span><span class="pk">부엌엔 냉장고가 있어요</span></button>
+    <p class="mute">bath tub 욕조 · closet 옷장 · utility room 다용도실 · between 2 rooms 방 2개 사이 · on the right 오른쪽에 · Yes, we have.</p>
+  </section>
+  <section class="card">
+    <h3>직독직해: 하루 일정 (스케줄을 세세하게)</h3>
+    <button class="pic" type="button"><span class="pe">I will go to 신용산 with my friends and I will eat some sushi and dessert.</span><span class="pk">친구들이랑 신용산에 가서 초밥이랑 디저트를 먹을 거예요</span></button>
+    <button class="pic" type="button"><span class="pe">I have an appointment.</span><span class="pk">약속이 있어요 (개인 스케줄을 잡은 것)</span></button>
+    <button class="pic" type="button"><span class="pe">I started exercising (= to exercise) from 1 pm.</span><span class="pk">오후 1시부터 운동을 시작했어요 (start + ing / to V 둘 다 OK)</span></button>
+    <button class="pic" type="button"><span class="pe">I exercised for around 2 hours at the fitness center.</span><span class="pk">헬스장에서 2시간 정도 운동했어요 (around = 대략)</span></button>
+    <button class="pic" type="button"><span class="pe">Stretching will make your bones in a right way.</span><span class="pk">스트레칭은 뼈를 바른 상태로 만들어 줄 거예요 (전치사구 = 목적격보어, 형용사 역할)</span></button>
+    <button class="pic" type="button"><span class="pe">I will depart from my house in the afternoon.</span><span class="pk">오후에 집에서 출발할 거예요 (from = 출발)</span></button>
+    <p class="mute">do exercise (3) = exercise (1) = work out (1)</p>
+  </section>
+  <section class="card">
+    <h3>발음 노트</h3>
+    <div class="rows">
+      <div><b>want / won't</b><span>원트 / 오운트</span></div>
+      <div><b>early</b><span>어얼리 ↗</span></div>
+      <div><b>free</b><span>프리 — r은 천장에 닿으면 프뤼에 가깝게</span></div>
+      <div><b>breakfast</b><span>브렉퍼스트 (break + fast)</span></div>
+      <div><b>nervous</b><span>너벌스 (nerverous X)</span></div>
+      <div><b>pressure / pleasure</b><span>압박감 / 즐거움</span></div>
+      <div><b>고유명사 · 고향</b><span>the를 안 붙임</span></div>
+    </div>
+  </section>
+  <section class="card">
     <h3>노트 단어장</h3>
     <div class="rows">
       <div><b>rinse</b><span>헹구다</span></div>
@@ -1226,6 +1392,27 @@ window.HCLASS = [
       <div><b>once a month</b><span>한 달에 한 번</span></div>
       <div><b>by chance</b><span>우연히</span></div>
       <div><b>be willing to</b><span>기꺼이 ~하다</span></div>
+      <div><b>refreshment</b><span>기분 전환 (음료·다과)</span></div>
+      <div><b>responsibility</b><span>책임</span></div>
+      <div><b>resume</b><span>이력서 · 경력</span></div>
+      <div><b>tenant</b><span>세입자</span></div>
+      <div><b>insurance</b><span>보험</span></div>
+      <div><b>interest</b><span>이자 (관심)</span></div>
+      <div><b>deposit</b><span>보증금</span></div>
+      <div><b>sue</b><span>~를 고소하다 (3V)</span></div>
+      <div><b>legally</b><span>법적으로</span></div>
+      <div><b>real estate agency</b><span>부동산</span></div>
+      <div><b>run</b><span>운영하다 (3V)</span></div>
+      <div><b>ignore</b><span>무시하다</span></div>
+      <div><b>hairy / oily</b><span>털이 많다 / 기름진</span></div>
+      <div><b>appointment</b><span>약속 (개인 스케줄을 잡은 것)</span></div>
+      <div><b>personal / face to face</b><span>개인적 / 1:1 대면</span></div>
+      <div><b>It doesn't matter.</b><span>상관없어요</span></div>
+      <div><b>influence</b><span>~에 영향을 주다 (3V)</span></div>
+      <div><b>motivate</b><span>~에게 동기부여를 하다</span></div>
+      <div><b>touching</b><span>감동적인 (= impressive)</span></div>
+      <div><b>material</b><span>재료, 자료</span></div>
+      <div><b>at the beginning / in the middle / at the end of</b><span>초반에 / 한가운데에 / 끝에</span></div>
       <div><b>celebrate</b><span>기념하다, 축하하다 (3V) — I want to celebrate our graduation.</span></div>
     </div>
   </section>
@@ -2326,4 +2513,8 @@ window.FIXES = [
   ['I want the road to enlarge', 'I want the road to be enlarged', '수동의 느낌'],
   ['A two cups of coffee', 'Two cups of coffee', '수량형용사 앞에 a X'],
   ['Everyone were asked', 'Everyone is asked', 'everyone은 단수'],
+  ['Are they arrived?', 'Did they arrive?', '일반동사 의문문은 Do/Did'],
+  ['Did you waited?', 'Did you wait?', 'did 뒤엔 동사원형'],
+  ['It may rains', 'It may rain', '조동사 뒤엔 동사원형'],
+  ['Who broken this toy?', 'Who broke this toy?', 'break-broke-broken'],
 ];
