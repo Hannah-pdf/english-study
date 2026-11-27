@@ -8,7 +8,7 @@ const PW_KEY = 'toeic.pw';
 /* ── 암호 해제 ── */
 const b64 = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
 async function decrypt(pw) {
-  const enc = await fetch('toeic.enc?v=3').then(r => r.json());
+  const enc = await fetch('toeic.enc?v=4').then(r => r.json());
   const base = await crypto.subtle.importKey('raw', new TextEncoder().encode(pw), 'PBKDF2', false, ['deriveKey']);
   const key = await crypto.subtle.deriveKey({ name: 'PBKDF2', salt: b64(enc.salt), iterations: enc.iter, hash: 'SHA-256' },
     base, { name: 'AES-GCM', length: 256 }, false, ['decrypt']);
@@ -342,7 +342,30 @@ function note(filter) {
 
 
 /* ── 매일 단어 테스트 ── */
-const T_NEW = 20, T_REV = 10, PASS = 0.8;
+const T_NEW = 20, T_REV = 15, PASS = 0.8;
+/* 간격 반복 (Leitner): 맞히면 다음 상자로 → 1·3·7·14·30일 뒤 다시 출제, 틀리면 1일 뒤 */
+const SRS_GAP = [1, 3, 7, 14, 30];
+const dayIdx = (d = new Date()) => Math.floor((d.getTime() - d.getTimezoneOffset() * 6e4) / 864e5);
+function srsMigrate(key, wrongKey) {
+  if (store.get(key, null)) return;
+  const S = {}, t = dayIdx();
+  Object.keys(store.get(wrongKey, {})).forEach(id => { S[id] = { box: 0, due: t }; });
+  store.set(key, S);
+}
+function srsDue(key, limit) {
+  const S = store.get(key, {}), t = dayIdx();
+  return Object.entries(S).filter(([, v]) => v.due <= t).sort((a, b) => a[1].due - b[1].due || a[1].box - b[1].box).slice(0, limit).map(([id]) => id);
+}
+function srsUpdate(key, right, wrong) {
+  const S = store.get(key, {}), t = dayIdx();
+  right.forEach(id => { const v = S[id] || { box: -1 }; const box = Math.min(v.box + 1, SRS_GAP.length - 1); S[id] = { box, due: t + SRS_GAP[box] }; });
+  wrong.forEach(id => { S[id] = { box: 0, due: t + 1 }; });
+  store.set(key, S);
+}
+function srsStats(key) {
+  const S = Object.values(store.get(key, {})), t = dayIdx();
+  return { today: S.filter(v => v.due <= t).length, tomorrow: S.filter(v => v.due === t + 1).length, master: S.filter(v => v.box >= 3).length, total: S.length };
+}
 const dkey = (d = new Date()) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
 let POOL = null;
 /* 품사 추출: 오답 보기를 같은 품사에서 고르기 위해 */
@@ -395,8 +418,8 @@ function todaySet() {
   if (cur && cur.date === today) return cur;
   const P = pool();
   const pos = store.get('t.test.pos', 0) % P.length;
-  const wrong = store.get('t.wrong', {});
-  const rev = Object.entries(wrong).sort((a, b) => a[1].t - b[1].t).slice(0, T_REV).map(([f]) => f);
+  srsMigrate('t.srs', 't.wrong');
+  const rev = srsDue('t.srs', T_REV).filter(f => P.some(w => w.f === f));
   const fresh = [];
   for (let k = 0; fresh.length < T_NEW && k < P.length; k++) { const w = P[(pos + k) % P.length]; if (!rev.includes(w.f)) fresh.push(w.f); }
   cur = { date: today, set: Math.floor(pos / T_NEW) + 1, fresh, rev, advanced: false };
@@ -467,6 +490,12 @@ function testHome() {
     <div class="group-list">
       <a class="row" href="#/toeic/cal"><span class="ic sf" style="background:${RC.red}">${svgIcon('flame')}</span><span class="t"><b>연속 학습</b><small>${streak()}일째 · 이번 주 ${wkDone}/7일 · 캘린더 보기</small></span>${chev}</a>
       <a class="row" href="#/toeic/test/wrong"><span class="ic sf" style="background:#ff9500">${svgIcon('x')}</span><span class="t"><b>틀린 단어</b><small>${wrongN}개 · 두 번 연속 맞히면 빠져요</small></span>${chev}</a>
+    </div>
+    <div class="sec-h">복습 일정 <span class="sec-sub">맞히면 1·3·7·14·30일 뒤에 다시 나와요</span></div>
+    <div class="srsbar">${(() => { const a = srsStats('t.srs'), g = srsStats('t.g.srs'); return `
+      <div><b>${a.today + g.today}</b><span>오늘 복습</span></div>
+      <div><b>${a.tomorrow + g.tomorrow}</b><span>내일 예정</span></div>
+      <div><b style="color:#34c759">${a.master}</b><span>장기 기억 단어</span></div>`; })()}
     </div>`, 2);
 }
 function svgIcon(n) {
@@ -555,6 +584,7 @@ function testRun(only) {
     wrong.forEach(f => { const w = P.find(x => x.f === f); W[f] = { b: w ? w.b : '', n: 0, t: Date.now() }; });
     right.forEach(f => { if (W[f]) { W[f].n++; W[f].t = Date.now(); if (W[f].n >= 2) delete W[f]; } });
     store.set('t.wrong', W);
+    srsUpdate('t.srs', right, wrong);
     const pct = score / Q.length, pass = pct >= PASS;
     if (!only) {
       const log = tLog(), d = cur.date, prev = log[d];
@@ -648,8 +678,8 @@ function gTodaySet() {
   const today = dkey(); let cur = store.get('t.g.today', null);
   if (cur && cur.date === today) return cur;
   const G = D.grammar, pos = store.get('t.g.pos', 0) % G.length;
-  const W = store.get('t.g.wrong', {});
-  const rev = Object.entries(W).sort((a, b) => a[1].t - b[1].t).slice(0, G_REV).map(([id]) => id);
+  srsMigrate('t.g.srs', 't.g.wrong');
+  const rev = srsDue('t.g.srs', G_REV).filter(id => G.some(q => q.id === id));
   const fresh = [];
   for (let k = 0; fresh.length < G_NEW && k < G.length; k++) { const q = G[(pos + k) % G.length]; if (!rev.includes(q.id)) fresh.push(q.id); }
   cur = { date: today, fresh, rev, advanced: false };
@@ -700,6 +730,7 @@ function gRun(only) {
     wrong.forEach(id => { W[id] = { n: 0, t: Date.now() }; });
     right.forEach(id => { if (W[id]) { W[id].n++; W[id].t = Date.now(); if (W[id].n >= 2) delete W[id]; } });
     store.set('t.g.wrong', W);
+    srsUpdate('t.g.srs', right, wrong);
     const pct = score / Q.length, pass = pct >= PASS;
     if (!only) {
       const log = gLog(), d = cur.date, prev = log[d];

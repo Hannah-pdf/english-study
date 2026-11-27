@@ -47,7 +47,6 @@ function home() {
       <a class="tile t" href="#/toeic"><span class="badge">학습 중</span><div><h3>TOEIC 850+</h3><p>강의노트 · 단어 · 패러프레이징 · 오답노트</p></div><span class="big">850</span></a>
       <a class="tile s" href="#/speaking"><span class="badge">준비 중</span><div><h3>Speaking IH</h3><p>토익스피킹 답변 템플릿</p></div><span class="big">IH</span></a>
     </div>
-    ${backupNudge()}
     <div class="sec-h">오늘의 영작</div>
     <button class="today" id="today" style="width:100%;text-align:left">
       <p class="ko">${esc(t.ko)}</p><p class="en">${esc(t.en)}</p>
