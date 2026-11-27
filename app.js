@@ -63,13 +63,13 @@ function home() {
     <div class="sec-h">오늘의 영작</div>
     <button class="today" id="today" style="width:100%;text-align:left">
       <p class="ko">${esc(t.ko)}</p><p class="en">${esc(t.en)}</p>
-      <div class="hint">탭해서 정답 보기 · ${esc(t.ct)}</div>
+      <div class="hint">탭해서 정답 보기 · <a href="#/h/${t.cid}">${esc(t.ct)} ›</a></div>
     </button>
     <div class="group-list" style="margin-top:10px">
       <a class="row" href="#/h/daily"><span class="ic c-indigo">◷</span><span class="t"><b>지난 오늘의 영작</b><small>${past > 0 ? `${past}일치 기록 · 어제 문장 다시 보기` : '내일부터 날짜별로 쌓여요'}</small></span>${chev}</a>
     </div>
   `, 0);
-  $('#today').onclick = e => e.currentTarget.classList.toggle('show');
+  $('#today').onclick = e => { if (e.target.closest('a')) return; e.currentTarget.classList.toggle('show'); };
 }
 
 /* ── H-class list ── */
@@ -129,10 +129,13 @@ function drillList(list) {
   return `<div class="bar-btns"><button class="pbtn" id="openAll">모두 펼치기</button><button class="pbtn" id="closeAll">모두 접기</button></div>` +
     list.map((d, i) => `<button class="drill"><span class="q"><i>${i + 1}</i><span>${esc(d.ko)}</span></span>
       <span class="peek">탭해서 정답 보기</span>
-      <span class="a"><div><p>${esc(d.en)}</p>${d.note ? `<small>${esc(d.note)}</small>` : ''}${d.ch ? `<small style="color:var(--text3)">${esc(d.ch.title)}</small>` : ''}</div></span></button>`).join('');
+      <span class="a"><div><p>${esc(d.en)}</p>${d.note ? `<small>${esc(d.note)}</small>` : ''}${d.ch ? `<span class="golink" data-href="#/h/${d.ch.id}">관련 문법 · ${esc(d.ch.title)} ›</span>` : ''}</div></span></button>`).join('');
 }
 function bindDrills() {
-  document.querySelectorAll('.drill').forEach(b => b.onclick = () => b.classList.toggle('open'));
+  document.querySelectorAll('.drill').forEach(b => b.onclick = e => {
+    const g = e.target.closest('.golink'); if (g) { location.hash = g.dataset.href; return; }
+    b.classList.toggle('open');
+  });
   const o = $('#openAll'), c = $('#closeAll');
   if (o) o.onclick = () => document.querySelectorAll('.drill').forEach(b => b.classList.add('open'));
   if (c) c.onclick = () => document.querySelectorAll('.drill').forEach(b => b.classList.remove('open'));
@@ -153,17 +156,17 @@ function drills(mode) {
     let i = Math.min(store.get('hclass.pos', 0), list.length - 1);
     render(`<h1 class="large">영작 연습</h1><p class="lead">카드를 탭하면 뒤집혀요</p>${seg}
       <p class="fc-count" id="cnt"></p>
-      <div class="flash" id="fc"><div class="inner"><div class="face front"><small id="fch"></small><p id="fko"></p></div><div class="face back"><small>정답</small><p id="fen"></p><em id="fnote"></em></div></div></div>
+      <div class="flash" id="fc"><div class="inner"><div class="face front"><small id="fch"></small><p id="fko"></p></div><div class="face back"><small>정답</small><p id="fen"></p><em id="fnote"></em><span class="golink" id="fgo"></span></div></div></div>
       <div class="fc-nav"><button class="pbtn" id="prev">이전</button><button class="pbtn" id="shuf">섞기</button><button class="pbtn" id="next">다음</button></div>`, 2);
     const fc = $('#fc');
     const show = () => {
       const d = list[order[i]];
       fc.classList.remove('flip');
-      setTimeout(() => { $('#fko').textContent = d.ko; $('#fen').textContent = d.en; $('#fnote').textContent = d.note; $('#fch').textContent = d.ch.title; }, fc.classList.contains('flip') ? 250 : 0);
+      setTimeout(() => { $('#fko').textContent = d.ko; $('#fen').textContent = d.en; $('#fnote').textContent = d.note; $('#fch').textContent = d.ch.title; $('#fgo').textContent = `관련 문법 · ${d.ch.title} ›`; $('#fgo').dataset.href = `#/h/${d.ch.id}`; }, fc.classList.contains('flip') ? 250 : 0);
       $('#cnt').textContent = `${i + 1} / ${list.length}`;
       store.set('hclass.pos', i);
     };
-    fc.onclick = () => fc.classList.toggle('flip');
+    fc.onclick = e => { const g = e.target.closest('.golink'); if (g && fc.classList.contains('flip')) { location.hash = g.dataset.href; return; } fc.classList.toggle('flip'); };
     $('#next').onclick = () => { i = (i + 1) % list.length; show(); };
     $('#prev').onclick = () => { i = (i - 1 + list.length) % list.length; show(); };
     $('#shuf').onclick = () => { for (let k = order.length - 1; k > 0; k--) { const j = Math.floor(Math.random() * (k + 1)); [order[k], order[j]] = [order[j], order[k]]; } store.set('hclass.order', order); i = 0; show(); };
