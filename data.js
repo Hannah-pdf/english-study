@@ -2730,8 +2730,65 @@ window.HCLASS = [
 /* ───────────────────────── 18. 명사절 ───────────────────────── */
 {
   id: 'nounclause', no: 18, color: 'graphite', glyph: 'what',
-  title: '명사절 · 간접의문문', sub: 'what절 vs 형용사절 that', pages: 'p.93, 143',
+  title: '명사절 · 간접의문문', sub: '문장을 명사처럼 · that / if / 의문사 + S V', pages: 'p.93, 143',
   html: `
+  <section class="card">
+    <h3>${SUP} 명사절이 뭐예요? (쉽게)</h3>
+    <p class="note">문장 하나를 통째로 상자에 넣어서 <b>명사 한 개처럼</b> 쓰는 것</p>
+    <p class="ex">I know <u>him</u>. <span class="mute">명사 1개 — 그를 안다</span></p>
+    <p class="ex">I know <u>that he is busy</u>. <span class="mute">문장 상자 1개 — 그가 바쁘다<b>는 것</b>을 안다</span></p>
+    <p class="mute">him 자리에 문장이 통째로 들어갔을 뿐, 구조는 똑같이 3형식 (S + V + O)</p>
+    <div class="tree">
+      <div class="node">상자(명사절) 만드는 뚜껑 3개</div>
+      <ul>
+        <li><b>that</b> + S + V — "~라는 것" (확실한 사실)</li>
+        <li><b>if / whether</b> + S + V — "~인지 아닌지" (Yes/No 궁금)</li>
+        <li><b>의문사</b> (who · what · where · when · why · how) + S + V — "누가 / 무엇을 / 어디서 ~하는지"</li>
+      </ul>
+    </div>
+  </section>
+  <section class="card">
+    <h3>${SUP} 상자가 들어가는 자리 = 명사 자리</h3>
+    <div class="rows">
+      <div><b>주어</b><span><u>What I like</u> is ham. — 내가 좋아하는 것은 햄이다</span></div>
+      <div><b>목적어 ★제일 많음</b><span>I think <u>that she is right</u>. — 그녀가 옳다고 생각해</span></div>
+      <div><b>보어</b><span>The problem is <u>that we don't have time</u>. — 문제는 시간이 없다는 것</span></div>
+      <div><b>전치사 뒤</b><span>I'm worried about <u>what he said</u>. — 그가 한 말이 걱정돼</span></div>
+    </div>
+    <p class="note">목적어 자리의 that은 자주 생략해요 — I think (that) she is right.</p>
+    <p class="note">주어 자리 that절은 길어서 뒤로 보내고 가주어 It — <b>It</b> is important <u>that every member attends</u>.</p>
+  </section>
+  <section class="card">
+    <h3>${SUP} ★ 상자 안은 무조건 평서문 순서 (S + V)</h3>
+    <p class="note">의문문을 상자에 넣으면 → 도치를 풀고, do/does/did는 빼고, 동사 시제를 되돌린다 (= 간접의문문)</p>
+    <div class="rows">
+      <div><b>Where <i>is he</i>?</b><span>→ I don't know where <b>he is</b>.</span></div>
+      <div><b>What <i>are you</i> looking for?</b><span>→ Tell me what <b>you are</b> looking for.</span></div>
+      <div><b>When <i>does</i> the store open?</b><span>→ Do you know when the store <b>opens</b>? <span class="mute">does 빠지고 동사에 s</span></span></div>
+      <div><b>Why <i>did</i> she leave?</b><span>→ I wonder why she <b>left</b>. <span class="mute">did 빠지고 과거형</span></span></div>
+      <div><b>Do you like coffee?</b><span>→ I'm not sure <b>if</b> you like coffee. <span class="mute">의문사 없으면 if / whether</span></span></div>
+      <div><b>Who sent this?</b><span>→ I know who sent this. <span class="mute">의문사가 주어면 원래 순서 그대로</span></span></div>
+    </div>
+    <div class="fixes"><div><s>I don't know where is he.</s><b>I don't know where he is.</b></div><div><s>Do you know when does it start?</s><b>Do you know when it starts?</b></div></div>
+  </section>
+  <section class="card">
+    <h3>${SUP} that vs what — 뒤가 완전한지 보기</h3>
+    <div class="two">
+      <div><h4>that + 완전한 문장</h4><p class="ex">I know <b>that</b> he lied.</p><p class="mute">he(S) lied(V) — 빠진 게 없음. that은 뜻 없는 뚜껑</p></div>
+      <div><h4>what + 빠진 문장</h4><p class="ex">I know <b>what</b> he said.</p><p class="mute">said의 목적어가 빠짐 → what이 그 자리를 채움 (= the thing that, "~것")</p></div>
+    </div>
+    <p class="ex">This is <b>what</b> I wanted. <span class="mute">이게 내가 원했던 것이야</span></p>
+    <p class="ex">The good news is <b>that</b> the project is finished.</p>
+  </section>
+  <section class="card">
+    <h3>${SUP} 명사절 · 형용사절 · 부사절 구별 팁</h3>
+    <div class="rows">
+      <div><b>명사절</b><span>빼면 문장이 깨짐 (주어·목적어가 사라짐) — I know [that he is busy] → I know. ✗</span></div>
+      <div><b>형용사절</b><span>앞의 명사를 꾸밈, 빼도 문장 OK — The man [who lives next door] is kind.</span></div>
+      <div><b>부사절</b><span>시간·이유·조건 배경, 빼도 문장 OK — [Because I was sick], I stayed home.</span></div>
+    </div>
+    <p class="mute">형용사절은 <a href="#/h/relpro">관계대명사 챕터 ›</a>, 부사절은 <a href="#/h/advcl">부사절 접속사 챕터 ›</a>에서 이어서 보세요</p>
+  </section>
   <section class="card">
     <h3>명사절 vs 형용사절</h3>
     <p class="ex">Tell me <b>what</b> you are looking for. <span class="mute">명사절 — what = 선행사 포함</span></p>
@@ -2757,6 +2814,16 @@ window.HCLASS = [
     </div>
   </section>`,
   drills: [
+    ['그가 어디에 사는지 모르겠어요.', "I don't know where he lives.", '간접의문문: 의문사 + S + V (does 빠지고 lives)'],
+    ['회의가 몇 시에 시작하는지 아세요?', 'Do you know what time the meeting starts?', 'when does it start (X) → when it starts'],
+    ['그녀가 내일 올지 안 올지 확실하지 않아요.', "I'm not sure if she will come tomorrow.", '의문사 없는 의문문 → if / whether'],
+    ['저는 그가 옳다고 생각해요.', 'I think (that) he is right.', '목적어 that은 생략 가능'],
+    ['문제는 우리에게 시간이 충분하지 않다는 거예요.', "The problem is that we don't have enough time.", '보어 자리 명사절'],
+    ['제가 원하는 것은 휴식이에요.', 'What I want is a rest.', '주어 자리 what절 — what = ~것'],
+    ['그가 회의에서 한 말을 이해하지 못했어요.', "I didn't understand what he said in the meeting.", 'said의 목적어가 빠짐 → what'],
+    ['모든 팀원이 이 규칙을 지키는 것이 중요합니다.', 'It is important that every team member follows this rule.', '가주어 It + 진주어 that절'],
+    ['왜 그녀가 일찍 떠났는지 궁금해요.', 'I wonder why she left early.', 'did 빠지고 과거형 left'],
+    ['누가 이 이메일을 보냈는지 알려주세요.', 'Please tell me who sent this email.', '의문사가 주어면 순서 그대로'],
     ['당신이 찾고 있는 물건이 무엇인지 말해 주세요.', "Tell me what you're looking for."],
     ['당신이 말하고 있는 그 뉴스는 들어본 적 없어요.', "I've never heard the news you're talking about."],
     ['어떤 이메일에 제가 답을 해야 하나요?', 'Which email should I reply to?'],
@@ -2855,6 +2922,8 @@ window.FIXES = [
   ['What did you ask?', 'What did you ask for?', '전치사 빼먹지 말기'],
   ['It will takes', 'It will take', '조동사 뒤 원형'],
   ['by the bus', 'by bus', '교통수단엔 관사 X'],
+  ["I don't know where is he", "I don't know where he is", '간접의문문은 S + V'],
+  ['Do you know when does it start?', 'Do you know when it starts?', '간접의문문에서 do 빠짐'],
   ['Which toy do you interested?', 'Which toy are you interested in?', 'interested는 형용사'],
   ['Whose shoes is yellow?', 'Whose shoes are yellow?', '복수 주어'],
   ['living fee', 'living cost', '물가'],
