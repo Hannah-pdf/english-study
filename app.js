@@ -34,7 +34,7 @@ function home() {
   const drills = allDrills();
   const day = Math.floor(Date.now() / 864e5);
   const t = drills[day % drills.length];
-  setNav({ title: '영어 공부' });
+  setNav({ title: '영어 공부', act: '<a href="#/settings" aria-label="설정" class="gear"><svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M19.4 13a7.5 7.5 0 0 0 0-2l2.1-1.6-2-3.5-2.5 1a7.6 7.6 0 0 0-1.7-1L15 3.3h-4l-.4 2.6a7.6 7.6 0 0 0-1.7 1l-2.5-1-2 3.5L6.6 11a7.5 7.5 0 0 0 0 2l-2.1 1.6 2 3.5 2.5-1c.5.4 1.1.7 1.7 1l.4 2.6h4l.4-2.6c.6-.3 1.2-.6 1.7-1l2.5 1 2-3.5L19.4 13zM13 15.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7z" transform="translate(-1 0)"/></svg></a>' });
   render(`
     <h1 class="large">영어 공부</h1>
     <p class="lead">${new Date().toLocaleDateString('ko-KR', { month: 'long', day: 'numeric', weekday: 'long' })}</p>
@@ -47,6 +47,7 @@ function home() {
       <a class="tile t" href="#/toeic"><span class="badge">학습 중</span><div><h3>TOEIC 850+</h3><p>강의노트 · 단어 · 패러프레이징 · 오답노트</p></div><span class="big">850</span></a>
       <a class="tile s" href="#/speaking"><span class="badge">준비 중</span><div><h3>Speaking IH</h3><p>토익스피킹 답변 템플릿</p></div><span class="big">IH</span></a>
     </div>
+    ${backupNudge()}
     <div class="sec-h">오늘의 영작</div>
     <button class="today" id="today" style="width:100%;text-align:left">
       <p class="ko">${esc(t.ko)}</p><p class="en">${esc(t.en)}</p>
@@ -164,6 +165,63 @@ function fixes() {
     <div class="fixlist"><div class="fixes">${window.FIXES.map(f => `<div><s>${esc(f[0])}</s><b>${esc(f[1])}</b>${f[2] ? `<small>${esc(f[2])}</small>` : ''}</div>`).join('')}</div></div>`, 2);
 }
 
+
+/* ── 백업 / 복원 / 설정 ── */
+const BK_SKIP = ['toeic.pw', 'backup.last'];
+function userKeys() { const ks = []; try { for (let k = 0; k < localStorage.length; k++) { const key = localStorage.key(k); if (!BK_SKIP.includes(key)) ks.push(key); } } catch {} return ks; }
+function backupNudge() {
+  const ks = userKeys().filter(k => /^(t\.(test\.log|known|notes|wrong|g\.log|done)|hclass\.done)$/.test(k));
+  if (!ks.length) return '';
+  const last = store.get('backup.last', 0), days = Math.floor((Date.now() - last) / 864e5);
+  if (last && days < 7) return '';
+  return `<a class="nudge" href="#/settings"><span class="ic sf" style="background:#ff9500"><svg viewBox="0 0 24 24" width="18" height="18"><path fill="#fff" d="M12 3l-5 5h3v6h4V8h3l-5-5zM5 18v2h14v-2H5z"/></svg></span><span class="t"><b>학습 기록 백업하기</b><small>${last ? `${days}일 전에 마지막으로 백업했어요` : '기록은 이 휴대폰에만 있어요. 한 번 저장해 두세요'}</small></span>${chev}</a>`;
+}
+function exportData() {
+  const data = {}; userKeys().forEach(k => { data[k] = localStorage.getItem(k); });
+  return { app: 'english-study', v: 1, at: new Date().toISOString(), data };
+}
+async function doBackup(btn) {
+  const json = JSON.stringify(exportData());
+  const name = `영어공부-백업-${new Date().toISOString().slice(0, 10)}.json`;
+  const file = new File([json], name, { type: 'application/json' });
+  try {
+    if (navigator.canShare && navigator.canShare({ files: [file] })) { await navigator.share({ files: [file], title: '영어 공부 백업' }); }
+    else { const a = document.createElement('a'); a.href = URL.createObjectURL(file); a.download = name; document.body.appendChild(a); a.click(); a.remove(); }
+    store.set('backup.last', Date.now()); btn.textContent = '저장했어요 ✓'; settings();
+  } catch (e) { if (e && e.name === 'AbortError') return; btn.textContent = '저장하지 못했어요'; }
+}
+function settings() {
+  const last = store.get('backup.last', 0);
+  const n = userKeys().length;
+  setNav({ back: { href: '#/', label: '홈' }, title: '설정' });
+  render(`
+    <h1 class="large">설정</h1>
+    <div class="sec-h">학습 기록 백업</div>
+    <section class="card">
+      <p style="margin-top:0">진도, 테스트 기록, 외운 단어, 오답노트는 <b>이 휴대폰에만</b> 저장돼요. 파일로 저장해 두면 휴대폰을 바꾸거나 앱을 지워도 되살릴 수 있어요.</p>
+      <p class="mute">${last ? `마지막 백업: ${new Date(last).toLocaleString('ko-KR', { month: 'long', day: 'numeric', hour: 'numeric', minute: '2-digit' })}` : '아직 백업한 적이 없어요'} · 저장 항목 ${n}개</p>
+      <button class="btn-primary" id="bk" type="button">백업 파일 저장</button>
+      <label class="btn-plain filebtn">백업 파일로 복원<input type="file" id="rs" accept="application/json,.json" hidden></label>
+      <p class="mute" id="rsmsg" style="text-align:center;margin:0"></p>
+    </section>
+    <p class="foot">아이폰은 '파일에 저장'을 고르면 iCloud Drive에 보관돼요. 일주일에 한 번 저장을 추천해요.</p>
+    <div class="sec-h">단어 발음</div>
+    <div class="group-list">
+      <label class="row"><span class="t"><b>문제가 나오면 자동으로 발음</b><small>단어 테스트에서 영어 단어를 읽어 줘요</small></span><span class="sw"><input type="checkbox" id="as" ${store.get('t.autoSpeak', true) ? 'checked' : ''}><span></span></span></label>
+    </div>`, 1);
+  $('#bk').onclick = e => doBackup(e.currentTarget);
+  $('#as').onchange = e => store.set('t.autoSpeak', e.target.checked);
+  $('#rs').onchange = async e => {
+    const f = e.target.files[0]; if (!f) return;
+    try {
+      const j = JSON.parse(await f.text());
+      if (j.app !== 'english-study' || !j.data) throw 0;
+      Object.entries(j.data).forEach(([k, v]) => { if (!BK_SKIP.includes(k)) localStorage.setItem(k, v); });
+      $('#rsmsg').textContent = `${new Date(j.at).toLocaleDateString('ko-KR')} 백업으로 되돌렸어요 ✓`;
+    } catch { $('#rsmsg').textContent = '이 앱의 백업 파일이 아니에요'; }
+  };
+}
+
 /* ── Placeholders ── */
 function soon(name, sub) {
   setNav({ back: { href: '#/', label: '홈' }, title: name });
@@ -184,6 +242,7 @@ function route() {
     return chapter(p[1], p[2]);
   }
   if (p[0] === 'toeic') return window.TOEIC ? window.TOEIC.route(p.slice(1)) : soon('TOEIC 850+', '목표 점수 850점 이상');
+  if (p[0] === 'settings') return settings();
   if (p[0] === 'speaking') return soon('Speaking IH', '토익스피킹 Intermediate High');
   home();
 }

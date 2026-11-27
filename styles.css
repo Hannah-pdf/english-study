@@ -522,3 +522,31 @@ body.testing .nav{background:var(--bg)}
 .dsum .ds-top em{font-style:normal;font-size:16px}
 .dsum .ds-top span{font-size:14px;color:var(--text3)}
 .ds-w{background:var(--card2);border-radius:12px;margin-top:6px}
+
+/* ── 설정·백업 / 발음 / 문법 테스트 ── */
+.gear{color:var(--blue);display:inline-grid;place-items:center;padding:2px}
+.nudge{display:flex;align-items:center;gap:12px;background:var(--card);border-radius:var(--radius);padding:12px 14px;margin:14px 0 0;color:var(--text)}
+.nudge .t{flex:1} .nudge b{display:block;font-weight:600;font-size:16px} .nudge small{color:var(--text3);font-size:13px}
+.filebtn{cursor:pointer}
+label.row{cursor:pointer}
+.spk{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:color-mix(in srgb,var(--blue) 12%,transparent);vertical-align:middle;margin-left:6px}
+.spk svg{width:16px;height:16px;fill:var(--blue)}
+.spk:active{transform:scale(.92)}
+.spk.big{position:absolute;right:18px;bottom:18px;width:42px;height:42px}
+.spk.big svg{width:20px;height:20px}
+.prompt .spk{margin:14px auto 0;display:grid;width:44px;height:44px}
+.prompt .spk svg{width:22px;height:22px}
+.wrow b .spk{width:26px;height:26px} .wrow b .spk svg{width:14px;height:14px}
+.btn-primary.green{background:#34c759}
+.tline i.g{background:#34c759}
+.prompt.gp{padding:30px 6px 24px;text-align:left}
+.prompt .gs{font-size:19px;font-weight:500;line-height:1.55;margin:10px 0 0}
+.gblank{display:inline-block;width:86px;border-bottom:2.5px solid var(--text);margin:0 3px;vertical-align:-3px}
+.gfill{text-decoration:none;color:#28a745;font-weight:700;border-bottom:2.5px solid #34c759}
+.sh-w .gfill{color:#28a745}
+.sh-s a{color:var(--blue)}
+a.wrow{color:var(--text)}
+.ds-g{display:flex;align-items:center;gap:6px;margin-top:10px;font-size:15px}
+.dot-g{width:10px;height:10px;border-radius:50%;background:#34c759}
+.lg.r{display:inline-block;width:9px;height:9px;border-radius:50%;background:#fa114f;margin-right:3px}
+.lg.g{display:inline-block;width:9px;height:9px;border-radius:50%;background:#34c759;margin:0 3px 0 4px}
