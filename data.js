@@ -686,6 +686,45 @@ window.HCLASS = [
         <tr><th>encourage 격려하다</th><td>encouraging 격려하는</td><td>encouraged 격려받은</td><td>by</td></tr>
       </tbody></table></div>
     <p class="tip">${FIX} 노트엔 impressing으로 적혀 있지만 실제로는 형용사 <b>impressive</b>를 주로 써요.</p>
+  </section>
+  <section class="card">
+    <h3>감정분사 예문 (노트)</h3>
+    <p class="ex">This manual confuses me. <span class="mute">이 매뉴얼 좀 이상해 (confuse 3V)</span></p>
+    <p class="ex">I was embarrassed at his behavior.</p>
+    <p class="ex">I am satisfied with the present. <span class="mute">satisfying = satisfactory (일반형용사)</span></p>
+    <p class="ex">I felt frustrated by heavy traffic jam. <span class="mute">frustrating: 답답 + 당황스러움, 내가 어찌할 수 없는, 내 힘으로 제어할 수 없는 / because of → by (느끼는 느낌)</span></p>
+    <p class="ex">This class is boring. / I am bored with the class.</p>
+    <p class="ex">I am disappointed at / by you.</p>
+    <p class="ex">I am excited at / by the movie. <span class="mute">짜릿한, 압도되는 느낌</span> — about the movie <span class="mute">(기대하는 느낌)</span></p>
+    <p class="ex">I am interested in the book / in you.</p>
+    <p class="ex">I was shocked at the news.</p>
+    <p class="ex">This movie is impressive. / I am impressed with the movie / the present.</p>
+    <p class="ex">I am annoyed with you. <span class="mute">짜증나고 우울하고 행복한 감정 → with</span></p>
+    <div class="rows">
+      <div><b>tired with</b><span>육체적으로 피곤 — I am tired with a lot of work.</span></div>
+      <div><b>tired of</b><span>싫증난 (정신적으로)</span></div>
+      <div><b>exhausted &gt; tired</b><span>exhausted from — 더 지친</span></div>
+    </div>
+    <p class="ex">I am depressed with the situation. / I am discouraged. <span class="mute">↔ motivated</span></p>
+    <p class="ex">This situation is very stressful.</p>
+    <p class="ex">I am nervous. <span class="mute">감정분사가 아니고 일반형용사로 씀</span></p>
+  </section>
+  <section class="card">
+    <h3>상태가 되다: be · become · get · feel (2V)</h3>
+    <p class="ex">I get (become) depressed with bad weather recently.</p>
+    <p class="note">내일도 그럴 거 같으면 현재시제로 (습관적). She라면 gets / would get = ~일 것 같다</p>
+    <p class="note">갑작스러운 → 형용사 sudden / 갑작스럽게 → 부사 suddenly</p>
+    <div class="rows">
+      <div><b>would be</b><span>~될 것 같다 / ~일 것 같다 — It would be funny. (웃긴 거라면)</span></div>
+    </div>
+  </section>
+  <section class="card">
+    <h3>to부정사 vs 형용사 (노트)</h3>
+    <p class="ex">I want my parents <b>to be</b> disappointed. <span class="mute">to부정사는 동사를 받아야 된다. disappointed는 형용사라서 be동사를 데리고 와야 함</span></p>
+    <p class="ex">I want the road <b>to be enlarged</b>. <span class="mute">도로가 확장되는 → 수동의 느낌</span></p>
+    <p class="ex">I hope <b>that</b> the road is enlarged. <span class="mute">want는 that을 받지 않아요</span></p>
+    <p class="note">very는 형용사·부사만 수식 / a lot은 동사 수식 → 단어 두 개라서 뒤로 가야 함</p>
+    <div class="fixes"><div><s>He looked disappointed a lot</s><b>He looked very disappointed</b></div><div><s>because of the coffee made you</s><b>because coffee will make you awake (awake = 형용사)</b></div></div>
   </section>`,
   drills: [
     ['당신은 아이가 스스로 밥을 먹을 수 있도록 시켜야 합니다.', 'You have to make the baby eat by himself.', 'eating (X) → eat (사역동사 + 동사원형)'],
@@ -696,6 +735,122 @@ window.HCLASS = [
     ['이 표지판은 사람들이 주차장을 쉽게 찾도록 만들어 줄 것입니다.', 'The sign will make the people find the parking lot easily.', 'easily = 동사 수식 부사 / parking space < parking lot'],
     ['아이가 이 곤충을 잘 관찰하게 해주세요.', 'Let the child observe this insect well.', 'have (X) → let or make'],
     ['아이가 혼자 밖에 나가지 않도록 해주세요.', "Don't make the child go out alone.", 'alone = by himself / by herself'],
+    ['요즘 안 좋은 날씨 때문에 우울해지는 것 같아요.', 'I get depressed with bad weather recently.', '계속 그런 상태 → 현재시제 / was (X)'],
+    ['갑작스런 교통체증에 조금 답답하고 당황스럽네요. 친구 결혼식에 제시간에 도착할 수 있을지 모르겠어요.', "I am a little frustrated and embarrassed by the sudden traffic jam. I don't know if I can arrive at my friend's wedding on time.", 'sudden = 형용사 / ~할지 → if'],
+    ['아이들이 제 생일날 선물을 주었을 때 매우 감동했어요.', 'When the children gave me the present on my birthday, I was very impressed.'],
+    ['호텔 가격은 비쌌지만 레스토랑 음식이나 시설에는 아주 만족했어요.', "Even though the room rate was expensive, the restaurant's food and facilities were satisfactory.", 'satisfying = satisfactory'],
+    ['저는 7번 문제가 조금 이해가 안가요 / 헷갈려요.', 'I am confused about question No. 7.'],
+    ['이번달에는 너무 잦은 출장 스케줄 때문에 조금 스트레스를 받지만 다음 달부터는 괜찮아질 것 같아요.', 'I am stressed by too frequent business trips, but it will be okay from next month.'],
+    ['이 영화는 너무 무서운 것 같아요. 특히 아이들이 너무 무서워 할 것 같아요.', 'This movie is too scary. Especially, children would be so scared.', 'scaring (X)'],
+    ['그 뉴스는 모든 사람들에게 정말 충격적이었어요.', 'The news was shocking to everyone.', '2형식 · 원인은 -ing'],
+    ['그 사람이 내 발을 밟았을 때 너무 당황했어요.', 'When the person stepped on my foot, I was so embarrassed.'],
+    ['저는 그 사건에 깜짝 놀랐어요.', 'I was surprised at the incident.', 'by도 가능'],
+    ['많은 사람들이 우리 앞에 있었어도 우리 아이는 당황하지 않더라고요.', 'Even though many people were in front of us, my children were not embarrassed.', 'in front of = 전치사 → us / children 복수 → were'],
+    ['수업이 너무 지루해서 집중이 잘 안 되더라고요.', "I couldn't concentrate on the class because it was so boring.", '잘 하려고 하는데 안 돼서 → can / I was bored with the class'],
+    ['차 막히는 건 너무 지치게 해요. 도로가 넓으면 좋겠어요.', 'Traffic jam is so tiring. I want the road to be enlarged.', 'I hope that the road is enlarged도 OK'],
+    ['저는 그 영화에 감명받았어요. 저는 많은 사람들이 그 영화를 봤으면 좋겠어요.', 'I was impressed by the movie. I want many people to watch the movie.', 'The movie made me impressed도 OK'],
+    ['아이들이 그 책을 본다면 재밌어 할 것 같아요.', 'If children read the book, it would be interesting to them.', 'they would be interested in it도 OK / looked the book (X)'],
+    ['지금 당신이 너무 졸린다면 커피 한잔 마시길 추천합니다. 커피는 당신을 깨워줄 것이기 때문에 공부에 다시 집중할 수 있을 거예요.', 'If you are very sleepy, I recommend you to drink a cup of coffee because coffee will make you awake. You can concentrate on studying again.', 'because of (X) → because / make + 형용사(awake) / 전치사 뒤엔 동명사'],
+    ['나는 네가 여기서 오랫동안 울지 않았으면 좋겠어. 그것은 다른 사람들을 좀 불편하게 만들거든.', "I don't want you to cry here for a long time. It makes other people a little bit uncomfortable.", 'want 5형식 / make KFC'],
+    ['인생에서 어려운 일을 겪을 때 그것은 당신을 우울하게 만들고 지치게 만들지만 너를 강하게도 만든다.', 'When you have difficult things, it makes you depressed and tired, but it makes you strong.'],
+    ['전체적으로 그 영화는 감동적이었지만 몇몇 장면은 좀 지루했다.', 'Generally, the movie was impressive, but some scenes were a little bit boring.'],
+    ['그는 그의 영어 점수에 많이 실망한 것처럼 보였다.', 'He looked very disappointed at his English score.', 'disappointed a lot (X) → very'],
+    ['너무 많은 양의 일은 날 짜증나게 하고 지치게 한다.', 'Too many tasks make me annoyed and tired.'],
+    ['주로 비오는 날은 좀 우울해지는 것 같다.', 'Rainy days would make me a little bit depressed mostly.'],
+    ['나는 부모님을 실망시키고 싶지 않았기 때문에 열심히 공부했어요.', "Because I didn't want my parents to be disappointed, I studied hard.", 'to + be + 형용사'],
+  ]
+},
+
+/* ───────────── (노트) 수동태 ───────────── */
+{
+  id: 'passive', no: 0, color: 'teal', glyph: 'be p.p',
+  title: '수동태', sub: '3·4·5형식 수동태 · 다단계 동사 수동', pages: '노트 3~4월',
+  html: `
+  <section class="card">
+    <h3>능동 → 수동</h3>
+    <p class="ex">I made a cake. <span class="mute">능동 · S 3V O</span></p>
+    <p class="ex">A cake was made <u>by me</u>. <span class="mute">수동 · be + p.p — 수·시제 일치</span></p>
+    <p class="note">by me = 전치사 + 전치사의 목적어 자리 → 생략해버리는 일도 많다 (누가 했는지 중요하지 않을 때)</p>
+    <p class="ex">He is loved by us. / He is loved in Korea by many people. <span class="mute">사랑을 받다</span></p>
+    <p class="ex">I love you. → You are loved (by me). <span class="mute">by me 생략 가능</span></p>
+  </section>
+  <section class="card">
+    <h3>목적어가 있는 형식만 수동태가 된다</h3>
+    <div class="rows">
+      <div><b>1형식 S + V</b><span>X</span></div>
+      <div><b>2형식 S + V + 주격보어</b><span>X — 새로운 사람(대상)이 없다</span></div>
+      <div><b>3형식 S + V + O</b><span>O → S + be p.p 로 완성 (뒤에 목적어 없음)</span></div>
+      <div><b>4형식 S + V + O1 + O2</b><span>O — 2개 만들 수 있음</span></div>
+      <div><b>5형식 S + V + O + O.C</b><span>O</span></div>
+    </div>
+    <p class="note">3V가 나오면 전치사구·부사 같은 것만 뒤에 나올 수 있다 — 3V는 S + be p.p가 완성된 문장</p>
+    <p class="ex">A button was pushed. <span class="mute">이것만으로 문장 OK!</span></p>
+  </section>
+  <section class="card">
+    <h3>4형식 동사의 수동태 (give · send · show · tell)</h3>
+    <p class="ex">I will give you the coupon.</p>
+    <p class="ex">① You will be given the coupon. <span class="mute">사람이 주어 → 명사(사물목적어)가 그대로 따라옴. 4형식은 전치사 안 붙고 명사가 따라나옴</span></p>
+    <p class="ex">② The coupon will be given <b>to</b> you. <span class="mute">사물목적어가 S로 오면, 사람목적어 앞에 전치사</span></p>
+    <p class="ex">I will provide you with the coupon. → You will be provided <b>with</b> the coupon.</p>
+    <div class="rows">
+      <div><b>S provide A with B</b><span>Customers will be provided with discount coupons.</span></div>
+      <div><b>S provide B to A</b><span>Discount coupons will be provided to customers.</span></div>
+      <div><b>S offer 사람 사물 (4)</b><span>Customers will be offered the coupon. / The coupon will be offered to customers.</span></div>
+    </div>
+  </section>
+  <section class="card">
+    <h3>5형식 동사의 수동태</h3>
+    <p class="ex">I made my room clean. → My room was made clean. <span class="mute">목적격보어는 그대로 따라감</span></p>
+    <p class="ex">I made my son a doctor. → My son was made a doctor. <span class="mute">5V일 때 목적어 = O.C</span></p>
+    <p class="ex">I made you spaghetti. → You were made spaghetti. <span class="mute">4V일 때 사람목 ≠ 사물목</span></p>
+    <h4>다단계 동사(to부정사)의 수동태</h4>
+    <div class="rows">
+      <div><b>be recommended to</b><span>~하라고 추천을 받았다 — I was recommended to try this brand.</span></div>
+      <div><b>be suggested to</b><span>~하라고 제안받았다</span></div>
+      <div><b>be told to</b><span>~하라고 들었다</span></div>
+      <div><b>be asked to</b><span>~하라고 요청을 받았다 — I was asked to send an email.</span></div>
+      <div><b>be encouraged to</b><span>~하라고 격려받았다</span></div>
+      <div><b>be permitted / allowed to</b><span>~하는 것을 허락받았다</span></div>
+      <div><b>be persuaded to</b><span>설득을 받았다 (마음이 움직여서 행위로 간 것처럼)</span></div>
+    </div>
+    <p class="mute">You are wanted to be healthy — want는 수동태로 잘 안 씀 (바라지는…)</p>
+  </section>
+  <section class="card">
+    <h3>leave: 형식마다 뜻이 다르다</h3>
+    <div class="rows">
+      <div><b>1V</b><span>떠나다</span></div>
+      <div><b>2V</b><span>~한 상태로 남다</span></div>
+      <div><b>3V</b><span>~을 두다, ~을 떠나다</span></div>
+      <div><b>5V</b><span>O를 O.C 상태로 두다 — Do not leave children unattended. (관심을 주지 않는, -ed 과거분사)</span></div>
+    </div>
+  </section>
+  <section class="card">
+    <h3>노트 포인트</h3>
+    <div class="rows">
+      <div><b>issue vs publish</b><span>(영수증을) 발행하다 3V / 출판하다 — The receipt can't be issued.</span></div>
+      <div><b>tear - tore - torn</b><span>찢다</span></div>
+      <div><b>money · cash</b><span>셀 수 X / price는 셀 수 있음</span></div>
+      <div><b>수량형용사</b><span>two 앞에 a X (A two cups X) / my는 가능</span></div>
+      <div><b>close</b><span>They close every second Sunday. (1V) / Close the window. (3V) / The store is closed now.</span></div>
+    </div>
+  </section>`,
+  drills: [
+    ['영수증 프린터가 고장났기 때문에 영수증이 더 이상 발행될 수 없네요. 죄송합니다.', "Because the receipt printer was broken, the receipt can't be issued anymore. Sorry.", 'recipe(X) → receipt / publish(출판) → issue(발행)'],
+    ['오늘 손님이 5만원 이상의 물건을 사시면 손님에게 할인쿠폰이 제공되어진답니다.', 'Today, if you buy an item more than 50,000 won, you will be offered a discount coupon.', 'if절은 현재 (will buy X) · offer 4형식 수동'],
+    ['비가 많이 와서 비행기가 연착될 것 같아요.', 'Because it is raining a lot, the airplane would be delayed.', 'delay 3형식 → be delayed / 지금 오는 중이면 현재진행'],
+    ['이 옷은 잘 안 빨아졌네요.', 'These clothes were not washed well.', 'clothes 복수 → These / were'],
+    ['돈이 많이 찢어지면 사용할 수가 없어요.', "If money is torn a lot, it can't be used anymore.", 'tear-tore-torn · use 3V → be used'],
+    ['테이블 위에 커피 2잔과 주스 1잔이 준비되어 있어요.', 'Two cups of coffee and a cup of juice are prepared on the table.', 'A two cups (X) · prepare 3형식'],
+    ['테이블이 청소될 때까지 기다려주실래요?', 'Can you wait until the table is cleaned?'],
+    ['이 버튼을 누르시면 자동으로 이 그림이 프린트됩니다.', 'If you push the button, this picture is printed automatically.'],
+    ['호텔식당에서 조식을 원하면 프런트데스크에 말해야 한다고 들었어요.', 'I was told that if I want to have breakfast in the hotel restaurant, I have to tell the front desk.', 'tell 5V 수동 · eat보다 have'],
+    ['저녁 9시 이후로 이 문은 잠겨져 있어야 합니다.', 'This door has to be locked after 9:00 pm.', 'has to + be p.p (조동사 뒤 동사원형)'],
+    ['여행하는 동안 고객들은 자신의 소지품을 항상 확인하도록 추천되어집니다.', 'Customers are recommended to always check their belongings during travel.', 'recommend 5V 수동 → be recommended to'],
+    ['고객들은 6월부터 9월까지 1인당 무료음료 하나가 제공되어집니다.', 'Customers are offered one free drink per person from June to September.', 'offer 4형식 수동 / were offered them (X) / by Jun to (X) → from June to'],
+    ['신문기사에 따르면 오늘은 비가 많이 올 것이기 때문에 당신은 대중교통을 이용하는 것이 추천되어집니다.', 'According to the newspaper, it will rain a lot today, so you are recommended to use public transport.', 'according to ~에 따르면 (전치사구) / today will rains (X)'],
+    ['만약 당신이 수업에 빠지지 않는다면 선생님은 당신을 성실한 학생으로 여길 거예요.', "If you don't miss the class, you will be considered a diligent student by the teacher.", 'consider 5V → be considered + 명사 / are not miss (X)'],
+    ['모든 사람들이 이 규칙을 지키도록 요청되어집니다.', 'Everyone is asked to follow this rule.', 'everyone은 단수 → is / were (X)'],
+    ['어린이들은 이 음료를 마시도록 허락되지 않습니다.', 'Children are not allowed to drink this drink.', 'to have로도 가능'],
   ]
 },
 
@@ -820,6 +975,40 @@ window.HCLASS = [
       <div><b>gonna</b><span>= going to</span></div>
       <div><b>You would be tired.</b><span>너는 피곤할 것 같아 (추측)</span></div>
     </div>
+  </section>
+  <section class="card">
+    <h3>인칭대명사</h3>
+    <div class="tbl-wrap"><table class="tbl">
+      <thead><tr><th>주격</th><th>소유격</th><th>목적격</th></tr></thead>
+      <tbody>
+        <tr><td>I</td><td>my</td><td>me</td></tr>
+        <tr><td>you</td><td>your</td><td>you</td></tr>
+        <tr><td>he / she</td><td>his / her</td><td>him / her</td></tr>
+        <tr><td>we</td><td>our</td><td>us</td></tr>
+        <tr><td>they</td><td>their</td><td>them</td></tr>
+        <tr><td>it</td><td>its</td><td>it</td></tr>
+      </tbody></table></div>
+    <p class="note">전치사 뒤엔 목적격 (전치사의 목적어 자리) — He was surprised by <b>me</b>. / in front of <b>us</b></p>
+    <p class="tip">${FIX} 노트의 it's는 소유격 <b>its</b>가 맞아요 (it's = it is).</p>
+  </section>
+  <section class="card">
+    <h3>비인칭주어 It: 날씨 · 시간 · 거리</h3>
+    <p class="ex">It took 5 hours.</p>
+    <p class="note">It took + 시간 + to부정사(O) / 동명사도 가능 — 동사를 요리해서 명사로 만들어야 함 (준동사)</p>
+    <p class="ex">It took 1 hour to do homework. <span class="mute">노트: It took doing homework 1 hour</span></p>
+  </section>
+  <section class="card">
+    <h3>There is / are — be동사를 쓰는 유일한 1형식 문장</h3>
+    <p class="ex">There is <u>a set</u> of eggs. <span class="mute">There = 비인칭주어(해석 X) · a set = S · of eggs = 전치사구</span></p>
+    <p class="ex">There are some eggs / 20 eggs.</p>
+    <p class="ex">a set of 20 eggs <span class="mute">20개로 구성된 하나의 세트</span></p>
+    <p class="ex">I bought these eggs through Coupang. <span class="mute">through/in 가능 — 웹사이트에 들어가서</span></p>
+    <p class="mute">around / about = 대략 (부사)</p>
+  </section>
+  <section class="card">
+    <h3>have been to (경험)</h3>
+    <p class="ex">I have been to ~ <span class="mute">have p.p — gone이 되어야 하는데 been을 쓴다. 가본 적 있어? go가 to를 썼다</span></p>
+    <p class="ex">I want <u>to celebrate</u> our graduation. <span class="mute">want + to부정사(목적어 자리, 명사 역할). celebrate는 3V라 목적어가 필요</span></p>
   </section>
   <section class="card">
     <h3>another · other · the other</h3>
@@ -951,6 +1140,48 @@ window.HCLASS = [
     <button class="pic" type="button"><span class="pe">but unfortunately my seat was in the middle of the aisle.</span><span class="pk">그러나 불행하게도(안타깝게도) 나의 좌석은 통로 중앙이었다</span></button>
   </section>
   <section class="card">
+    <h3>직독직해: 좌석을 바꿔달라는 남자</h3>
+    <button class="pic" type="button"><span class="pe">However, suddenly a man came to me and asked me to change the seat very carefully.</span><span class="pk">그런데 갑자기 한 남자가 나에게 왔다 그리고 요청했다 나에게 좌석을 바꿔달라고 매우 조심스럽게 (ask 5V)</span></button>
+    <button class="pic" type="button"><span class="pe">He explained that his seat was a window seat over there,</span><span class="pk">그는 설명했다 그의 좌석이 저기에 있는 창문 좌석이라고</span></button>
+    <button class="pic" type="button"><span class="pe">but the other family members were sitting on the aisle seats next to me unfortunately.</span><span class="pk">그러나 나머지 가족 구성원들은 앉아있었다 내 옆에 있는 통로 좌석에 안타깝게도</span></button>
+    <button class="pic" type="button"><span class="pe">He said that he made this mistake when he booked the tickets.</span><span class="pk">그는 말했다 그가 실수했다고 그가 티켓을 예약했을 때 (book 3V)</span></button>
+  </section>
+  <section class="card">
+    <h3>직독직해: 자리를 양보하다 (스피킹하듯이!)</h3>
+    <button class="pic" type="button"><span class="pe">Since he wanted me to change the seat seriously and the seat was a window seat,</span><span class="pk">그가 나에게 좌석을 바꿔주기를 간절히 원했고 그 좌석은 창가자리였기 때문에</span></button>
+    <button class="pic" type="button"><span class="pe">I was willing to respond to him favorably.</span><span class="pk">나는 기꺼이 그에게 호의적으로 응답했다 (respond 1V)</span></button>
+    <button class="pic" type="button"><span class="pe">At first, I wanted a window seat, but I couldn&#x27;t get it,</span><span class="pk">처음에 나는 창가자리를 원했지만 그것을 얻을 수 없었다</span></button>
+    <button class="pic" type="button"><span class="pe">but finally I got it by chance!!</span><span class="pk">그러나 마침내 우연히 얻었다!! (by chance = 우연히)</span></button>
+    <button class="pic" type="button"><span class="pe">I think that I am a very lucky boy.</span><span class="pk">나는 내가 매우 행운아라고 여긴다</span></button>
+    <button class="pic" type="button"><span class="pe">Actually, the event made me have a lot of self-confidence for my journey to Sydney</span><span class="pk">사실 그 사건은 나에게 시드니로 향하는 나의 여행에 많은 자신감을 갖게 만들었다 (사역동사 + 동사원형)</span></button>
+    <button class="pic" type="button"><span class="pe">because I felt that God is looking after my wish and all situations.</span><span class="pk">왜냐하면 신이 나의 바람과 모든 상황을 돌본다고 느꼈기 때문에</span></button>
+    <p class="mute">be willing to = 기꺼이 ~하다 · I am willing to help you. · I met my friend on the street by chance.</p>
+  </section>
+  <section class="card">
+    <h3>직독직해: 업무 메일 표현</h3>
+    <button class="pic" type="button"><span class="pe">It seems like they suggested the price headfirst and randomly</span><span class="pk">그들은 가격을 무턱대고 아무렇게나 제안한 것 같아요 (headfirst = 무턱대고, 아무 생각없이 = thoughtlessly)</span></button>
+    <button class="pic" type="button"><span class="pe">because they want to attract the customers.</span><span class="pk">왜냐하면 그들은 고객을 끌어들이고 싶어하니까</span></button>
+    <button class="pic" type="button"><span class="pe">Actually, my English is not perfect and I am trying to improve it,</span><span class="pk">사실 제 영어는 완벽하지 않고 그것을 향상시키려고 노력 중이에요 (English 반복 대신 it)</span></button>
+    <button class="pic" type="button"><span class="pe">so I can make you misunderstand my point and my explanation.</span><span class="pk">그래서 제가 제 요점과 설명을 오해하게 만들 수도 있어요</span></button>
+    <button class="pic" type="button"><span class="pe">If you feel my contents are ambiguous, let me know.</span><span class="pk">제 내용이 애매하게 느껴지시면 알려주세요</span></button>
+    <button class="pic" type="button"><span class="pe">Thank you for your consideration.</span><span class="pk">배려해 주셔서 감사합니다</span></button>
+  </section>
+  <section class="card">
+    <h3>직독직해: 주말 일상 영작</h3>
+    <button class="pic" type="button"><span class="pe">I had beef sashimi for dinner with my friends.</span><span class="pk">친구들과 저녁으로 소고기 육회를 먹었다</span></button>
+    <button class="pic" type="button"><span class="pe">I met them in 안양 1번가. I saw many people hang around.</span><span class="pk">안양 1번가에서 그들을 만났다. 많은 사람들이 돌아다니는 걸 봤다 (지각동사 + 동사원형)</span></button>
+    <button class="pic" type="button"><span class="pe">Four people including me gathered.</span><span class="pk">나를 포함해서 4명이 모였다 (gather 1V)</span></button>
+    <button class="pic" type="button"><span class="pe">We visited my elder brother&#x27;s house in 인천 after we had breakfast.</span><span class="pk">아침을 먹은 후 인천에 있는 오빠 집을 방문했다</span></button>
+    <button class="pic" type="button"><span class="pe">My eldest brother lives in Seoul.</span><span class="pk">큰오빠는 서울에 산다 (elder 손위의 / eldest 가장 손위의)</span></button>
+    <button class="pic" type="button"><span class="pe">All family members except my father gathered on my birthday.</span><span class="pk">아빠를 제외한 모든 가족이 내 생일에 모였다 (except = 전치사)</span></button>
+    <button class="pic" type="button"><span class="pe">He sent me a message and asked me to work on Friday. It made me embarrassed.</span><span class="pk">그는 나에게 메시지를 보내 금요일에 일하라고 요청했다. 그것은 날 당황하게 만들었다 (the message → a)</span></button>
+    <button class="pic" type="button"><span class="pe">I left my house at 11 a.m. and I worked for 6 hours. I arrived at home at 12 o&#x27;clock.</span><span class="pk">11시에 집을 나와 6시간 동안 일했다. 12시에 집에 도착했다</span></button>
+    <button class="pic" type="button"><span class="pe">I am on a diet. / I am on the way to the office.</span><span class="pk">다이어트 중이에요 (2V, 주격보어 자리에 전치사구) / 사무실 가는 길이에요 (the way = 도로, 걷는 길, 비행길)</span></button>
+    <button class="pic" type="button"><span class="pe">Let&#x27;s keep the diary in English and write about my recent updates.</span><span class="pk">영어로 일기를 쓰고 최근 소식에 대해 써보자</span></button>
+    <button class="pic" type="button"><span class="pe">I&#x27;m preparing for the renewal of my company homepage.</span><span class="pk">회사 홈페이지 리뉴얼을 준비하고 있어요</span></button>
+    <p class="mute">You can transfer to line number 2. (환승하다) · exit number 1 (1번 출구)</p>
+  </section>
+  <section class="card">
     <h3>노트 단어장</h3>
     <div class="rows">
       <div><b>rinse</b><span>헹구다</span></div>
@@ -979,6 +1210,23 @@ window.HCLASS = [
       <div><b>introvert / extrovert</b><span>내성적인 / 외향적인</span></div>
       <div><b>pick</b><span>고르다</span></div>
       <div><b>look into</b><span>조사하다</span></div>
+      <div><b>acquaintance</b><span>지인</span></div>
+      <div><b>pain / relieve</b><span>통증 / 풀다, 완화하다</span></div>
+      <div><b>register for</b><span>등록하다</span></div>
+      <div><b>hang around</b><span>돌아다니다, 어슬렁거리다</span></div>
+      <div><b>including</b><span>~을 포함해서</span></div>
+      <div><b>transfer / exit</b><span>환승하다 / 출구</span></div>
+      <div><b>fridge / refrigerator / freezer</b><span>냉장실 / 냉장고 전체 / 냉동실 (얼리는 것)</span></div>
+      <div><b>seaweed</b><span>김, 미역 (바다의 잡초)</span></div>
+      <div><b>fried eggs</b><span>계란 프라이</span></div>
+      <div><b>pear</b><span>배</span></div>
+      <div><b>elder / eldest</b><span>손위의 / 가장 손위의</span></div>
+      <div><b>headfirst</b><span>무턱대고, 아무 생각 없이 (= thoughtlessly)</span></div>
+      <div><b>rage</b><span>분노, 격분</span></div>
+      <div><b>once a month</b><span>한 달에 한 번</span></div>
+      <div><b>by chance</b><span>우연히</span></div>
+      <div><b>be willing to</b><span>기꺼이 ~하다</span></div>
+      <div><b>celebrate</b><span>기념하다, 축하하다 (3V) — I want to celebrate our graduation.</span></div>
     </div>
   </section>
   <section class="card">
@@ -2073,4 +2321,9 @@ window.FIXES = [
   ['make the baby eating', 'make the baby eat', '사역동사 + 동사원형'],
   ['a confused manual', 'a confusing manual', '원인은 -ing / 느끼는 사람은 -ed'],
   ['If you will arrive', 'If you arrive', '부사절은 현재시제'],
+  ['This movie is impressing', 'This movie is impressive', ''],
+  ['looked disappointed a lot', 'looked very disappointed', 'very는 형용사 수식'],
+  ['I want the road to enlarge', 'I want the road to be enlarged', '수동의 느낌'],
+  ['A two cups of coffee', 'Two cups of coffee', '수량형용사 앞에 a X'],
+  ['Everyone were asked', 'Everyone is asked', 'everyone은 단수'],
 ];
