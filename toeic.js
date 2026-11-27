@@ -77,7 +77,9 @@ function home() {
       <div><h2>강의 ${done.size} / ${D.lessons.length}</h2><p>외운 단어 ${kn} / ${words.length}개</p></div>
     </div>
     <div class="group-list">
-      ${row('#/toeic/today', '20', 'orange', '오늘의 단어 20', '매일 바뀌는 RC·LC 단어 카드')}
+      ${(() => { const r = tLog()[dkey()]; return `<a class="row" href="#/toeic/test"><span class="ic c-orange">✓</span><span class="t"><b>매일 단어 테스트</b><small>${r && r.pass ? `오늘 완료 ✓ ${r.best}/${r.total}` : '오늘 아직 안 봤어요'} · 🔥 ${streak()}일 연속</small></span>${r && r.pass ? check : ''}${chev}</a>`; })()}
+      ${row('#/toeic/cal', '📅', 'green', '학습 캘린더', '매일 테스트 완료 기록')}
+      ${row('#/toeic/today', '20', 'yellow', '오늘의 단어 20', '매일 바뀌는 RC·LC 단어 카드')}
       ${row('#/toeic/note', '✎', 'red', '내 오답노트', `퀴즈 형태로 적고 가려서 외우기 · ${notes}개`)}
     </div>
     <div class="sec-h">RC</div>
@@ -337,6 +339,202 @@ function note(filter) {
   bindSeg(k => note(k));
 }
 
+
+/* ── 매일 단어 테스트 ── */
+const T_NEW = 20, T_REV = 10, PASS = 0.8;
+const dkey = (d = new Date()) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+let POOL = null;
+function pool() {
+  if (POOL) return POOL;
+  const seen = new Set(), out = [];
+  const add = (f, b, src) => { f = (f || '').trim(); b = (b || '').trim(); if (!f || !b || seen.has(f)) return; seen.add(f); out.push({ f, b, src }); };
+  const lc = D.lcVoca.filter(d => d.day < 10);
+  for (let k = 0; k < Math.max(D.rcVoca.length, lc.length); k++) {
+    if (D.rcVoca[k]) D.rcVoca[k].items.forEach(i => add(i[0], i[1], `RC DAY ${D.rcVoca[k].day}`));
+    if (lc[k]) lc[k].items.forEach(i => add(i[0], i[1], `LC DAY ${lc[k].day}`));
+  }
+  D.partVoca.forEach(g => g.items.forEach(([n, w, m]) => add(w, m.replace(/^(n|v|adj|adv|phr)\.\s*/, ''), `${g.part} ${n}`)));
+  return POOL = out;
+}
+const tLog = () => store.get('t.test.log', {});
+function streak() {
+  const log = tLog(); let n = 0; const d = new Date();
+  if (!(log[dkey(d)] && log[dkey(d)].pass)) d.setDate(d.getDate() - 1);
+  while (log[dkey(d)] && log[dkey(d)].pass) { n++; d.setDate(d.getDate() - 1); }
+  return n;
+}
+function todaySet() {
+  const today = dkey();
+  let cur = store.get('t.test.today', null);
+  if (cur && cur.date === today) return cur;
+  const P = pool();
+  const pos = store.get('t.test.pos', 0) % P.length;
+  const wrong = store.get('t.wrong', {});
+  const rev = Object.entries(wrong).sort((a, b) => a[1].t - b[1].t).slice(0, T_REV).map(([f]) => f);
+  const fresh = [];
+  for (let k = 0; fresh.length < T_NEW && k < P.length; k++) { const w = P[(pos + k) % P.length]; if (!rev.includes(w.f)) fresh.push(w.f); }
+  cur = { date: today, set: Math.floor(pos / T_NEW) + 1, fresh, rev, advanced: false };
+  store.set('t.test.today', cur);
+  return cur;
+}
+function testHome() {
+  const P = pool(), cur = todaySet(), log = tLog(), r = log[cur.date];
+  const pos = store.get('t.test.pos', 0), wrongN = Object.keys(store.get('t.wrong', {})).length;
+  const C = 2 * Math.PI * 29, pct = Math.min(pos / P.length, 1);
+  setNav({ back, title: '매일 단어 테스트' });
+  render(`
+    <h1 class="large">매일 단어 테스트</h1>
+    <p class="lead">새 단어 ${T_NEW}개 + 틀렸던 단어 복습 · ${Math.round(PASS * 100)}점 이상이면 완료</p>
+    <div class="hero">
+      <svg class="ring" viewBox="0 0 66 66"><circle class="bg" cx="33" cy="33" r="29"/><circle class="fg t" cx="33" cy="33" r="29" stroke-dasharray="${C}" stroke-dashoffset="${C * (1 - pct)}" transform="rotate(-90 33 33)"/></svg>
+      <div><h2>🔥 ${streak()}일 연속</h2><p>전체 ${P.length}단어 중 ${Math.min(pos, P.length)}개 진행 · ${Math.ceil(P.length / T_NEW)}세트 중 ${cur.set}세트</p></div>
+    </div>
+    <section class="card tcard">
+      <div class="tc-top"><span class="tc-date">${new Date().toLocaleDateString('ko-KR', { month: 'long', day: 'numeric', weekday: 'short' })}</span>
+        ${r ? `<span class="pill2 ${r.pass ? 'ok' : 'warn'}">${r.pass ? '✓ 완료' : '재도전 필요'}</span>` : '<span class="pill2">아직 안 봄</span>'}</div>
+      <h3>오늘의 테스트 · ${cur.fresh.length + cur.rev.length}문제</h3>
+      <p class="mute">새 단어 ${cur.fresh.length}개${cur.rev.length ? ` · 복습 ${cur.rev.length}개` : ''} · 뜻 고르기 + 단어 고르기</p>
+      ${r ? `<p class="tc-score">최고 <b>${r.best}</b> / ${r.total} · ${r.tries}번 응시</p>` : ''}
+      <a class="lock-go block" href="#/toeic/test/run">${r ? '다시 보기' : '테스트 시작'}</a>
+      <a class="pbtn block" href="#/toeic/test/study">먼저 카드로 외우기</a>
+    </section>
+    <div class="group-list">
+      ${row('#/toeic/cal', '📅', 'green', '학습 캘린더', `완료한 날 ${Object.values(log).filter(x => x.pass).length}일`)}
+      ${row('#/toeic/test/wrong', '✕', 'red', '틀린 단어 모음', `${wrongN}개 · 두 번 연속 맞히면 빠져요`)}
+    </div>`, 2);
+}
+function testStudy() {
+  const cur = todaySet(), P = pool();
+  const words = [...cur.fresh, ...cur.rev].map(f => P.find(w => w.f === f)).filter(Boolean);
+  setNav({ back: { href: '#/toeic/test', label: '테스트' }, title: '오늘의 단어' });
+  const view = cardDeck(words);
+  render(`<h1 class="large">오늘의 단어</h1><p class="lead">테스트에 나올 ${words.length}개예요. 다 보면 테스트로!</p>${view.html}
+    <a class="lock-go block" href="#/toeic/test/run" style="margin-top:14px">테스트 시작</a>`, 3);
+  view.mount();
+}
+function shuffle(a) { for (let k = a.length - 1; k > 0; k--) { const j = Math.floor(Math.random() * (k + 1)); [a[k], a[j]] = [a[j], a[k]]; } return a; }
+function makeQs(fs) {
+  const P = pool();
+  return shuffle(fs.map(f => P.find(w => w.f === f)).filter(Boolean)).map((w, k) => {
+    const rev = k % 3 === 2;                     // 3문제마다 1번은 뜻 → 단어
+    const others = shuffle(P.filter(x => x.f !== w.f && x.b !== w.b)).slice(0, 3);
+    const opts = shuffle([w, ...others]);
+    return { w, rev, opts, ans: opts.indexOf(w) };
+  });
+}
+function testRun(only) {
+  const cur = todaySet();
+  const fs = only && only.length ? only : [...cur.fresh, ...cur.rev];
+  const Q = makeQs(fs);
+  let i = 0, score = 0; const wrong = [], right = [];
+  setNav({ back: { href: '#/toeic/test', label: '그만' }, title: only ? '틀린 것 다시' : '오늘의 테스트' });
+  render(`<div class="tbar"><span id="tprog"></span><div class="tline"><i id="tfill"></i></div></div><div id="tq"></div>`, 3);
+  const draw = () => {
+    if (i >= Q.length) return finish();
+    const q = Q[i];
+    $('#tprog').textContent = `${i + 1} / ${Q.length}`;
+    $('#tfill').style.width = `${(i / Q.length) * 100}%`;
+    $('#tq').innerHTML = `
+      <section class="qcard"><small>${q.rev ? '알맞은 단어는?' : '뜻은?'}</small><p class="${q.rev ? 'qk' : 'qe'}">${esc(q.rev ? q.w.b : q.w.f)}</p></section>
+      <div class="opts">${q.opts.map((o, k) => `<button class="opt" data-k="${k}" type="button"><i>${'ABCD'[k]}</i><span>${esc(q.rev ? o.f : o.b)}</span></button>`).join('')}</div>
+      <div id="tnext"></div>`;
+    document.querySelectorAll('.opt').forEach(b => b.onclick = () => {
+      if ($('#tq').dataset.done === '1') return;
+      $('#tq').dataset.done = '1';
+      const k = +b.dataset.k, ok = k === q.ans;
+      document.querySelectorAll('.opt')[q.ans].classList.add('right');
+      if (!ok) { b.classList.add('bad'); wrong.push(q.w.f); } else { score++; right.push(q.w.f); }
+      if (navigator.vibrate) navigator.vibrate(ok ? 10 : [30, 40, 30]);
+      if (ok) setTimeout(() => { i++; $('#tq').dataset.done = ''; draw(); }, 650);
+      else {
+        $('#tnext').innerHTML = `<p class="tsrc">${esc(q.w.f)} — ${esc(q.w.b)} <span class="mute">· ${esc(q.w.src)}</span></p><button class="lock-go block" id="nx" type="button">다음</button>`;
+        $('#nx').onclick = () => { i++; $('#tq').dataset.done = ''; draw(); };
+      }
+    });
+  };
+  const finish = () => {
+    // 틀린 단어장 갱신: 틀리면 추가, 복습 단어를 맞히면 +1, 두 번 연속 맞히면 제거
+    const W = store.get('t.wrong', {}), P = pool();
+    wrong.forEach(f => { const w = P.find(x => x.f === f); W[f] = { b: w ? w.b : '', n: 0, t: Date.now() }; });
+    right.forEach(f => { if (W[f]) { W[f].n++; W[f].t = Date.now(); if (W[f].n >= 2) delete W[f]; } });
+    store.set('t.wrong', W);
+    const pct = score / Q.length, pass = pct >= PASS;
+    if (!only) {
+      const log = tLog(), d = cur.date, prev = log[d];
+      log[d] = { best: Math.max(score, prev ? prev.best : 0), total: Q.length, tries: (prev ? prev.tries : 0) + 1,
+        pass: (prev && prev.pass) || pass, wrong: pass || !prev ? wrong : prev.wrong, set: cur.set };
+      if (pass) log[d].wrong = wrong;
+      store.set('t.test.log', log);
+      if (!cur.advanced) { store.set('t.test.pos', store.get('t.test.pos', 0) + cur.fresh.length); cur.advanced = true; store.set('t.test.today', cur); }
+    }
+    const C = 2 * Math.PI * 52;
+    $('#tfill').style.width = '100%';
+    $('#tq').innerHTML = `
+      <div class="result">
+        <svg class="bigring" viewBox="0 0 120 120"><circle class="bg" cx="60" cy="60" r="52"/><circle class="fg ${pass ? 'ok' : 'warn'}" cx="60" cy="60" r="52" stroke-dasharray="${C}" stroke-dashoffset="${C * (1 - pct)}" transform="rotate(-90 60 60)"/></svg>
+        <div class="rnum"><b>${score}</b>/${Q.length}</div>
+        <h2>${pass ? (only ? '다 잡았어요!' : '오늘 완료! 🎉') : '조금만 더!'}</h2>
+        <p class="mute">${pass ? (only ? '' : '캘린더에 완료로 표시했어요') : `${Math.ceil(Q.length * PASS)}개 이상 맞히면 완료예요`}</p>
+      </div>
+      ${wrong.length ? `<div class="sec-h">틀린 단어 ${wrong.length}</div><div class="group-list">${wrong.map(f => { const w = pool().find(x => x.f === f); return `<div class="prow"><span class="pa">${esc(f)}</span><span class="pb">${esc(w ? w.b : '')}</span></div>`; }).join('')}</div>
+        <button class="lock-go block" id="again" type="button" style="margin-top:12px">틀린 것만 다시</button>` : ''}
+      <a class="pbtn block" href="#/toeic/cal">캘린더 보기</a>
+      <a class="pbtn block" href="#/toeic/test">테스트 홈</a>`;
+    const ag = $('#again'); if (ag) ag.onclick = () => testRun(wrong.slice());
+  };
+  draw();
+}
+function wrongList() {
+  const W = store.get('t.wrong', {});
+  const words = Object.entries(W).sort((a, b) => b[1].t - a[1].t).map(([f, v]) => ({ f, b: v.b, src: v.n ? `복습 ${v.n}/2` : '' }));
+  setNav({ back: { href: '#/toeic/test', label: '테스트' }, title: '틀린 단어' });
+  if (!words.length) { render(`<h1 class="large">틀린 단어 모음</h1><div class="empty small"><p>틀린 단어가 없어요 👏</p></div>`, 3); return; }
+  const view = wordList(words, true);
+  render(`<h1 class="large">틀린 단어 모음</h1><p class="lead">${words.length}개 · 다음 테스트에 복습으로 나와요</p>
+    <a class="lock-go block" href="#/toeic/test/retry" style="margin-bottom:12px">틀린 단어만 테스트</a>${view.html}`, 3);
+  view.mount();
+}
+function calendar(ym) {
+  const log = tLog(), now = new Date();
+  let [y, m] = ym ? ym.split('-').map(Number) : [now.getFullYear(), now.getMonth() + 1];
+  const first = new Date(y, m - 1, 1), days = new Date(y, m, 0).getDate(), lead = first.getDay();
+  const prev = m === 1 ? `${y - 1}-12` : `${y}-${m - 1}`, next = m === 12 ? `${y + 1}-1` : `${y}-${m + 1}`;
+  const entries = Object.entries(log), passDays = entries.filter(([, v]) => v.pass);
+  const monthPass = passDays.filter(([d]) => d.startsWith(`${y}-${String(m).padStart(2, '0')}`)).length;
+  const avg = entries.length ? Math.round(entries.reduce((a, [, v]) => a + v.best / v.total, 0) / entries.length * 100) : 0;
+  let cells = '';
+  for (let k = 0; k < lead; k++) cells += '<span></span>';
+  for (let d = 1; d <= days; d++) {
+    const key = `${y}-${String(m).padStart(2, '0')}-${String(d).padStart(2, '0')}`, r = log[key];
+    const cls = [r ? (r.pass ? 'ok' : 'warn') : '', key === dkey() ? 'today' : '', new Date(y, m - 1, d) > now ? 'future' : ''].join(' ');
+    cells += `<button class="day ${cls}" data-d="${key}" type="button"><span>${d}</span>${r ? `<i>${r.pass ? '✓' : Math.round(r.best / r.total * 100)}</i>` : ''}</button>`;
+  }
+  setNav({ back: { href: '#/toeic/test', label: '테스트' }, title: '학습 캘린더' });
+  render(`
+    <h1 class="large">학습 캘린더</h1>
+    <div class="stats">
+      <div><b>🔥 ${streak()}</b><span>연속</span></div>
+      <div><b>${passDays.length}</b><span>완료한 날</span></div>
+      <div><b>${avg}%</b><span>평균 점수</span></div>
+    </div>
+    <section class="card cal">
+      <div class="cal-h"><a href="#/toeic/cal/${prev}" aria-label="이전 달">‹</a><b>${y}년 ${m}월</b><a href="#/toeic/cal/${next}" aria-label="다음 달">›</a></div>
+      <div class="cal-w">${'일월화수목금토'.split('').map(w => `<span>${w}</span>`).join('')}</div>
+      <div class="cal-g">${cells}</div>
+      <p class="cal-legend"><i class="lg ok"></i>완료 <i class="lg warn"></i>도전(80점 미만) · 이번 달 ${monthPass}일 완료</p>
+    </section>
+    <div id="dd"></div>
+    <a class="lock-go block" href="#/toeic/test">${log[dkey()] && log[dkey()].pass ? '오늘 테스트 다시 보기' : '오늘 테스트 보러 가기'}</a>`, 3);
+  document.querySelectorAll('.day').forEach(b => b.onclick = () => {
+    const r = log[b.dataset.d]; document.querySelectorAll('.day').forEach(x => x.classList.remove('sel')); b.classList.add('sel');
+    const P = pool();
+    $('#dd').innerHTML = r ? `<section class="card"><h3>${b.dataset.d.replace(/-/g, '.')} · ${r.set ? `${r.set}세트` : ''}</h3>
+      <p>최고 <b>${r.best}</b> / ${r.total} · ${r.tries}번 응시 · ${r.pass ? '✓ 완료' : '미완료'}</p>
+      ${r.wrong && r.wrong.length ? `<p class="mute">틀린 단어</p>${r.wrong.map(f => { const w = P.find(x => x.f === f); return `<div class="vx"><span>${esc(f)}</span><small>${esc(w ? w.b : '')}</small></div>`; }).join('')}` : '<p class="mute">틀린 단어 없음</p>'}</section>`
+      : `<section class="card"><p class="mute">${b.dataset.d.replace(/-/g, '.')} — 기록 없음</p></section>`;
+  });
+}
+
 /* ── 라우터 ── */
 async function route(p) {
   if (!(await ensure())) return lockScreen(() => route(p));
@@ -350,6 +548,8 @@ async function route(p) {
   if (a === 'verbs') return verbs();
   if (a === 'pv') return partVoca();
   if (a === 'note') return note(b);
+  if (a === 'test') return b === 'run' ? testRun() : b === 'study' ? testStudy() : b === 'wrong' ? wrongList() : b === 'retry' ? testRun(Object.keys(store.get('t.wrong', {}))) : testHome();
+  if (a === 'cal') return calendar(b);
   return home();
 }
 window.TOEIC = { route };

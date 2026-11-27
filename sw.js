@@ -1,7 +1,7 @@
 // 오프라인에서도 열리도록 캐시. 내용을 고치면 VERSION 숫자를 올리세요.
-const VERSION = 'v4';
-const FILES = ['./', 'index.html', 'styles.css?v=4', 'data.js?v=4', 'app.js?v=4', 'manifest.webmanifest',
-  'apple-touch-icon.png', 'icon-192.png', 'icon-512.png', 'toeic.js?v=1'];
+const VERSION = 'v5';
+const FILES = ['./', 'index.html', 'styles.css?v=5', 'data.js?v=4', 'app.js?v=4', 'manifest.webmanifest',
+  'apple-touch-icon.png', 'icon-192.png', 'icon-512.png', 'toeic.js?v=2'];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(VERSION).then(c => c.addAll(FILES)).then(() => self.skipWaiting()));
