@@ -968,6 +968,42 @@ window.HCLASS = [
     </div>
   </section>
   <section class="card">
+    <h3>How 더 보기</h3>
+    <div class="rows">
+      <div><b>How</b><span>어떻게 / 어떤 상태</span></div>
+      <div><b>How + 형/부</b><span>얼마나 — How beautiful was it? / How expensive is it? (주격보어 V S) / How fast can you run? (부) / How fast was it? (형)</span></div>
+      <div><b>How many + 셀 수 O 명사</b><span>주어 / 목적어 / 보어 → 주어가 되면 도치 X</span></div>
+      <div><b>How much + 셀 수 X 명사</b><span>너무 뻔하면 명사를 뺀다 (money) — How much do I have to pay?</span></div>
+    </div>
+    <p class="ex">How many people are working in the office? <span class="mute">S V — 도치 X</span></p>
+    <p class="ex">How many people will you send this email to? <span class="mute">사람 O → 도치</span></p>
+    <p class="ex">How much (alcohol) can you drink? / How much food do I have to make?</p>
+    <p class="ex">How expensive is it? = How much is it? <span class="mute">양을 묻거나 가격을 물어볼 때</span></p>
+    <p class="ex">For how many days will you stay in this hotel? = How long ~?</p>
+  </section>
+  <section class="card">
+    <h3>which vs what · whose</h3>
+    <p class="note">리스트(선택지)가 있을 때 → which / 없을 때 → what</p>
+    <div class="rows">
+      <div><b>which (형용사, 어떤)</b><span>Which food did you eat? 어떤 음식을 먹었니?</span></div>
+      <div><b>which (대명사, 어떤 것)</b><span>Which did you eat? / Which do you want? — 뻔하면 명사를 빼버림</span></div>
+      <div><b>whose (형용사, 누구의)</b><span>Whose document is it? / Whose socks are in the basket? (S V 주보-전치사구)</span></div>
+      <div><b>whose (대명사, 누구의 것)</b><span>Whose is in the basket? / Whose is this smartphone?</span></div>
+    </div>
+    <p class="ex">Whose turn is next? / Which presentation is next?</p>
+    <p class="ex">There are which kids menus in the restaurant. → Which kids menus are there in the restaurant? <span class="mute">There = 가짜주어, 진짜 주어는 which kids menus</span></p>
+  </section>
+  <section class="card">
+    <h3>분사가 명사를 꾸밀 때 (노트)</h3>
+    <p class="note">분사 → 형용사: ① 명사 수식 ② 보어 — 꾸미는 말이 길면(구) 명사 뒤로!</p>
+    <p class="ex">There are many people <u>exercising in the park</u>. <span class="mute">공원에서 운동하고 있는 사람이 많다 (능동 -ing)</span></p>
+    <p class="ex">Please check the <u>attached</u> file. → Please check the file <u>attached in this email</u>. <span class="mute">청부된 (수동 p.p), 구면 뒤로</span></p>
+    <p class="ex">The car <u>parked in the garage</u> has to move to the outside. <span class="mute">move는 1V라 수동 X (= to be moved, 3V 수동으로 보면)</span></p>
+    <p class="ex">People <u>attending the presentation</u> have to move to the hotel banquet hall A after the presentation.</p>
+    <p class="ex">People fix the issue. → The issue is fixed by people.</p>
+    <p class="ex">I am pretty. (2V 주격보어) / smart women (명사 수식)</p>
+  </section>
+  <section class="card">
     <h3>ask 총정리</h3>
     <div class="rows">
       <div><b>① ask for + n</b><span>요청하다 — 물건을 요청 (n 달라고)</span></div>
@@ -1063,6 +1099,29 @@ window.HCLASS = [
     ['누가 당신에게 그 프로젝트에 대해서 이야기 했나요?', 'Who talked to you about the project?', '누가 = 주어 → 도치 X'],
     ['그 문제에 대해 당신은 누구에게 이메일을 보냈나요?', 'Who did you send this email to about the problem?'],
     ['누가 이 프로젝트를 담당하고 있나요?', 'Who is looking after this project?'],
+    ['누가 이 프로젝트를 끝냈습니까?', 'Who finished this project?'],
+    ['이 식당에는 어떤 키즈 메뉴가 있나요?', 'Which kids menus do you have in the restaurant?', '= Which kids menus are there in the restaurant?'],
+    ['한 명이 얼마나 많은 쿠폰을 받을 수 있나요?', 'How many coupons can a person receive?', '= How many coupons are given per person?'],
+    ['이 커피는 누구의 것인가요?', 'Whose coffee is this?'],
+    ['당신은 제가 당신의 커피에 시럽을 넣기를 원하나요?', 'Do you want me to put syrup in your coffee?', 'into도 가능'],
+    ['이 차에 얼마나 많은 사람이 탈 수 있나요?', 'How many people can get in this car?', 'get in 구멍 들어가는 느낌 / get on 큰 것에 타는'],
+    ['당신은 이 호텔에 얼마나 많은 날 동안 머무르나요?', 'For how many days will you stay in this hotel?', '= How long / during days (X)'],
+    ['당신은 지금 얼마나 많은 사람들과 함께 카페에 있나요?', 'How many people are you with in the cafe now?', 'with는 뒤에 남김'],
+    ['당신은 직원 중 한 명에게 계산서를 가져다 달라고 요청하셨나요?', 'Did you ask one of the staff for the bill?', '5V: Did you ask one of the staff to bring the bill?'],
+    ['너는 어떤 장난감에 흥미를 느끼니?', 'Which toy are you interested in?', 'do you interested (X) — interested는 형용사 → be'],
+    ['이 식당에서 어떤 메뉴가 인기가 있나요?', 'Which menu is popular in this restaurant?'],
+    ['어떤 드레스가 예뻐 보이니?', 'Which dress looks pretty?'],
+    ['이 스마트폰은 누구의 것인가요?', 'Whose is this smartphone?', 'whose = 누구의 것 (대명사)'],
+    ['누구의 신발이 노란색입니까?', 'Whose shoes are yellow?', 'shoes 복수 → are'],
+    ['누가 신분증을 안 가져왔나요?', "Who didn't bring the ID card?"],
+    ['당신은 누구의 펜을 빌렸나요?', 'Whose pen did you borrow?'],
+    ['이 빈 접시를 어디에 두어야 하나요?', 'Where do I have to put this empty dish?'],
+    ['얼마나 자주 이 약을 먹어야 하나요?', 'How often do I have to take this medicine?', '약은 take / eat은 삼시세끼 빼고 젤리 등'],
+    ['이 학교에서는 어떤 프로그램을 운영하고 있나요?', 'Which programs are managed at this school?', 'manage 3V 수동'],
+    ['제가 여기서 몇 번 버스를 타야 하나요?', 'Which number bus do I have to get on here?'],
+    ['이 프레젠테이션에서 당신은 무엇에 대해 이야기할 건가요?', 'What will you talk about in this presentation?'],
+    ['공원에서 운동하고 있는 사람이 많다.', 'There are many people exercising in the park.'],
+    ['첨부된 파일을 확인해주세요.', 'Please check the attached file.'],
   ]
 },
 
@@ -1521,6 +1580,35 @@ window.HCLASS = [
       <div><b>awkward</b><span>어색하다</span></div>
       <div><b>touching = impressive / touched = impressed</b><span>I'm touched. That is touching.</span></div>
       <div><b>be jealous of</b><span>~에 질투를 느끼다</span></div>
+      <div><b>attend vs participate in</b><span>참가하다: attend 3V 준비 안 하고 참여하는 방청객 느낌 / participate in 1V 일부분에 속해서 해야 할 일이 있는 느낌</span></div>
+      <div><b>lose weight / gain weight</b><span>살 빠지다 / 살 찌다 (lost · gained)</span></div>
+      <div><b>the other way around</b><span>반대로, 역으로 (부사) · oppositely 반대로 / opposite 형</span></div>
+      <div><b>annual checkup</b><span>매년 건강검진</span></div>
+      <div><b>be proud of</b><span>자랑스러워하다 — He feels proud of himself.</span></div>
+      <div><b>hospitality</b><span>서비스직 — He works for hospitality.</span></div>
+      <div><b>has been working for 3 months</b><span>(쭉) 해오다</span></div>
+      <div><b>bald</b><span>대머리</span></div>
+      <div><b>pestering</b><span>귀찮게 조르는 (예의를 갖춘 단어로)</span></div>
+      <div><b>refreshment</b><span>다과 — I had refreshment today. (3V)</span></div>
+      <div><b>acquaintance</b><span>아는 사람, 지인 (어퀘인턴스)</span></div>
+      <div><b>atmosphere · aspects</b><span>분위기 · 측면, 부분</span></div>
+      <div><b>audience</b><span>관객</span></div>
+      <div><b>objective · purpose</b><span>목표 · 목적 — on the purpose of improving convenience (편의성 향상)</span></div>
+      <div><b>read / lead</b><span>뤼드 / 리드 (발음 구분)</span></div>
+      <div><b>province</b><span>프로빈스 (도) · omelette</span></div>
+      <div><b>later on</b><span>후자에, 나중에</span></div>
+      <div><b>schedule / plan (3V)</b><span>I will plan a summer holiday around autumn.</span></div>
+      <div><b>journey</b><span>여행 일정</span></div>
+      <div><b>living cost</b><span>물가 (노트: living fee)</span></div>
+      <div><b>Cairns · Perth</b><span>호주 북쪽 지역 · 퍼스</span></div>
+      <div><b>extremely · talkative</b><span>극단적으로 · 수다스러운</span></div>
+      <div><b>stand</b><span>서다 (1V) / 견디다 (3V)</span></div>
+      <div><b>accommodation</b><span>숙소</span></div>
+      <div><b>flea market</b><span>벼룩시장</span></div>
+      <div><b>flavor · fruity</b><span>향 · 과일향이 나는</span></div>
+      <div><b>distilled · vine</b><span>증류된 · 포도나무 (cabernet sauvignon, merlot)</span></div>
+      <div><b>ruin</b><span>망치다</span></div>
+      <div><b>high level of curiosity · self-directed</b><span>호기심이 많은 · 자기주도적인</span></div>
       <div><b>celebrate</b><span>기념하다, 축하하다 (3V) — I want to celebrate our graduation.</span></div>
     </div>
   </section>
@@ -2629,4 +2717,8 @@ window.FIXES = [
   ['What did you ask?', 'What did you ask for?', '전치사 빼먹지 말기'],
   ['It will takes', 'It will take', '조동사 뒤 원형'],
   ['by the bus', 'by bus', '교통수단엔 관사 X'],
+  ['Which toy do you interested?', 'Which toy are you interested in?', 'interested는 형용사'],
+  ['Whose shoes is yellow?', 'Whose shoes are yellow?', '복수 주어'],
+  ['living fee', 'living cost', '물가'],
+  ['flee market', 'flea market', '벼룩시장'],
 ];
